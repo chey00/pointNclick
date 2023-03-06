@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16daf25b-8a9c-47b0-8927-891ae8b61c63" name="Changes" comment="Added new features">
+    <list default="true" id="16daf25b-8a9c-47b0-8927-891ae8b61c63" name="Changes" comment="Removed obsoled package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TemplateRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateRoom.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678107834083</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Removed obsoled package">
+      <created>1678108378226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678108378226</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,6 +94,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added new features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new features" />
+    <MESSAGE value="Removed obsoled package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed obsoled package" />
   </component>
 </project>

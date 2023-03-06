@@ -1,7 +1,6 @@
-from PyQt6.QtCore import QPoint, QRect, pyqtSignal, pyqtSlot
+from PyQt6.QtCore import QPoint, QRect, pyqtSignal, pyqtSlot, QSize, Qt
 from PyQt6.QtGui import QPixmap, QMouseEvent, QPaintEvent, QPainter, QColor, QFont
 from PyQt6.QtWidgets import QLabel
-from PyQt6.QtCore import QSize
 
 
 class TemplateRoom(QLabel):
@@ -37,11 +36,18 @@ class TemplateRoom(QLabel):
 
         self.hitbox_easter_egg = QRect(0,0,0,0)
         self.setMouseTracking(True)
+        self.setCursor(Qt.CursorShape.CrossCursor)
 
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
         for hitbox in self.__hitboxes:
             if hitbox.contains(ev.pos()):
-                print("in box")
+                if self.cursor().shape() != Qt.CursorShape.PointingHandCursor:
+                    self.setCursor(Qt.CursorShape.PointingHandCursor)
+
+                return
+
+        if self.cursor().shape() != Qt.CursorShape.CrossCursor:
+            self.setCursor(Qt.CursorShape.CrossCursor)
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         self.__mouse_pos = ev.pos()
@@ -87,7 +93,6 @@ class TemplateRoom(QLabel):
 
             if self.hitbox_easter_egg:
                 painter.drawRect(hitbox)
-
 
     @pyqtSlot(bool)
     def setHitBoxVisible(self, visible: bool):
