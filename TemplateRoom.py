@@ -1,7 +1,7 @@
 from PyQt6.QtCore import QPoint, QRect, pyqtSignal, pyqtSlot
 from PyQt6.QtGui import QPixmap, QMouseEvent, QPaintEvent, QPainter, QColor, QFont
 from PyQt6.QtWidgets import QLabel
-from PySide6.QtCore import QSize
+from PyQt6.QtCore import QSize
 
 
 class TemplateRoom(QLabel):

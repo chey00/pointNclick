@@ -1,6 +1,6 @@
 from PyQt6.QtCore import pyqtSlot
 from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
-#from TemplateRoom import TemplateRoom
+
 from MyRoom import MyRoom
 from KatzenRoom import KatzenRoom
 
