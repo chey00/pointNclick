@@ -2,6 +2,7 @@ from PyQt6.QtCore import pyqtSlot
 from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
 #from TemplateRoom import TemplateRoom
 from MyRoom import MyRoom
+from KatzenRoom import KatzenRoom
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -10,29 +11,40 @@ class MainWindow(QMainWindow):
         self.__set_rooms = set()
         self.__number_of_easter_eggs = 5
 
-        self.central_widget = MyRoom(parent)
-        self.central_widget.leave_room.connect(self.change_room)
-        self.central_widget.found_easter_egg.connect(self.handler_easter_egg)
-
         self.__status_bar = QStatusBar(parent)
         self.setStatusBar(self.__status_bar)
-
-        self.setCentralWidget(self.central_widget)
 
         self.setWindowTitle("Schulhausrundgang")
         self.showFullScreen()
 
         menuBar = QMenuBar(self)
         einstellungen = menuBar.addMenu("Einstellungen")
-        hitbox = einstellungen.addAction("Hitboxen anzeigen")
-        hitbox.setCheckable(True)
-        hitbox.toggled.connect(self.central_widget.setHitBoxVisible)
-        hitbox.setChecked(False)
+        self.__hitbox_action = einstellungen.addAction("Hitboxen anzeigen")
+        self.__hitbox_action.setCheckable(True)
+        self.__hitbox_action.setChecked(True)
         self.setMenuBar(menuBar)
+
+        self.central_widget = MyRoom(parent)
+        self.setup_new_room()
+
+    def setup_new_room(self):
+        self.central_widget.setHitBoxVisible(self.__hitbox_action.isChecked())
+        self.central_widget.leave_room.connect(self.change_room)
+        self.central_widget.found_easter_egg.connect(self.handler_easter_egg)
+        self.__hitbox_action.toggled.connect(self.central_widget.setHitBoxVisible)
+
+        self.setCentralWidget(self.central_widget)
 
     @pyqtSlot(str)
     def change_room(self, old_room):
         print(old_room)
+
+        if old_room == "90125637.jpg":
+            self.central_widget = KatzenRoom()
+            self.setup_new_room()
+        elif old_room == "katze.jpg":
+            self.central_widget = MyRoom()
+            self.setup_new_room()
 
     @pyqtSlot(str)
     def handler_easter_egg(self, room_name):
