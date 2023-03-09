@@ -30,10 +30,16 @@ class MainWindow(QMainWindow):
     def setup_new_room(self):
         self.central_widget.setHitBoxVisible(self.__hitbox_action.isChecked())
         self.central_widget.leave_room.connect(self.change_room)
+        self.central_widget.new_room.connect(self.renew_room)
         self.central_widget.found_easter_egg.connect(self.handler_easter_egg)
         self.__hitbox_action.toggled.connect(self.central_widget.setHitBoxVisible)
-
         self.setCentralWidget(self.central_widget)
+
+    @pyqtSlot(str)
+    def renew_room(self, new_room):
+        if new_room == "blub":
+            self.central_widget = KatzenRoom()
+            self.setup_new_room()
 
     @pyqtSlot(str)
     def change_room(self, old_room):

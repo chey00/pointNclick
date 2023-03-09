@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import QLabel
 
 class TemplateRoom(QLabel):
     leave_room = pyqtSignal(str)
+    new_room = pyqtSignal(str)
     found_easter_egg = pyqtSignal(str)
 
     def __init__(self, parent=None):
