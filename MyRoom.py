@@ -1,4 +1,4 @@
-from PyQt6.QtCore import QRect
+from PyQt6.QtCore import QRect, QPoint
 from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
@@ -11,6 +11,14 @@ class MyRoom(TemplateRoom):
 
         self.offset_balloon_x = 900
         self.offset_balloon_y = 25
+
+        self.offset_balloon_length = 450
+        self.offset_balloon_width = 200
+
+
+        self.mouth_to_speech.append(QPoint(771, 429))
+        self.mouth_to_speech.append(QPoint(990, 175))
+        self.mouth_to_speech.append(QPoint(1103, 175))
 
         self.hitbox_mouth = QRect(570, 475, 75, 75)
         self.append_hitbox(self.hitbox_mouth)

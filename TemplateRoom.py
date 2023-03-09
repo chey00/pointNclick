@@ -1,5 +1,5 @@
 from PyQt6.QtCore import QPoint, QRect, pyqtSignal, pyqtSlot, QSize, Qt
-from PyQt6.QtGui import QPixmap, QMouseEvent, QPaintEvent, QPainter, QColor, QFont
+from PyQt6.QtGui import QPixmap, QMouseEvent, QPaintEvent, QPainter, QColor, QFont, QPolygon, QPen, QBrush
 from PyQt6.QtWidgets import QLabel
 
 
@@ -28,13 +28,16 @@ class TemplateRoom(QLabel):
 
         self.__mouse_pos = QPoint()
 
-        self.__offset_balloon_length = 500
-        self.__offset_balloon_width = 150
+        self.offset_balloon_length = 500
+        self.offset_balloon_width = 150
 
         self.hitbox_exit = QRect()
         self.append_hitbox(self.hitbox_exit)
 
         self.hitbox_easter_egg = QRect(0,0,0,0)
+
+        self.mouth_to_speech = QPolygon()
+
         self.setMouseTracking(True)
         self.setCursor(Qt.CursorShape.CrossCursor)
 
@@ -45,6 +48,12 @@ class TemplateRoom(QLabel):
                     self.setCursor(Qt.CursorShape.PointingHandCursor)
 
                 return
+
+        if self.hitbox_easter_egg.contains(ev.pos()):
+            if self.cursor().shape() != Qt.CursorShape.PointingHandCursor:
+                self.setCursor(Qt.CursorShape.PointingHandCursor)
+
+            return
 
         if self.cursor().shape() != Qt.CursorShape.CrossCursor:
             self.setCursor(Qt.CursorShape.CrossCursor)
@@ -57,6 +66,8 @@ class TemplateRoom(QLabel):
         elif self.hitbox_easter_egg.contains(self.__mouse_pos):
             self.found_easter_egg.emit(self.__room_name)
 
+        print(self.__mouse_pos)
+
     def paintEvent(self, a0: QPaintEvent) -> None:
         painter = QPainter(self)
 
@@ -66,17 +77,38 @@ class TemplateRoom(QLabel):
             painter.setPen(QColor("red"))
             painter.drawEllipse(self.__mouse_pos, 10, 10)
 
-        painter.fillRect(QRect(self.offset_balloon_x, self.offset_balloon_y, self.__offset_balloon_length + 5, self.__offset_balloon_width + 5), QColor("goldenrod"))
-        painter.fillRect(QRect(self.offset_balloon_x + 5, self.offset_balloon_y + 5, self.__offset_balloon_length, self.__offset_balloon_width), QColor("gold"))
+        old_pen = painter.pen()
+        new_pen = QPen()
+        new_pen.setColor(QColor("black"))
+        new_pen.setWidth(5)
+        painter.setPen(new_pen)
 
-        painter.fillRect(QRect(self.__offset_exit, self.__pos_x_exit, 100, self.__heigth_box), QColor("darkred"))
-        painter.fillRect(QRect(self.__offset_exit + 5, self.__pos_x_exit + 5, 95, self.__heigth_box - 5), QColor("red"))
+        old_brush = painter.brush()
+        new_brush = QBrush()
+        new_brush.setColor(QColor("white"))
+        new_brush.setStyle(Qt.BrushStyle.Dense2Pattern)
+        painter.setBrush(new_brush)
+
+        painter.drawPolygon(self.mouth_to_speech)
+        painter.drawRoundedRect(self.offset_balloon_x, self.offset_balloon_y, self.offset_balloon_length,
+                                self.offset_balloon_width, 10, 10)
+
+        new_pen.setColor(QColor("goldenrod"))
+        painter.setPen(new_pen)
+        new_brush.setColor(QColor("gold"))
+        painter.setBrush(new_brush)
+
+        painter.drawRoundedRect(QRect(self.__offset_exit, self.__pos_x_exit, 100, self.__heigth_box), 10, 10)
+
+        painter.setBrush(old_brush)
+        painter.setPen(old_pen)
 
         font = QFont("Courier", 24)
         font.setBold(True)
         font.setItalic(True)
         painter.setFont(font)
         painter.setPen(QColor("black"))
+
         painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 25, self.text_line_1)
         painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 50, self.text_line_2)
         painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 75, self.text_line_3)
@@ -87,12 +119,13 @@ class TemplateRoom(QLabel):
         painter.drawText(self.__offset_exit + 10, self.__pos_x_exit + 25, "Zurück")
 
         if self.__hitbox_visible:
-            painter.setPen(QColor("red"))
+            painter.setPen(QColor("greenyellow"))
             for hitbox in self.__hitboxes:
                 painter.drawRect(hitbox)
 
             if self.hitbox_easter_egg:
-                painter.drawRect(hitbox)
+                painter.setPen(QColor("cyan"))
+                painter.drawRect(self.hitbox_easter_egg)
 
     @pyqtSlot(bool)
     def setHitBoxVisible(self, visible: bool):
