@@ -43,10 +43,10 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot(str)
     def change_room(self, old_room):
-        if old_room == "90125637.jpg":
+        if old_room == "MyRoom.jpg":
             self.central_widget = KatzenRoom()
             self.setup_new_room()
-        elif old_room == "katze.jpg":
+        elif old_room == "KatzenRoom.jpg":
             self.central_widget = MyRoom()
             self.setup_new_room()
 

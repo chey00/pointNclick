@@ -94,7 +94,13 @@ class TemplateRoom(QLabel):
         painter.drawRoundedRect(self.offset_balloon_x, self.offset_balloon_y, self.offset_balloon_length,
                                 self.offset_balloon_width, 10, 10)
 
+        new_pen.setStyle(Qt.PenStyle.NoPen)
+        painter.setPen(new_pen)
+
+        painter.drawRect(self.mouth_to_speech.at(1).x(), self.mouth_to_speech.at(1).y(), 100, 10)
+
         new_pen.setColor(QColor("goldenrod"))
+        new_pen.setStyle(Qt.PenStyle.SolidLine)
         painter.setPen(new_pen)
         new_brush.setColor(QColor("gold"))
         painter.setBrush(new_brush)
@@ -143,3 +149,10 @@ class TemplateRoom(QLabel):
 
     def append_hitbox(self, hitbox):
         self.__hitboxes.append(hitbox)
+
+    def set_offset_mouth(self, x, y, offset_x, width):
+        self.mouth_to_speech.clear()
+
+        self.mouth_to_speech.append(QPoint(x, y))
+        self.mouth_to_speech.append(QPoint(self.offset_balloon_x + self.offset_balloon_width + offset_x, self.offset_balloon_y + self.offset_balloon_width))
+        self.mouth_to_speech.append(QPoint(self.offset_balloon_x + self.offset_balloon_width + offset_x + width, self.offset_balloon_y + self.offset_balloon_width))

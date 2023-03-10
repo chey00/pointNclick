@@ -7,10 +7,11 @@ class KatzenRoom(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("katze.jpg")
+        self.init_room("KatzenRoom.jpg")
 
         self.offset_balloon_x = 10
         self.offset_balloon_y = 10
+        self.set_offset_mouth(549, 533, 50, 150)
 
         self.text_line_1 = "Hallo, ich bin die"
         self.text_line_2 = "Katze!"
