@@ -97,7 +97,7 @@ class TemplateRoom(QLabel):
         new_pen.setStyle(Qt.PenStyle.NoPen)
         painter.setPen(new_pen)
 
-        painter.drawRect(self.mouth_to_speech.at(1).x(), self.mouth_to_speech.at(1).y(), 100, 10)
+        painter.drawRect(self.mouth_to_speech.at(1).x() + 5, self.mouth_to_speech.at(1).y(), 95, 10)
 
         new_pen.setColor(QColor("goldenrod"))
         new_pen.setStyle(Qt.PenStyle.SolidLine)
