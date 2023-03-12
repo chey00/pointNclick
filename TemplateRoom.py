@@ -68,15 +68,12 @@ class TemplateRoom(QLabel):
             self.found_easter_egg.emit(self.__room_name)
 
         print(self.__mouse_pos)
+        self.update()
 
     def paintEvent(self, a0: QPaintEvent) -> None:
         painter = QPainter(self)
 
         painter.drawPixmap(QPoint(0, 0), self.__background_pixmap)
-
-        if self.__mouse_pos:
-            painter.setPen(QColor("red"))
-            painter.drawEllipse(self.__mouse_pos, 10, 10)
 
         old_pen = painter.pen()
         new_pen = QPen()
@@ -90,14 +87,20 @@ class TemplateRoom(QLabel):
         new_brush.setStyle(Qt.BrushStyle.Dense2Pattern)
         painter.setBrush(new_brush)
 
-        painter.drawPolygon(self.mouth_to_speech)
         painter.drawRoundedRect(self.offset_balloon_x, self.offset_balloon_y, self.offset_balloon_length,
                                 self.offset_balloon_width, 10, 10)
 
         new_pen.setStyle(Qt.PenStyle.NoPen)
         painter.setPen(new_pen)
 
-        painter.drawRect(self.mouth_to_speech.at(1).x() + 5, self.mouth_to_speech.at(1).y(), 95, 10)
+        painter.drawPolygon(self.mouth_to_speech)
+        painter.drawRect(self.mouth_to_speech.at(1).x() + 5, self.mouth_to_speech.at(1).y() - 5, self.mouth_to_speech.at(2).x() - self.mouth_to_speech.at(1).x() - 5, 5)
+
+        new_pen.setStyle(Qt.PenStyle.SolidLine)
+        painter.setPen(new_pen)
+
+        painter.drawLine(self.mouth_to_speech.at(0), self.mouth_to_speech.at(1))
+        painter.drawLine(self.mouth_to_speech.at(2), self.mouth_to_speech.at(0))
 
         new_pen.setColor(QColor("goldenrod"))
         new_pen.setStyle(Qt.PenStyle.SolidLine)
@@ -126,8 +129,12 @@ class TemplateRoom(QLabel):
         painter.drawText(self.__offset_exit + 10, self.__pos_x_exit + 25, "Zurück")
 
         if self.__hitbox_visible:
-            painter.setPen(QColor("greenyellow"))
+            if self.__mouse_pos:
+                painter.setPen(QColor("red"))
+                painter.drawEllipse(self.__mouse_pos, 10, 10)
+
             for hitbox in self.__hitboxes:
+                painter.setPen(QColor("greenyellow"))
                 painter.drawRect(hitbox)
 
             if self.hitbox_easter_egg:
