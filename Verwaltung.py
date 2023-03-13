@@ -27,6 +27,9 @@ class Verwaltung(TemplateRoom):
         self.hitbox_zumStvRoom= QRect(1340, 1, 99, 800)
         self.append_hitbox(self.hitbox_zumStvRoom)
 
+        self.hitbox_zumOSTD = QRect(1, 1, 99, 800)
+        self.append_hitbox(self.hitbox_zumOSTD)
+
         self.text_line_1 = "Herzlich Willkommen in der"
         self.text_line_2 = "Verwaltung!"
         self.text_line_3 = ""
@@ -69,5 +72,7 @@ class Verwaltung(TemplateRoom):
 
         elif self.hitbox_zumStvRoom.contains(mouse_pos):
             self.new_room.emit("StvRoom.jpg")
+        elif self.hitbox_zumOSTD.contains(mouse_pos):
+            self.new_room.emit("OSTD1.jpg")
 
         self.update()
