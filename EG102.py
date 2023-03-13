@@ -11,7 +11,7 @@ class EG102(TemplateRoom):
 
         self.offset_balloon_x = 500
         self.offset_balloon_y = 167
-        self.offset_balloon_length = 500
+        self.offset_balloon_length = 550
         self.offset_balloon_width = 150
 
         self.set_offset_mouth(280, 517, 50, 150)
