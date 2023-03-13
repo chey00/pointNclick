@@ -31,7 +31,7 @@ class Eingang(TemplateRoom):
 
         self.text_line_1 = ""
         self.text_line_2 = "Hey,"
-        self.text_line_3 = "Herzlich Willkommen an der"
+        self.text_line_3 = "herzlich Willkommen an der"
         self.text_line_4 = "SBS Herzogenaurach!"
         self.text_line_5 = ""
         self.text_line_6 = "                                    weiter"
