@@ -9,9 +9,12 @@ class Wegweiser(TemplateRoom):
 
         self.init_room("Wegweiser.jpg")
 
-        self.offset_balloon_x = int((1440-500)/2)
-        self.offset_balloon_y = 25
-        self.set_offset_mouth(self.offset_balloon_x, self.offset_balloon_y + 200, 0, 0)
+        self.offset_balloon_x = 639
+        self.offset_balloon_y = 10
+        self.offset_balloon_length = 550
+        self.offset_balloon_width = 150
+
+        self.set_offset_mouth(717, 498, 50, 150)
 
         self.hitbox_zumTreppenhaus = QRect(1, 1, 250, 800)
         self.append_hitbox(self.hitbox_zumTreppenhaus)
@@ -19,12 +22,15 @@ class Wegweiser(TemplateRoom):
         self.hitbox_zumGangTech = QRect(1440-251, 1, 250, 800)
         self.append_hitbox(self.hitbox_zumGangTech)
 
-        self.text_line_1 = "\t\tWegweiser:"
+        self.hitbox_mouth = QRect(661, 442, 60, 75)
+        self. append_hitbox(self.hitbox_mouth)
+
+        self.text_line_1 = "Hallo ich bin Frau Körber"
         self.text_line_2 = ""
         self.text_line_3 = ""
         self.text_line_6 = ""
-        self.text_line_4 = "Links: zum Treppenhaus"
-        self.text_line_5 = "Rechts: zu den Unterrichtsräumen"
+        self.text_line_4 = ""
+        self.text_line_5 = ""
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Wegweiser, self).mousePressEvent(ev)
@@ -36,5 +42,13 @@ class Wegweiser(TemplateRoom):
             self.new_room.emit("Treppenhaus.jpg")
         elif self.hitbox_zumGangTech.contains(mouse_pos):
             self.new_room.emit("GangTech.jpg")
-
+        elif self.hitbox_mouth.contains(mouse_pos):
+            self.text_line_1 = ""
+            self.text_line_2 = "Links geht es zum Treppenhaus"
+            self.text_line_3 = "Rechts geht es zu den"
+            self.text_line_4 = "Unterrichtsräumen"
+            self.text_line_5 = ""
+            self.text_line_6 = ""
         self.update()
+
+
