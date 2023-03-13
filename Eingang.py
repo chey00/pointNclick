@@ -31,8 +31,8 @@ class Eingang(TemplateRoom):
 
         self.text_line_1 = ""
         self.text_line_2 = "Hey,"
-        self.text_line_3 = "Herzlich Willkommen an der"
-        self.text_line_4 = "SBS- Herzogenaurach!"
+        self.text_line_3 = "herzlich Willkommen an der"
+        self.text_line_4 = "SBS Herzogenaurach!"
         self.text_line_5 = ""
         self.text_line_6 = "                                    weiter"
 
@@ -44,8 +44,8 @@ class Eingang(TemplateRoom):
         if self.hitbox_easter_egg.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = ""
-            self.text_line_3 = "GLÜCKWUNSCH !!!"
-            self.text_line_4 = "Sie haben Ihr erstes Ei gefunden."
+            self.text_line_3 = "GLÜCKWUNSCH!!!"
+            self.text_line_4 = "Sie haben Ihre erste Kaffetasse gefunden."
             self.text_line_5 = ""
             self.text_line_6 = "                                    weiter"
 

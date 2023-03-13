@@ -25,7 +25,7 @@ class BueroVogel(TemplateRoom):
         self.hitbox_acces = QRect(920, 115, 60, 60)
         self.append_hitbox(self.hitbox_acces)
 
-        self.text_line_1 = "Hallo mein Name ist Frau Vogel,"
+        self.text_line_1 = "Hallo, mein Name ist Frau Vogel,"
         self.text_line_2 = ""
         self.text_line_3 = "Ich stehe hier vor meinem Büro."
         self.text_line_4 = ""
@@ -43,16 +43,16 @@ class BueroVogel(TemplateRoom):
             self.text_line_4 = ""
             self.text_line_5 = ""
         elif self.hitbox_raumzuweisung.contains(mouse_pos):
-            self.text_line_1 = "Hier ist Die Raumzuweisung: EG-105"
-            self.text_line_2 = ""
-            self.text_line_3 = "Diese Schilder sind an jedem Raum,"
-            self.text_line_4 = ""
-            self.text_line_5 = "um Missverständnisse zu vermeiden."
+            self.text_line_1 = "Hier ist Die Raumzuweisung:"
+            self.text_line_2 = "EG - 105"
+            self.text_line_3 = "Diese Schilder sind"
+            self.text_line_4 = "an jedem Raum, um "
+            self.text_line_5 = "Missverständnisse zu vermeiden."
         elif self.hitbox_acces.contains(mouse_pos):
-            self.text_line_1 = "Hier ist der Acces point zu sehen."
-            self.text_line_2 = "Er sorgt für eine stabile"
-            self.text_line_3 = "Internetverbindung und "
-            self.text_line_4 = "ist im ganzen Schulhaus zu finden."
-            self.text_line_5 = ""
+            self.text_line_1 = "Hier ist der Acces point zu"
+            self.text_line_2 = "sehen. Er sorgt"
+            self.text_line_3 = "für eine stabile"
+            self.text_line_4 = "Internetverbindung und ist im"
+            self.text_line_5 = "ganzen Schulhaus zu finden."
 
         self.update()
