@@ -25,7 +25,7 @@ class Wegweiser(TemplateRoom):
         self.hitbox_mouth = QRect(661, 442, 60, 75)
         self. append_hitbox(self.hitbox_mouth)
 
-        self.text_line_1 = "Hallo ich bin Frau Körber"
+        self.text_line_1 = "Hallo ich bin Frau Körber."
         self.text_line_2 = ""
         self.text_line_3 = ""
         self.text_line_6 = ""
@@ -44,9 +44,9 @@ class Wegweiser(TemplateRoom):
             self.new_room.emit("GangTech.jpg")
         elif self.hitbox_mouth.contains(mouse_pos):
             self.text_line_1 = ""
-            self.text_line_2 = "Links geht es zum Treppenhaus"
-            self.text_line_3 = "Rechts geht es zu den"
-            self.text_line_4 = "Unterrichtsräumen"
+            self.text_line_2 = "Links geht es zum Treppenhaus,"
+            self.text_line_3 = "rechts geht es zu den"
+            self.text_line_4 = "Unterrichtsräumen."
             self.text_line_5 = ""
             self.text_line_6 = ""
         self.update()
