@@ -19,10 +19,10 @@ class GangTech(TemplateRoom):
         self.hitbox_zumEG101 = QRect(715, 200, 360, 630)
         self.append_hitbox(self.hitbox_zumEG101)
 
-        self.text_line_1 = "Greetings!"
+        self.text_line_1 = ""
         self.text_line_2 = ""
-        self.text_line_3 = "So long, and"
-        self.text_line_4 = "Thanks for the fish"
+        self.text_line_3 = ""
+        self.text_line_4 = ""
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(GangTech, self).mousePressEvent(ev)
