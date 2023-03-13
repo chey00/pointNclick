@@ -26,11 +26,11 @@ class Wegweiser(TemplateRoom):
         self. append_hitbox(self.hitbox_mouth)
 
         self.text_line_1 = "Hallo ich bin Frau Körber."
-        self.text_line_2 = ""
-        self.text_line_3 = ""
+        self.text_line_2 = "Ich bin die stellvertretende"
+        self.text_line_3 = "Schulleiterin."
+        self.text_line_4 = "In der FSWI-2 unterrichte ich"
+        self.text_line_5 = "Betriebswirtschaft."
         self.text_line_6 = ""
-        self.text_line_4 = ""
-        self.text_line_5 = ""
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Wegweiser, self).mousePressEvent(ev)

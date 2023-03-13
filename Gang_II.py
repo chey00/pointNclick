@@ -19,10 +19,10 @@ class Gang_II(TemplateRoom):
         self.hitbox_zumEG102 = QRect(115, 100, 560, 800)
         self.append_hitbox(self.hitbox_zumEG102)
 
-        self.text_line_1 = "Greetings!"
+        self.text_line_1 = "Hier ist die FSWI-1 zuhause."
         self.text_line_2 = ""
-        self.text_line_3 = "So long, and"
-        self.text_line_4 = "Thanks for the fish"
+        self.text_line_3 = "Sprich Freund und"
+        self.text_line_4 = "tritt ein. "
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Gang_II, self).mousePressEvent(ev)
