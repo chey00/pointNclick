@@ -25,7 +25,7 @@ class BueroVogel(TemplateRoom):
         self.hitbox_acces = QRect(920, 115, 60, 60)
         self.append_hitbox(self.hitbox_acces)
 
-        self.text_line_1 = "Hallo mein Name ist Frau Vogel,"
+        self.text_line_1 = "Hallo, mein Name ist Frau Vogel,"
         self.text_line_2 = ""
         self.text_line_3 = "Ich stehe hier vor meinem Büro."
         self.text_line_4 = ""
