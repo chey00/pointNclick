@@ -25,11 +25,12 @@ class BueroVogel(TemplateRoom):
         self.hitbox_acces = QRect(920, 115, 60, 60)
         self.append_hitbox(self.hitbox_acces)
 
-        self.text_line_1 = "Hallo, mein Name ist Frau Vogel,"
-        self.text_line_2 = ""
-        self.text_line_3 = "Ich stehe hier vor meinem Büro."
-        self.text_line_4 = ""
-        self.text_line_5 = ""
+        self.text_line_1 = "Hallo, mein Name ist "
+        self.text_line_2 = "Frau Vogel und ich stehe hier"
+        self.text_line_3 = "vor meinem Büro. Ich habe die"
+        self.text_line_4 = "Seminarleitung und bin die"
+        self.text_line_5 = "stellvertretende"
+        self.text_line_6 = "Fachschulleitung."
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(BueroVogel, self).mousePressEvent(ev)
@@ -42,17 +43,20 @@ class BueroVogel(TemplateRoom):
             self.text_line_3 = "zum Gießen der Pflanze."
             self.text_line_4 = ""
             self.text_line_5 = ""
+            self.text_line_6 = ""
         elif self.hitbox_raumzuweisung.contains(mouse_pos):
             self.text_line_1 = "Hier ist Die Raumzuweisung:"
             self.text_line_2 = "EG - 105"
             self.text_line_3 = "Diese Schilder sind"
             self.text_line_4 = "an jedem Raum, um "
             self.text_line_5 = "Missverständnisse zu vermeiden."
+            self.text_line_6 = ""
         elif self.hitbox_acces.contains(mouse_pos):
             self.text_line_1 = "Hier ist der Acces point zu"
             self.text_line_2 = "sehen. Er sorgt"
             self.text_line_3 = "für eine stabile"
             self.text_line_4 = "Internetverbindung und ist im"
             self.text_line_5 = "ganzen Schulhaus zu finden."
+            self.text_line_6 = ""
 
         self.update()
