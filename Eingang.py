@@ -52,9 +52,9 @@ class Eingang(TemplateRoom):
             self.update()
 
         elif self.hitbox_door_1.contains(mouse_pos):
-            pass
-        elif self.hitbox_door_1.contains(mouse_pos):
-            pass
+            self.new_room.emit("Aula.jpg")
+        elif self.hitbox_door_2.contains(mouse_pos):
+            self.new_room.emit("Aula.jpg")
 
         elif self.hitbox_forward.contains(mouse_pos):
             if self.__counter == 0:

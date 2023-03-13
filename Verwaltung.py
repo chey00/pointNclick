@@ -24,6 +24,9 @@ class Verwaltung(TemplateRoom):
         self.hitbox_computer = QRect(700, 435, 110, 120)
         self.append_hitbox(self.hitbox_computer)
 
+        self.hitbox_zumStvRoom= QRect(1340, 1, 99, 800)
+        self.append_hitbox(self.hitbox_zumStvRoom)
+
         self.text_line_1 = "Herzlich Willkommen in der"
         self.text_line_2 = "Verwaltung!"
         self.text_line_3 = ""
@@ -64,4 +67,7 @@ class Verwaltung(TemplateRoom):
             self.text_line_5 = "WWW.SBS-herzogenaurach.de"
             self.text_line_6 = ""
 
-            self.update()
+        elif self.hitbox_zumStvRoom.contains(mouse_pos):
+            self.new_room.emit("StvRoom.jpg")
+
+        self.update()

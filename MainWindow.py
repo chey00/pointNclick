@@ -3,6 +3,19 @@ from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
 
 from MyRoom import MyRoom
 from KatzenRoom import KatzenRoom
+from Wegweiser import Wegweiser
+from Treppenhaus import Treppenhaus
+from Gang_I import Gang_I
+from Gang_II import Gang_II
+from Gang_III import Gang_III
+from GangTech import GangTech
+from Aula import Aula
+from Fraesmaschine import Fraesmaschine
+from EG102 import EG102
+from Verwaltung import Verwaltung
+from StvRoom import StvRoom
+from Eingang import Eingang
+
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -24,7 +37,7 @@ class MainWindow(QMainWindow):
         self.__hitbox_action.setChecked(True)
         self.setMenuBar(menuBar)
 
-        self.central_widget = MyRoom(parent)
+        self.central_widget = Eingang(parent)
         self.setup_new_room()
 
     def setup_new_room(self):
@@ -37,8 +50,38 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot(str)
     def renew_room(self, new_room):
-        if new_room == "blub":
-            self.central_widget = KatzenRoom()
+        if new_room == "Treppenhaus.jpg":
+            self.central_widget = Treppenhaus()
+            self.setup_new_room()
+        elif new_room == "GangTech.jpg":
+            self.central_widget = GangTech()
+            self.setup_new_room()
+        elif new_room == "Gang_I.jpg":
+            self.central_widget = Gang_I()
+            self.setup_new_room()
+        elif new_room == "Gang_II.jpg":
+            self.central_widget = Gang_II()
+            self.setup_new_room()
+        elif new_room == "Gang_III.jpg":
+            self.central_widget = Gang_III()
+            self.setup_new_room()
+        elif new_room == "Wegweiser.jpg":
+            self.central_widget = Wegweiser()
+            self.setup_new_room()
+        elif new_room == "Fraesmaschine.jpg":
+            self.central_widget = Fraesmaschine()
+            self.setup_new_room()
+        elif new_room == "EG102.jpg":
+            self.central_widget = EG102()
+            self.setup_new_room()
+        elif new_room == "Verwaltung.jpg":
+            self.central_widget = Verwaltung()
+            self.setup_new_room()
+        elif new_room == "StvRoom.jpg":
+            self.central_widget = StvRoom()
+            self.setup_new_room()
+        elif new_room == "Aula.jpg":
+            self.central_widget = Aula()
             self.setup_new_room()
 
     @pyqtSlot(str)
@@ -48,6 +91,42 @@ class MainWindow(QMainWindow):
             self.setup_new_room()
         elif old_room == "KatzenRoom.jpg":
             self.central_widget = MyRoom()
+            self.setup_new_room()
+        elif old_room == "Wegweiser.jpg":
+            self.central_widget = Aula()
+            self.setup_new_room()
+        elif old_room == "Treppenhaus.jpg":
+            self.central_widget = Wegweiser()
+            self.setup_new_room()
+        elif old_room == "GangTech.jpg":
+            self.central_widget = Wegweiser()
+            self.setup_new_room()
+        elif old_room == "Gang_I.jpg":
+            self.central_widget = Treppenhaus()
+            self.setup_new_room()
+        elif old_room == "Gang_II.jpg":
+            self.central_widget = GangTech()
+            self.setup_new_room()
+        elif old_room == "Gang_III.jpg":
+            self.central_widget = Gang_II()
+            self.setup_new_room()
+        elif old_room == "Wegweiser.jpg":
+            self.central_widget = Aula()
+            self.setup_new_room()
+        elif old_room == "Fraesmaschine.jpg":
+            self.central_widget = Gang_I()
+            self.setup_new_room()
+        elif old_room == "EG102.jpg":
+            self.central_widget = Gang_II()
+            self.setup_new_room()
+        elif old_room == "Verwaltung.jpg":
+            self.central_widget = Aula()
+            self.setup_new_room()
+        elif old_room == "StvRoom.jpg":
+            self.central_widget = Verwaltung()
+            self.setup_new_room()
+        elif old_room == "Aula.jpg":
+            self.central_widget = Eingang()
             self.setup_new_room()
 
     @pyqtSlot(str)
