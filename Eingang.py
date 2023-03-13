@@ -6,8 +6,10 @@ from TemplateRoom import TemplateRoom
 class Eingang(TemplateRoom):
     def __init__(self, parent=None):
         super(Eingang, self).__init__()
+        self.show_exit_button(False)
 
         self.init_room("Eingang.jpg")
+
 
         self.offset_balloon_x = 750
         self.offset_balloon_y = 20
@@ -45,9 +47,11 @@ class Eingang(TemplateRoom):
             self.text_line_1 = ""
             self.text_line_2 = ""
             self.text_line_3 = "GLÜCKWUNSCH!!!"
-            self.text_line_4 = "Sie haben Ihre erste Kaffetasse gefunden."
+            self.text_line_4 = "Sie haben Ihre erste Kaffeetasse gefunden."
             self.text_line_5 = ""
             self.text_line_6 = "                                    weiter"
+
+            self.__counter = 5
 
             self.update()
 
@@ -60,18 +64,22 @@ class Eingang(TemplateRoom):
             if self.__counter == 0:
                 self.text_line_1 = ""
                 self.text_line_2 = "Ich heiße David Ojimba"
-                self.text_line_3 = "und begleite euch heute,"
+                self.text_line_3 = "und begleite euch heute"
                 self.text_line_4 = "durch unsere Schule."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 
+                self.__counter = 1
+
             elif self.__counter == 1:
                 self.text_line_1 = "Hier ist unser Point & Click adventure,"
                 self.text_line_2 = "klicke dich gerne von Raum zu Raum"
-                self.text_line_3 = "um einen Einblick in unsere verschiedenen,"
-                self.text_line_4 = "Fachschulen, zu gewinnen."
+                self.text_line_3 = "um einen Einblick in unsere verschiedenen"
+                self.text_line_4 = "Fachschulen zu gewinnen."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
+
+                self.__counter = 2
 
             elif self.__counter == 2:
                 self.text_line_1 = ""
@@ -81,6 +89,8 @@ class Eingang(TemplateRoom):
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 
+                self.__counter = 3
+
             elif self.__counter == 3:
                 self.text_line_1 = "In manchen Räumen ist eine Tasse versteckt."
                 self.text_line_2 = ""
@@ -89,13 +99,15 @@ class Eingang(TemplateRoom):
                 self.text_line_5 = "ein 'Easter Present' zu gewinnen."
                 self.text_line_6 = "                                    weiter"
 
+                self.__counter = 4
+
             elif self.__counter == 4:
                 self.text_line_1 = ""
                 self.text_line_2 = ""
                 self.text_line_3 = "Naaa, haben Sie schon"
                 self.text_line_4 = "eine Tasse entdeckt?"
                 self.text_line_5 = ""
-                self.text_line_6 = "                                    weiter"
+                self.text_line_6 = ""
 
             elif self.__counter == 5:
                 self.text_line_1 = "Ihre erste Tasse haben Sie bereits gefunden."
@@ -105,6 +117,8 @@ class Eingang(TemplateRoom):
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 
+                self.__counter = 6
+
             elif self.__counter == 6:
                 self.text_line_1 = ""
                 self.text_line_2 = ""
@@ -112,7 +126,5 @@ class Eingang(TemplateRoom):
                 self.text_line_4 = "Viel Spaß bei der Suche!!"
                 self.text_line_5 = ""
                 self.text_line_6 = ""
-
-            self.__counter += 1
 
             self.update()
