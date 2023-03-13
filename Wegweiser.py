@@ -19,7 +19,7 @@ class Wegweiser(TemplateRoom):
         self.hitbox_zumGangTech = QRect(1440-251, 1, 250, 800)
         self.append_hitbox(self.hitbox_zumGangTech)
 
-        self.text_line_1 = "Wegweiser:"
+        self.text_line_1 = "\t\tWegweiser:"
         self.text_line_2 = ""
         self.text_line_3 = ""
         self.text_line_6 = ""
