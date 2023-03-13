@@ -30,7 +30,7 @@ class EG102(TemplateRoom):
 
         self.text_line_1 = "Hallo!"
         self.text_line_2 = ""
-        self.text_line_3 = "Wilkommen im Raum EG102"
+        self.text_line_3 = "Willkommen im Raum EG102."
         self.text_line_4 = ""
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
@@ -39,29 +39,29 @@ class EG102(TemplateRoom):
         mouse_pos = ev.pos()
 
         if self.hitbox_freddy.contains(mouse_pos):
-            self.text_line_1 = "Ich bin Freddy"
-            self.text_line_2 = "ich gehe in die FSWI-1"
-            self.text_line_3 = "bei Fragen "
-            self.text_line_4 = "Sprechen Sie mich gerne an"
-            self.text_line_5 = "oder einen anderen aus der Klasse"
+            self.text_line_1 = "Ich heiße Freddy und"
+            self.text_line_2 = "besuche die Klasse FSWI-1."
+            self.text_line_3 = "Bei Fragen"
+            self.text_line_4 = "sprechen Sie mich gerne "
+            self.text_line_5 = "oder einen anderen aus der Klasse an."
             self.text_line_6 = ""
 
             self.update()
 
         if self.hitbox_taffel.contains(mouse_pos):
-            self.text_line_1 = "Auf der Taffel Steht"
-            self.text_line_2 = "Meistens nicht viel"
-            self.text_line_3 = "da der unterricht"
-            self.text_line_4 = "digital gestalltet ist"
+            self.text_line_1 = "Auf der Taffel steht"
+            self.text_line_2 = "meistens nicht viel,"
+            self.text_line_3 = "da der Unterricht"
+            self.text_line_4 = "digital gestalltet ist."
             self.text_line_5 = ""
             self.text_line_6 = ""
 
             self.update()
 
         if self.hitbox_beamer.contains(mouse_pos):
-            self.text_line_1 = "Dank dem Digitalen Unterricht"
-            self.text_line_2 = "Findet dieser über dem Beamer"
-            self.text_line_3 = "statt"
+            self.text_line_1 = "Dank dem digitalen Unterricht"
+            self.text_line_2 = "findet dieser über dem Beamer"
+            self.text_line_3 = "statt."
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""
@@ -70,7 +70,7 @@ class EG102(TemplateRoom):
 
         if self.hitbox_schwamm.contains(mouse_pos):
             self.text_line_1 = "Wer lebt in der Annanas"
-            self.text_line_2 = "ganz tief im Meer"
+            self.text_line_2 = "ganz tief im Meer?"
             self.text_line_3 = ""
             self.text_line_4 = ""
             self.text_line_5 = ""
