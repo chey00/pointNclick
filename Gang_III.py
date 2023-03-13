@@ -32,6 +32,6 @@ class Gang_III(TemplateRoom):
         if self.hitbox_zuHerrnBeck.contains(mouse_pos):
             pass
         elif self.hitbox_zuFrauVogel.contains(mouse_pos):
-            pass
+            self.new_room.emit("BueroVogel.jpg")
 
         self.update()

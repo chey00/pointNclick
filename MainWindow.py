@@ -15,6 +15,7 @@ from EG102 import EG102
 from Verwaltung import Verwaltung
 from StvRoom import StvRoom
 from Eingang import Eingang
+from BueroVogel import BueroVogel
 
 
 class MainWindow(QMainWindow):
@@ -83,6 +84,9 @@ class MainWindow(QMainWindow):
         elif new_room == "Aula.jpg":
             self.central_widget = Aula()
             self.setup_new_room()
+        elif new_room == "BueroVogel.jpg":
+            self.central_widget = BueroVogel()
+            self.setup_new_room()
 
     @pyqtSlot(str)
     def change_room(self, old_room):
@@ -127,6 +131,9 @@ class MainWindow(QMainWindow):
             self.setup_new_room()
         elif old_room == "Aula.jpg":
             self.central_widget = Eingang()
+            self.setup_new_room()
+        elif old_room == "BueroVogel.jpg":
+            self.central_widget = Gang_III()
             self.setup_new_room()
 
     @pyqtSlot(str)
