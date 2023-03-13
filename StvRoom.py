@@ -25,11 +25,11 @@ class StvRoom(TemplateRoom):
 
         self.hitbox_easter_egg = QRect(800, 590, 75, 109)
 
-        self.text_line_1 = "Hallo ich bin Herr Gumbmann,"
-        self.text_line_2 = "schön das Sie hier sind!"
+        self.text_line_1 = "Hallo ich bin Herr Gumbmann."
+        self.text_line_2 = "Schön das Sie hier sind!"
         self.text_line_3 = "Hier stehe ich als "
-        self.text_line_4 = "Stellvertretender Schulleiter."
-        self.text_line_5 = "Schau dich gerne etwas um."
+        self.text_line_4 = "stellvertretender Schulleiter!"
+        self.text_line_5 = "Schau dich gerne etwas um"
         self.text_line_6 = "                           weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
@@ -41,7 +41,7 @@ class StvRoom(TemplateRoom):
             self.text_line_1 = ""
             self.text_line_2 = ""
             self.text_line_3 = "Für den guten Start in"
-            self.text_line_4 = "den Tag ist Kaffee unnerlässlich!"
+            self.text_line_4 = "den Tag, ist Kaffee unerlässlich!"
             self.text_line_5 = ""
             self.text_line_6 = ""
 
@@ -60,9 +60,9 @@ class StvRoom(TemplateRoom):
         if self.hitbox_forward.contains(mouse_pos):
             if self.__counter == 0:
                 self.text_line_1 = ""
-                self.text_line_2 = "Sie wollen wissen, welche"
+                self.text_line_2 = "Sie wollen wissen welche"
                 self.text_line_3 = "Fächer ich an der Fachschule"
-                self.text_line_4 = "unterrichte?"
+                self.text_line_4 = "unterrichte ?"
                 self.text_line_5 = ""
                 self.text_line_6 = "                           weiter"
 
@@ -76,7 +76,7 @@ class StvRoom(TemplateRoom):
 
             elif self.__counter == 2:
                 self.text_line_1 = "Ich hoffe Ihnen gefällt unser"
-                self.text_line_2 = "Tag der offenen Tür bisher?"
+                self.text_line_2 = "Tag der offenen Tür bisher ?"
                 self.text_line_3 = "Schauen Sie sich gerne noch"
                 self.text_line_4 = "in den anderen Räumen weiter um."
                 self.text_line_5 = ""

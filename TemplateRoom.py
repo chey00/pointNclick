@@ -13,6 +13,8 @@ class TemplateRoom(QLabel):
         self.__room_name = None
         self.__background_pixmap = None
 
+        self.__show_exit_button = True
+
         self.__size = QSize(1440, 900)
         self.__offset_exit = 10
         self.__heigth_box = 30
@@ -102,13 +104,14 @@ class TemplateRoom(QLabel):
         painter.drawLine(self.mouth_to_speech.at(0), self.mouth_to_speech.at(1))
         painter.drawLine(self.mouth_to_speech.at(2), self.mouth_to_speech.at(0))
 
-        new_pen.setColor(QColor("goldenrod"))
-        new_pen.setStyle(Qt.PenStyle.SolidLine)
-        painter.setPen(new_pen)
-        new_brush.setColor(QColor("gold"))
-        painter.setBrush(new_brush)
+        if self.__show_exit_button:
+            new_pen.setColor(QColor("goldenrod"))
+            new_pen.setStyle(Qt.PenStyle.SolidLine)
+            painter.setPen(new_pen)
+            new_brush.setColor(QColor("gold"))
+            painter.setBrush(new_brush)
 
-        painter.drawRoundedRect(QRect(self.__offset_exit, self.__pos_x_exit, 100, self.__heigth_box), 10, 10)
+            painter.drawRoundedRect(QRect(self.__offset_exit, self.__pos_x_exit, 100, self.__heigth_box), 10, 10)
 
         painter.setBrush(old_brush)
         painter.setPen(old_pen)
@@ -126,7 +129,8 @@ class TemplateRoom(QLabel):
         painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 125, self.text_line_5)
         painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 150, self.text_line_6)
 
-        painter.drawText(self.__offset_exit + 10, self.__pos_x_exit + 25, "Zurück")
+        if self.__show_exit_button:
+            painter.drawText(self.__offset_exit + 10, self.__pos_x_exit + 25, "Zurück")
 
         if self.__hitbox_visible:
             if self.__mouse_pos:
@@ -163,3 +167,6 @@ class TemplateRoom(QLabel):
         self.mouth_to_speech.append(QPoint(x, y))
         self.mouth_to_speech.append(QPoint(self.offset_balloon_x + self.offset_balloon_width + offset_x, self.offset_balloon_y + self.offset_balloon_width))
         self.mouth_to_speech.append(QPoint(self.offset_balloon_x + self.offset_balloon_width + offset_x + width, self.offset_balloon_y + self.offset_balloon_width))
+
+    def show_exit_button(self, visible):
+        self.__show_exit_button = visible

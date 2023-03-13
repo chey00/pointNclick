@@ -152,4 +152,3 @@ class MainWindow(QMainWindow):
             msgBox.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Kennwort super_geheim Ihre Kaffeetasse im Raum XYZ.")
 
             msgBox.exec()
-
