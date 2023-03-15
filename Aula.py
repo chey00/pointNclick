@@ -11,7 +11,7 @@ class Aula(TemplateRoom):
 
         self.offset_balloon_x = int((1440-500)/2)
         self.offset_balloon_y = 25
-        self.set_offset_mouth(self.offset_balloon_x, self.offset_balloon_y, 0, 0)
+        self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length, self.offset_balloon_y + self.offset_balloon_width, 0, 0)
 
         self.hitbox_zurVerwaltung = QRect(1, 1, 250, 800)
         self.append_hitbox(self.hitbox_zurVerwaltung)

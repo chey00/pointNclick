@@ -14,6 +14,7 @@ class TemplateRoom(QLabel):
         self.__background_pixmap = None
 
         self.__show_exit_button = True
+        self.__show_speech_bubble = True
 
         self.__size = QSize(1440, 900)
         self.__offset_exit = 10
@@ -89,20 +90,21 @@ class TemplateRoom(QLabel):
         new_brush.setStyle(Qt.BrushStyle.Dense2Pattern)
         painter.setBrush(new_brush)
 
-        painter.drawRoundedRect(self.offset_balloon_x, self.offset_balloon_y, self.offset_balloon_length,
-                                self.offset_balloon_width, 10, 10)
+        if self.__show_speech_bubble:
+            painter.drawRoundedRect(self.offset_balloon_x, self.offset_balloon_y, self.offset_balloon_length,
+                                    self.offset_balloon_width, 10, 10)
 
-        new_pen.setStyle(Qt.PenStyle.NoPen)
-        painter.setPen(new_pen)
+            new_pen.setStyle(Qt.PenStyle.NoPen)
+            painter.setPen(new_pen)
 
-        painter.drawPolygon(self.mouth_to_speech)
-        painter.drawRect(self.mouth_to_speech.at(1).x() + 5, self.mouth_to_speech.at(1).y() - 5, self.mouth_to_speech.at(2).x() - self.mouth_to_speech.at(1).x() - 5, 5)
+            painter.drawPolygon(self.mouth_to_speech)
+            painter.drawRect(self.mouth_to_speech.at(1).x() + 5, self.mouth_to_speech.at(1).y() - 5, self.mouth_to_speech.at(2).x() - self.mouth_to_speech.at(1).x() - 5, 5)
 
-        new_pen.setStyle(Qt.PenStyle.SolidLine)
-        painter.setPen(new_pen)
+            new_pen.setStyle(Qt.PenStyle.SolidLine)
+            painter.setPen(new_pen)
 
-        painter.drawLine(self.mouth_to_speech.at(0), self.mouth_to_speech.at(1))
-        painter.drawLine(self.mouth_to_speech.at(2), self.mouth_to_speech.at(0))
+            painter.drawLine(self.mouth_to_speech.at(0), self.mouth_to_speech.at(1))
+            painter.drawLine(self.mouth_to_speech.at(2), self.mouth_to_speech.at(0))
 
         if self.__show_exit_button:
             new_pen.setColor(QColor("goldenrod"))
@@ -122,12 +124,13 @@ class TemplateRoom(QLabel):
         painter.setFont(font)
         painter.setPen(QColor("black"))
 
-        painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 25, self.text_line_1)
-        painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 50, self.text_line_2)
-        painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 75, self.text_line_3)
-        painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 100, self.text_line_4)
-        painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 125, self.text_line_5)
-        painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 150, self.text_line_6)
+        if self.__show_speech_bubble:
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 25, self.text_line_1)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 50, self.text_line_2)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 75, self.text_line_3)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 100, self.text_line_4)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 125, self.text_line_5)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 150, self.text_line_6)
 
         if self.__show_exit_button:
             painter.drawText(self.__offset_exit + 10, self.__pos_x_exit + 25, "Zurück")
@@ -170,3 +173,5 @@ class TemplateRoom(QLabel):
 
     def show_exit_button(self, visible):
         self.__show_exit_button = visible
+    def show_speech_bubble(self, visible):
+        self.__show_speech_bubble = visible
