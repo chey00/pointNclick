@@ -17,6 +17,7 @@ from StvRoom import StvRoom
 from Eingang import Eingang
 from BueroVogel import BueroVogel
 from OSTD import OSTD
+from CNC import CNC
 
 
 class MainWindow(QMainWindow):
@@ -91,6 +92,9 @@ class MainWindow(QMainWindow):
         elif new_room == "OSTD1.jpg":
             self.central_widget = OSTD()
             self.setup_new_room()
+        elif new_room == "CNC.jpg":
+            self.central_widget = CNC()
+            self.setup_new_room()
 
     @pyqtSlot(str)
     def change_room(self, old_room):
@@ -141,6 +145,9 @@ class MainWindow(QMainWindow):
             self.setup_new_room()
         elif old_room == "OSTD1.jpg":
             self.central_widget = Verwaltung()
+            self.setup_new_room()
+        elif old_room == "CNC.jpg":
+            self.central_widget = Treppenhaus()
             self.setup_new_room()
 
     @pyqtSlot(str)
