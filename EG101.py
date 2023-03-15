@@ -56,6 +56,8 @@ class EG101(TemplateRoom):
                 self.text_line_5 = ""
                 self.text_line_6 = ""
 
+                self.__counter=1
+
         if self.hitbox_iPad.contains(mouse_pos):
             self.text_line_1 = "Das iPad, mit dem wir arbeiten."
             self.text_line_2 = "Dieses wird den Schülern"
