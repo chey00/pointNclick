@@ -47,7 +47,7 @@ class Verwaltung(TemplateRoom):
             self.text_line_2 = "für Ihre Krankenkasse?"
             self.text_line_3= ""
             self.text_line_4 = "Gerne, da kann ich Ihnen helfen!"
-            self.text_line_5 = "Sie können es in der nächsten Pause"
+            self.text_line_5 = "Sie können diese in der nächsten Pause"
             self.text_line_6 = "abholen."
 
             self.update()
@@ -57,7 +57,7 @@ class Verwaltung(TemplateRoom):
             self.text_line_2 = "Nein das sind nicht Ihre Unterlagen."
             self.text_line_3 = "Mensch, Finger weg!"
             self.text_line_4 = "Warten Sie kurz... ah, hier."
-            self.text_line_5 = "Bitteschön, Ihre Unterlagen sind hier!"
+            self.text_line_5 = "Bitteschön, Ihre Unterlagen sind hier."
             self.text_line_6 = "Haben Sie noch einen Wunsch?"
 
             self.update()
@@ -67,7 +67,7 @@ class Verwaltung(TemplateRoom):
             self.text_line_2 = "Möglichkeit Ihre Unterlagen online"
             self.text_line_3 = "zu beantragen. Unsere Website:"
             self.text_line_4 = ""
-            self.text_line_5 = "www.SBS-Herzogenaurach.de"
+            self.text_line_5 = "www.sbs-herzogenaurach.de"
             self.text_line_6 = ""
 
         elif self.hitbox_zumStvRoom.contains(mouse_pos):

@@ -33,7 +33,7 @@ class Eingang(TemplateRoom):
 
         self.text_line_1 = ""
         self.text_line_2 = "Hey,"
-        self.text_line_3 = "herzlich Willkommen an der"
+        self.text_line_3 = "herzlich Willkommen am"
         self.text_line_4 = "SBS Herzogenaurach!"
         self.text_line_5 = ""
         self.text_line_6 = "                                    weiter"
@@ -64,7 +64,7 @@ class Eingang(TemplateRoom):
             if self.__counter == 0:
                 self.text_line_1 = ""
                 self.text_line_2 = "Ich heiße David Ojimba"
-                self.text_line_3 = "und begleite euch heute"
+                self.text_line_3 = "und begleite Sie heute"
                 self.text_line_4 = "durch unsere Schule."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
@@ -72,8 +72,8 @@ class Eingang(TemplateRoom):
                 self.__counter = 1
 
             elif self.__counter == 1:
-                self.text_line_1 = "Hier ist unser Point & Click adventure,"
-                self.text_line_2 = "klicke dich gerne von Raum zu Raum"
+                self.text_line_1 = "Hier ist unser Point & Click Adventure,"
+                self.text_line_2 = "klicken Sie sich gerne von Raum zu Raum,"
                 self.text_line_3 = "um einen Einblick in unsere verschiedenen"
                 self.text_line_4 = "Fachschulen zu gewinnen."
                 self.text_line_5 = ""
@@ -94,9 +94,9 @@ class Eingang(TemplateRoom):
             elif self.__counter == 3:
                 self.text_line_1 = "In manchen Räumen ist eine Tasse versteckt."
                 self.text_line_2 = ""
-                self.text_line_3 = "Findet und sammelt sie,"
-                self.text_line_4 = "den am Ende, habt Ihr die Chance"
-                self.text_line_5 = "ein 'Easter Present' zu gewinnen."
+                self.text_line_3 = "Gehen Sie von Raum zu Raum,"
+                self.text_line_4 = "denn am Ende habt Ihr die Chance"
+                self.text_line_5 = "eine Kaffeetasse zu gewinnen."
                 self.text_line_6 = "                                    weiter"
 
                 self.__counter = 4
@@ -112,8 +112,8 @@ class Eingang(TemplateRoom):
             elif self.__counter == 5:
                 self.text_line_1 = "Ihre erste Tasse haben Sie bereits gefunden."
                 self.text_line_2 = ""
-                self.text_line_3 = "Sammelt Sie und gehen Sie nun von"
-                self.text_line_4 = "Raum zu Raum."
+                self.text_line_3 = "Gehen Sie von Raum zu Raum"
+                self.text_line_4 = "und sammeln Sie diese."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 
