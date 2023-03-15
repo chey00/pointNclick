@@ -40,10 +40,10 @@ class EG102(TemplateRoom):
 
         if self.hitbox_freddy.contains(mouse_pos):
             self.text_line_1 = "Ich heiße Freddy und"
-            self.text_line_2 = "besuche die Klasse FSWI-1."
-            self.text_line_3 = "Bei Fragen"
-            self.text_line_4 = "sprechen Sie mich gerne "
-            self.text_line_5 = "oder einen anderen aus der Klasse an."
+            self.text_line_2 = "besuche die Klasse FSWI-1. Bei Fragen"
+            self.text_line_3 = "sprechen Sie mich oder einen anderen "
+            self.text_line_4 = "Mitschüller aus der klasse gerne an"
+            self.text_line_5 = ""
             self.text_line_6 = ""
 
             self.update()
@@ -60,7 +60,7 @@ class EG102(TemplateRoom):
 
         if self.hitbox_beamer.contains(mouse_pos):
             self.text_line_1 = "Dank dem digitalen Unterricht"
-            self.text_line_2 = "findet dieser über dem Beamer"
+            self.text_line_2 = "findet dieser mithilfe des Beamers"
             self.text_line_3 = "statt."
             self.text_line_4 = ""
             self.text_line_5 = ""

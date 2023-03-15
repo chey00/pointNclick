@@ -11,6 +11,8 @@ class OSTD(TemplateRoom):
 
         self.offset_balloon_x = 515
         self.offset_balloon_y = 150
+        self.offset_balloon_length = 550
+        self.offset_balloon_width = 155
         self.set_offset_mouth(563, 421, 100, 200)
 
         self.hitbox_mouth = QRect(520, 355, 75, 75)
