@@ -69,7 +69,7 @@ class EG102(TemplateRoom):
             self.update()
 
         if self.hitbox_schwamm.contains(mouse_pos):
-            self.text_line_1 = "Wer lebt in der Annanas"
+            self.text_line_1 = "Wer lebt in der Ananas"
             self.text_line_2 = "ganz tief im Meer?"
             self.text_line_3 = ""
             self.text_line_4 = ""
