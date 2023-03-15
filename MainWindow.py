@@ -126,7 +126,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Aula()
             self.setup_new_room()
         elif old_room == "Fraesmaschine.jpg":
-            self.central_widget = Gang_I()
+            self.central_widget = Treppenhaus()
             self.setup_new_room()
         elif old_room == "EG102.jpg":
             self.central_widget = Gang_II()
@@ -147,7 +147,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Verwaltung()
             self.setup_new_room()
         elif old_room == "CNC.jpg":
-            self.central_widget = Treppenhaus()
+            self.central_widget = Gang_I()
             self.setup_new_room()
 
     @pyqtSlot(str)

@@ -33,6 +33,6 @@ class Gang_I(TemplateRoom):
         if self.hitbox_zumProjekt.contains(mouse_pos):
             pass
         elif self.hitbox_zumMetall.contains(mouse_pos):
-            self.new_room.emit("Fraesmaschine.jpg")
+            self.new_room.emit("CNC.jpg")
 
         self.update()
