@@ -35,5 +35,5 @@ class GangTech(TemplateRoom):
         if self.hitbox_zumGang_II.contains(mouse_pos):
             self.new_room.emit("Gang_II.jpg")
         elif self.hitbox_zumEG101.contains(mouse_pos):
-            pass
+            self.new_room.emit("EG101.jpg")
         self.update()
