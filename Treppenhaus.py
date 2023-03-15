@@ -19,12 +19,12 @@ class Treppenhaus(TemplateRoom):
         self.hitbox_zumGang_I = QRect(1440 - 251, 1, 250, 800)
         self.append_hitbox(self.hitbox_zumGang_I)
 
-        self.text_line_1 = "Wegweiser:"
+        self.text_line_1 = "\t\tWegweiser:"
         self.text_line_2 = ""
         self.text_line_3 = ""
-        self.text_line_4 = ""
-        self.text_line_5 = "Links: zum 3D Drucker"
-        self.text_line_6 = "Rechts: zu Projektraum/Metallraum"
+        self.text_line_4 = "Links: zum 3D Drucker"
+        self.text_line_5 = "Rechts: zum Projektraum/Metallraum"
+        self.text_line_6 = ""
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Treppenhaus, self).mousePressEvent(ev)
