@@ -9,6 +9,7 @@ class Treppenhaus(TemplateRoom):
 
         self.init_room("Treppenhaus.jpg")
 
+        self.offset_balloon_length = 530
         self.offset_balloon_x = int((1440 - 500) / 2)
         self.offset_balloon_y = 25
         self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length,self.offset_balloon_y + self.offset_balloon_width, 0, 0)
