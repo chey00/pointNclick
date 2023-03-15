@@ -23,6 +23,8 @@ class Gang_III(TemplateRoom):
         self.text_line_3 = "So long, and"
         self.text_line_4 = "Thanks for the fish"
 
+        self.show_speech_bubble(False)
+
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Gang_III, self).mousePressEvent(ev)
 
