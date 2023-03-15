@@ -11,7 +11,10 @@ class OSTD(TemplateRoom):
 
         self.offset_balloon_x = 515
         self.offset_balloon_y = 150
+        self.offset_balloon_length = 600
+        self.offset_balloon_width = 200
         self.set_offset_mouth(563, 421, 100, 200)
+
 
         self.hitbox_mouth = QRect(520, 355, 75, 75)
         self.append_hitbox(self.hitbox_mouth)
@@ -21,6 +24,9 @@ class OSTD(TemplateRoom):
 
         self.hitbox_schulregeln = QRect(161, 195, 190, 200)
         self.append_hitbox(self.hitbox_schulregeln)
+
+        self.hitbox_schulpark = QRect(1100, 280, 290, 200)
+        self.append_hitbox(self.hitbox_schulpark)
 
         self.hitbox_easter_egg = QRect(750, 535, 80, 80)
 
@@ -76,5 +82,12 @@ class OSTD(TemplateRoom):
 
             self.update()
 
+        if self.hitbox_schulpark.contains(mouse_pos):
+            self.text_line_1 = ""
+            self.text_line_2 = ""
+            self.text_line_3 = "Durch das Fenster können"
+            self.text_line_4 = "Sie unseren idyllischen"
+            self.text_line_5 = "Schulpark sehen."
+            self.text_line_6 = ""
 
-
+            self.update()
