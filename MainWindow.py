@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
 
         self.__set_rooms = set()
-        self.__number_of_easter_eggs = 5
+        self.__number_of_easter_eggs = 4
 
         self.__status_bar = QStatusBar(parent)
         self.setStatusBar(self.__status_bar)
