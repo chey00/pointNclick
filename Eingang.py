@@ -72,10 +72,10 @@ class Eingang(TemplateRoom):
                 self.__counter = 1
 
             elif self.__counter == 1:
-                self.text_line_1 = "Hier ist unser Point & Click Adventure,"
-                self.text_line_2 = "klicken Sie sich gerne von Raum zu Raum,"
-                self.text_line_3 = "um einen Einblick in unsere verschiedenen"
-                self.text_line_4 = "Fachschulen zu gewinnen."
+                self.text_line_1 = "Hier ist unser Point & Click Adventure."
+                self.text_line_2 = "Dieses haben wir für Sie erstellt,"
+                self.text_line_3 = "um Ihnen einen Einblick in unsere"
+                self.text_line_4 = "verschiedenen Fachschulen zu geben."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 
