@@ -83,9 +83,9 @@ class Eingang(TemplateRoom):
 
             elif self.__counter == 2:
                 self.text_line_1 = ""
-                self.text_line_2 = "Hitboxen werden angezeigt und"
-                self.text_line_3 = "Easter Eggs sind auch versteckt."
-                self.text_line_4 = ""
+                self.text_line_2 = "Wenn Sie etwas anklicken/benutzen"
+                self.text_line_3 = "können, dann verändert sich der Cursor."
+                self.text_line_4 = "Dieser wird dann zu einem Zeigefinger."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 
