@@ -32,7 +32,7 @@ class Gang_III(TemplateRoom):
         print(mouse_pos)
 
         if self.hitbox_zuHerrnBeck.contains(mouse_pos):
-            pass
+            self.new_room.emit("Beck.png")
         elif self.hitbox_zuFrauVogel.contains(mouse_pos):
             self.new_room.emit("BueroVogel.jpg")
 
