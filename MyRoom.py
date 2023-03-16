@@ -7,14 +7,18 @@ class MyRoom(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("MyRoom.jpg")
+        self.init_room("90125637.jpg")
 
         self.offset_balloon_x = 900
         self.offset_balloon_y = 25
-        self.offset_balloon_length = 500
-        self.offset_balloon_width = 150
 
-        self.set_offset_mouth(775, 425, 50, 150)
+        self.offset_balloon_length = 450
+        self.offset_balloon_width = 200
+
+
+        self.mouth_to_speech.append(QPoint(771, 429))
+        self.mouth_to_speech.append(QPoint(990, 175))
+        self.mouth_to_speech.append(QPoint(1103, 175))
 
         self.hitbox_mouth = QRect(570, 475, 75, 75)
         self.append_hitbox(self.hitbox_mouth)
