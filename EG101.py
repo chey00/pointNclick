@@ -1,14 +1,14 @@
-from PyQt6.QtCore import QRect, QPoint
+from PyQt6.QtCore import QRect
 from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
+
 
 class EG101(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
         self.init_room("EG101.jpg")
-
 
         self.offset_balloon_x = 700
         self.offset_balloon_y = 60
@@ -41,7 +41,6 @@ class EG101(TemplateRoom):
         self.text_line_5 = "Hier unterrichte ich die Klasse FSWI-2."
         self.text_line_6 = "                               weiter"
 
-
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(EG101, self).mousePressEvent(ev)
 
@@ -56,7 +55,7 @@ class EG101(TemplateRoom):
                 self.text_line_5 = ""
                 self.text_line_6 = ""
 
-                self.__counter=1
+                self.__counter = 1
 
         if self.hitbox_iPad.contains(mouse_pos):
             self.text_line_1 = "Das iPad, mit dem wir arbeiten."
@@ -91,4 +90,3 @@ class EG101(TemplateRoom):
             self.text_line_6 = "Softwareentwicklungsprozesse."
 
             self.update()
-

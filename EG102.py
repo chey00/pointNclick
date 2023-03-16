@@ -1,7 +1,8 @@
-from PyQt6.QtCore import QRect, QPoint
+from PyQt6.QtCore import QRect
 from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
+
 
 class EG102(TemplateRoom):
     def __init__(self, parent=None):
@@ -57,7 +58,7 @@ class EG102(TemplateRoom):
             self.update()
 
         if self.hitbox_forword.contains(mouse_pos):
-            if self.__counter==0:
+            if self.__counter == 0:
                 self.text_line_1 = "Wenn Sie mit der Klassenleitung "
                 self.text_line_2 = "sprechen wollen dann klicken Sie hier."
                 self.text_line_3 = ""
@@ -65,14 +66,13 @@ class EG102(TemplateRoom):
                 self.text_line_5 = ""
                 self.text_line_6 = ""
 
-                self.__counter=1
+                self.__counter = 1
 
         if self.hitbox_raumwecksel.contains(mouse_pos):
-            if self.__counter==1:
+            if self.__counter == 1:
                 self.new_room.emit("EG102Reinhart.jpg")
 
-                self.__counter=2
-
+                self.__counter = 2
 
         if self.hitbox_taffel.contains(mouse_pos):
             self.text_line_1 = "Auf der Tafel steht"
