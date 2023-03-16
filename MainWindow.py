@@ -23,7 +23,7 @@ from EG101 import EG101
 from Ganglinks import Ganglinks
 from DreiDDruck import DreiDDruck
 
-
+#test
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)

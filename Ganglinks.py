@@ -2,7 +2,7 @@ from PyQt6.QtCore import QRect
 from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
-
+#test
 class Ganglinks(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
