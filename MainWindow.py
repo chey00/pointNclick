@@ -22,7 +22,7 @@ from CNC import CNC
 from EG101 import EG101
 from Ganglinks import Ganglinks
 from DreiDDruck import DreiDDruck
-
+from EG102Reinhart import  EG102Reinhart
 #test
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -108,6 +108,10 @@ class MainWindow(QMainWindow):
         elif new_room == "Ganglinks.jpg":
             self.central_widget = Ganglinks()
             self.setup_new_room()
+        elif new_room == "EG102Reinhart.jpg":
+            self.central_widget = EG102Reinhart()
+            self.setup_new_room()
+
 
     @pyqtSlot(str)
     def change_room(self, old_room):
@@ -179,6 +183,9 @@ class MainWindow(QMainWindow):
             self.setup_new_room()
         elif old_room == "BueroVogel2.jpg":
             self.central_widget = Gang_III()
+            self.setup_new_room()
+        elif old_room == "FrauReinhart.jpg":
+            self.central_widget = EG102()
             self.setup_new_room()
 
     @pyqtSlot(str)
