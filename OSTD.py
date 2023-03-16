@@ -31,7 +31,7 @@ class OSTD(TemplateRoom):
         self.text_line_3 = "Mein Name ist Hr. Wirsching."
         self.text_line_4 = "Ich bin hier der Schulleiter."
         self.text_line_5 = ""
-        self.text_line_6 = "Schön das Sie hier sind!"
+        self.text_line_6 = "Schön, dass Sie hier sind!"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(OSTD, self).mousePressEvent(ev)
@@ -52,7 +52,7 @@ class OSTD(TemplateRoom):
             self.text_line_1 = "Das ist mein Arbeitszimmer."
             self.text_line_2 = "Von hier aus leite ich unsere"
             self.text_line_3 = "Schule und bearbeite alle"
-            self.text_line_4 = "wichtigen Aufgaben damit alles"
+            self.text_line_4 = "wichtigen Aufgaben, damit alles"
             self.text_line_5 = "reibungslos abläuft."
             self.text_line_6 = ""
 
@@ -61,7 +61,7 @@ class OSTD(TemplateRoom):
         if self.hitbox_easter_egg.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = ""
-            self.text_line_3 = "Eine Tasse Kaffe"
+            self.text_line_3 = "Eine Tasse Kaffee"
             self.text_line_4 = "wäre jetzt nicht schlecht..."
             self.text_line_5 = ""
             self.text_line_6 = ""

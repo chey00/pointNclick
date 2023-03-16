@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16daf25b-8a9c-47b0-8927-891ae8b61c63" name="Changes" comment="Added new feature to set speech ballon">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pointNclick.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pointNclick.iml" afterDir="false" />
+    <list default="true" id="16daf25b-8a9c-47b0-8927-891ae8b61c63" name="Changes" comment="Added cursor style">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BueroVogel.py" beforeDir="false" afterPath="$PROJECT_DIR$/BueroVogel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EG102.py" beforeDir="false" afterPath="$PROJECT_DIR$/EG102.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyRoom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OSTD.py" beforeDir="false" afterPath="$PROJECT_DIR$/OSTD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StvRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/StvRoom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemplateRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateRoom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wegweiser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wegweiser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,28 +91,7 @@
       <option name="project" value="LOCAL" />
       <updated>1678109399645</updated>
     </task>
-    <task id="LOCAL-00004" summary="Added new features">
-      <created>1678366205342</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1678366205342</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Feateure for new rooms added">
-      <created>1678369064437</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1678369064437</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Added new feature to set speech ballon">
-      <created>1678447188995</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1678447188995</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,22 +106,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added new features" />
     <MESSAGE value="Removed obsoled package" />
     <MESSAGE value="Added cursor style" />
-    <MESSAGE value="Added new features" />
-    <MESSAGE value="Feateure for new rooms added" />
-    <MESSAGE value="Added new feature to set speech ballon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new feature to set speech ballon" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/TemplateRoom.py</url>
-          <line>94</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="Added cursor style" />
   </component>
 </project>
