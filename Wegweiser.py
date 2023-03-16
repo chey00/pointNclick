@@ -25,7 +25,7 @@ class Wegweiser(TemplateRoom):
         self.hitbox_mouth = QRect(661, 442, 60, 75)
         self. append_hitbox(self.hitbox_mouth)
 
-        self.text_line_1 = "Hallo ich bin Frau Körber."
+        self.text_line_1 = "Hallo, ich bin Frau Körber."
         self.text_line_2 = "Ich bin die stellvertretende"
         self.text_line_3 = "Schulleiterin."
         self.text_line_4 = "In der FSWI-2 unterrichte ich"
