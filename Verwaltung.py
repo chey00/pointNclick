@@ -1,5 +1,5 @@
 from PyQt6.QtCore import QRect, QPoint
-from PyQt6.QtGui import QMouseEvent
+from PyQt6.QtGui import QMouseEvent, QPaintEvent, QPixmap, QPainter
 
 from TemplateRoom import TemplateRoom
 
