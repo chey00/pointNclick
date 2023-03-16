@@ -1,5 +1,6 @@
-from PyQt6.QtCore import QPoint, QRect, pyqtSignal, pyqtSlot, QSize, Qt
+from PyQt6.QtCore import QPoint, QRect, pyqtSignal, pyqtSlot, QSize, Qt, QUrl
 from PyQt6.QtGui import QPixmap, QMouseEvent, QPaintEvent, QPainter, QColor, QFont, QPolygon, QPen, QBrush
+from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtWidgets import QLabel
 
 
@@ -173,5 +174,18 @@ class TemplateRoom(QLabel):
 
     def show_exit_button(self, visible):
         self.__show_exit_button = visible
+
     def show_speech_bubble(self, visible):
         self.__show_speech_bubble = visible
+
+    @staticmethod
+    def play_sound(source_path):
+        media_player = QMediaPlayer()
+
+        audio_output = QAudioOutput()
+        audio_output.setVolume(25)
+
+        media_player.setAudioOutput(audio_output)
+        media_player.setSource(QUrl.fromLocalFile(source_path))
+
+        media_player.play()
