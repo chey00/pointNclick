@@ -177,6 +177,9 @@ class MainWindow(QMainWindow):
         elif old_room == "Ganglinks.jpg":
             self.central_widget = Treppenhaus()
             self.setup_new_room()
+        elif old_room == "BueroVogel2.jpg":
+            self.central_widget = Gang_III()
+            self.setup_new_room()
 
     @pyqtSlot(str)
     def handler_easter_egg(self, room_name):
