@@ -1,3 +1,4 @@
+
 from PyQt6.QtCore import pyqtSlot
 from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
 
@@ -19,8 +20,10 @@ from BueroVogel import BueroVogel
 from OSTD import OSTD
 from CNC import CNC
 from EG101 import EG101
-
-
+from Ganglinks import Ganglinks
+from DreiDDruck import DreiDDruck
+from EG102Reinhart import  EG102Reinhart
+#test
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -99,6 +102,16 @@ class MainWindow(QMainWindow):
         elif new_room == "EG101.jpg":
             self.central_widget = EG101()
             self.setup_new_room()
+        elif new_room == "DreiDDruck_Normal.jpg":
+            self.central_widget = DreiDDruck()
+            self.setup_new_room()
+        elif new_room == "Ganglinks.jpg":
+            self.central_widget = Ganglinks()
+            self.setup_new_room()
+        elif new_room == "EG102Reinhart.jpg":
+            self.central_widget = EG102Reinhart()
+            self.setup_new_room()
+
 
     @pyqtSlot(str)
     def change_room(self, old_room):
@@ -130,7 +143,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Aula()
             self.setup_new_room()
         elif old_room == "Fraesmaschine.jpg":
-            self.central_widget = Treppenhaus()
+            self.central_widget = Ganglinks()
             self.setup_new_room()
         elif old_room == "EG102.jpg":
             self.central_widget = Gang_II()
@@ -155,6 +168,24 @@ class MainWindow(QMainWindow):
             self.setup_new_room()
         elif old_room == "EG101.jpg":
             self.central_widget = GangTech()
+            self.setup_new_room()
+        elif old_room == "DreiDDruck_Normal.jpg":
+            self.central_widget = Ganglinks()
+            self.setup_new_room()
+        elif old_room == "DreiDDruck_Dark_Room.jpg":
+            self.central_widget = Ganglinks()
+            self.setup_new_room()
+        elif old_room == "DreiDDruck_Under_Water.jpg":
+            self.central_widget = Ganglinks()
+            self.setup_new_room()
+        elif old_room == "Ganglinks.jpg":
+            self.central_widget = Treppenhaus()
+            self.setup_new_room()
+        elif old_room == "BueroVogel2.jpg":
+            self.central_widget = Gang_III()
+            self.setup_new_room()
+        elif old_room == "FrauReinhart.jpg":
+            self.central_widget = EG102()
             self.setup_new_room()
 
     @pyqtSlot(str)

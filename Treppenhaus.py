@@ -33,7 +33,7 @@ class Treppenhaus(TemplateRoom):
         mouse_pos = ev.pos()
 
         if self.hitbox_zumDrucker.contains(mouse_pos):
-            self.new_room.emit("Fraesmaschine.jpg")
+            self.new_room.emit("Ganglinks.jpg")
         elif self.hitbox_zumGang_I.contains(mouse_pos):
             self.new_room.emit("Gang_I.jpg")
 

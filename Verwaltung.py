@@ -1,5 +1,5 @@
 from PyQt6.QtCore import QRect, QPoint
-from PyQt6.QtGui import QMouseEvent, QPaintEvent, QPixmap, QPainter
+from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
@@ -37,9 +37,6 @@ class Verwaltung(TemplateRoom):
         self.text_line_5 = "Wie kann ich Ihnen behilflich"
         self.text_line_6 = "sein?"
 
-        self.__show_qr = False
-        self.__pixmap = QPixmap("Verwaltung_QRCode.jpeg")
-
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Verwaltung, self).mousePressEvent(ev)
 
@@ -71,10 +68,8 @@ class Verwaltung(TemplateRoom):
             self.text_line_2 = "Möglichkeit Ihre Unterlagen online"
             self.text_line_3 = "zu beantragen. Unsere Website:"
             self.text_line_4 = ""
-            self.text_line_5 = "www.SBS-Herzogenaurach.de"
-            self.text_line_6 = "oder scannen Sie den QR-Code"
-
-            self.__show_qr = True
+            self.text_line_5 = "www.sbs-herzogenaurach.de"
+            self.text_line_6 = ""
 
         elif self.hitbox_zumStvRoom.contains(mouse_pos):
             self.new_room.emit("StvRoom.jpg")
@@ -82,14 +77,3 @@ class Verwaltung(TemplateRoom):
             self.new_room.emit("OSTD1.jpg")
 
         self.update()
-
-    def paintEvent(self, a0: QPaintEvent) -> None:
-        super(Verwaltung, self).paintEvent(a0)
-
-        painter = QPainter()
-        painter.begin(self)
-
-        if self.__show_qr:
-            painter.drawPixmap(25, 25, self.__pixmap)
-
-        painter.end()

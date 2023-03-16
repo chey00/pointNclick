@@ -7,7 +7,7 @@ class DreiDDruck(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("DreiDDruck_Normal.jpeg")
+        self.init_room("DreiDDruck_Normal.jpg")
 
         self.offset_balloon_x = 200
         self.offset_balloon_y = 25
@@ -44,7 +44,7 @@ class DreiDDruck(TemplateRoom):
             self.text_line_4 = "verwendet ein Metall-3D-Drucker Metallpulver als Druckmaterial."
             self.text_line_5 = "Das Verfahren, das für den 3D-Druck mit Metall verwendet wird,"
             self.text_line_6 = "heißt selektives Laserschmelzen (SLM)."
-            self.init_room("DreiDDruck_Normal.jpeg")
+            self.init_room("DreiDDruck_Normal.jpg")
             self.update()
 
         if self.hitbox_water.contains(mouse_pos):
