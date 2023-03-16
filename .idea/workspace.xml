@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16daf25b-8a9c-47b0-8927-891ae8b61c63" name="Changes" comment="Added new feature to set speech ballon">
+    <list default="true" id="16daf25b-8a9c-47b0-8927-891ae8b61c63" name="Changes" comment="Rechtschreibung">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemplateRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateRoom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eingang.py" beforeDir="false" afterPath="$PROJECT_DIR$/Eingang.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Verwaltung.py" beforeDir="false" afterPath="$PROJECT_DIR$/Verwaltung.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LmNHhxo5zYPlMuQJxrTXwITE4p" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -105,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678447188995</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Rechtschreibung">
+      <created>1678872653465</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678872653465</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,7 +130,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Removed obsoled package" />
@@ -126,14 +137,15 @@
     <MESSAGE value="Added new features" />
     <MESSAGE value="Feateure for new rooms added" />
     <MESSAGE value="Added new feature to set speech ballon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new feature to set speech ballon" />
+    <MESSAGE value="Rechtschreibung" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rechtschreibung" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/TemplateRoom.py</url>
-          <line>94</line>
+          <line>98</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
