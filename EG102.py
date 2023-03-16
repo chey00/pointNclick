@@ -40,10 +40,10 @@ class EG102(TemplateRoom):
 
         if self.hitbox_freddy.contains(mouse_pos):
             self.text_line_1 = "Ich heiße Freddy und"
-            self.text_line_2 = "besuche die Klasse FSWI-1."
-            self.text_line_3 = "Bei Fragen"
-            self.text_line_4 = "sprechen Sie mich gerne "
-            self.text_line_5 = "oder einen anderen aus der Klasse an."
+            self.text_line_2 = "besuche die Klasse FSWI-1. Bei Fragen"
+            self.text_line_3 = "sprechen Sie mich oder einen anderen "
+            self.text_line_4 = "Mitschüller aus der Klasse gerne an."
+            self.text_line_5 = ""
             self.text_line_6 = ""
 
             self.update()
@@ -52,24 +52,24 @@ class EG102(TemplateRoom):
             self.text_line_1 = "Auf der Taffel steht"
             self.text_line_2 = "meistens nicht viel,"
             self.text_line_3 = "da der Unterricht"
-            self.text_line_4 = "digital gestalltet ist."
+            self.text_line_4 = "digital gestaltet ist."
             self.text_line_5 = ""
             self.text_line_6 = ""
 
             self.update()
 
         if self.hitbox_beamer.contains(mouse_pos):
-            self.text_line_1 = "Dank dem digitalen Unterricht"
-            self.text_line_2 = "findet dieser über dem Beamer"
-            self.text_line_3 = "statt."
-            self.text_line_4 = ""
+            self.text_line_1 = "Mithilfe des Beamers"
+            self.text_line_2 = "findet der Online-Unterricht"
+            self.text_line_3 = "problemlos auch im"
+            self.text_line_4 = "Klassenzimmer statt."
             self.text_line_5 = ""
             self.text_line_6 = ""
 
             self.update()
 
         if self.hitbox_schwamm.contains(mouse_pos):
-            self.text_line_1 = "Wer lebt in der Annanas"
+            self.text_line_1 = "Wer lebt in der Ananas"
             self.text_line_2 = "ganz tief im Meer?"
             self.text_line_3 = ""
             self.text_line_4 = ""

@@ -1,5 +1,5 @@
 from PyQt6.QtCore import QRect, QPoint
-from PyQt6.QtGui import QMouseEvent, QPaintEvent, QPainter, QPixmap
+from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
@@ -49,23 +49,24 @@ class Verwaltung(TemplateRoom):
             self.text_line_2 = "für Ihre Krankenkasse?"
             self.text_line_3= ""
             self.text_line_4 = "Gerne, da kann ich Ihnen helfen!"
-            self.text_line_5 = "Sie können es in der nächsten Pause"
-            self.text_line_6 = "abholen."
+            self.text_line_5 = "Sie können diese in der nächsten"
+            self.text_line_6 = "Pause abholen."
 
             self.update()
 
         elif self.hitbox_unterlagen.contains(mouse_pos):
-            self.text_line_1 = " "
-            self.text_line_2 = "Nein das sind nicht Ihre Unterlagen."
-            self.text_line_3 = "Mensch, Finger weg!"
-            self.text_line_4 = "Warten Sie kurz... ah, hier."
-            self.text_line_5 = "Bitteschön, Ihre Unterlagen sind hier!"
+            self.text_line_6 = " "
+            self.text_line_1 = "Nein das sind nicht Ihre Unterlagen."
+            self.text_line_2 = "Mensch, Finger weg!"
+            self.text_line_3 = "Warten Sie kurz... ah, hier."
+            self.text_line_4 = "Bitteschön, Ihre Unterlagen sind"
+            self.text_line_5 = "hier."
             self.text_line_6 = "Haben Sie noch einen Wunsch?"
 
             self.update()
 
         elif self.hitbox_computer.contains(mouse_pos):
-            self.text_line_1 = "Für Sie zur Info, Sie haben auch die"
+            self.text_line_1 = "Für Sie zur Info: Sie haben auch die"
             self.text_line_2 = "Möglichkeit Ihre Unterlagen online"
             self.text_line_3 = "zu beantragen. Unsere Website:"
             self.text_line_4 = ""

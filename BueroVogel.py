@@ -52,10 +52,10 @@ class BueroVogel(TemplateRoom):
             self.text_line_5 = "Missverständnisse zu vermeiden."
             self.text_line_6 = ""
         elif self.hitbox_acces.contains(mouse_pos):
-            self.text_line_1 = "Hier ist der Acces point zu"
-            self.text_line_2 = "sehen. Er sorgt"
+            self.text_line_1 = "Hier ist ein Access Point zu"
+            self.text_line_2 = "sehen. Diese sorgen"
             self.text_line_3 = "für eine stabile"
-            self.text_line_4 = "Internetverbindung und ist im"
+            self.text_line_4 = "Internetverbindung und sind im"
             self.text_line_5 = "ganzen Schulhaus zu finden."
             self.text_line_6 = ""
 

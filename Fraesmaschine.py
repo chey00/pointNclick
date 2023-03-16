@@ -27,9 +27,9 @@ class Fraesmaschine(TemplateRoom):
 
         self.__counter = 0
 
-        self.text_line_1 = ""
-        self.text_line_2 = "Willkommen in der"
-        self.text_line_3 = "CNC-Ausbildungswerkstatt!"
+        self.text_line_1 = "Hi ich bin der Alex und "
+        self.text_line_2 = "besuche die Fachschule"
+        self.text_line_3 = "für Wirtschaftsinformatik."
         self.text_line_4 = ""
         self.text_line_5 = "weiter"
         self.text_line_6 = ""
@@ -52,26 +52,36 @@ class Fraesmaschine(TemplateRoom):
         elif self.hitbox_tuer.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = "Das ist eine Sicherheitstür."
-            self.text_line_3 = "Die Maschine schaltet nur die "
-            self.text_line_4 = "Spindel frei, wenn diese"
+            self.text_line_3 = "Die Maschine schaltet die "
+            self.text_line_4 = "Spindel nur frei, wenn diese"
             self.text_line_5 = "geschlossen ist."
             self.text_line_6 = ""
             self.update()
 
         elif self.hitbox_weiter.contains(mouse_pos):
-            if self.__counter == 0:
+            if self.__counter == 1:
                 self.text_line_1 = ""
                 self.text_line_2 = "Hier lernt man die richtige"
                 self.text_line_3 = "Bedienung der Maschinen und das"
                 self.text_line_4 = "Erstellen von CNC-Programmen"
                 self.text_line_5 = "für Dreh- und Fräsmaschinen."
                 self.__counter += 1
+
+            if self.__counter ==0:
+                self.text_line_1 = ""
+                self.text_line_2 = "Willkommen in unserer"
+                self.text_line_3 = "CNC-Ausbildungswerkstatt!"
+                self.text_line_4 = ""
+                self.text_line_5 = "weiter"
+                self.text_line_6 = ""
+                self.__counter += 1
                 self.update()
+
 
         elif self.hitbox_easter_egg.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = ""
-            self.text_line_3 = "Glückwunsch du hast"
+            self.text_line_3 = "Glückwunsch Sie haben"
             self.text_line_4 = "eine Tasse gefunden!!!"
             self.text_line_5 = ""
             self.text_line_6 = ""
