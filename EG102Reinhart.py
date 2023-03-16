@@ -62,7 +62,7 @@ class EG102Reinhart(TemplateRoom):
                 self.__counter = 2
 
             elif self.__counter == 2:
-                self.text_line_1 = "Dort besucht man zu"
+                self.text_line_1 = "Dort besucht man zum"
                 self.text_line_2 = "einem eine Schule oder man"
                 self.text_line_3 = "tritt ein Praktikum an."
                 self.text_line_4 = "Die dauer des Aufenhaltes"
@@ -101,15 +101,3 @@ class EG102Reinhart(TemplateRoom):
                 self.update()
 
 
-
-
-
-        #if self.hitbox_schwamm.contains(mouse_pos):
-            #self.text_line_1 = "Wer lebt in der Annanas"
-            #self.text_line_2 = "ganz tief im Meer?"
-            #self.text_line_3 = ""
-            #self.text_line_4 = ""
-            #self.text_line_5 = ""
-            #self.text_line_6 = ""
-
-        #  self.update()
