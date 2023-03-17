@@ -33,7 +33,7 @@ class Verwaltung(TemplateRoom):
         self.text_line_1 = "Herzlich Willkommen in der"
         self.text_line_2 = "Verwaltung!"
         self.text_line_3 = ""
-        self.text_line_4 = "Ich bin Frau Del Popolo!"
+        self.text_line_4 = "Ich bin Frau Del Popolo."
         self.text_line_5 = "Wie kann ich Ihnen behilflich"
         self.text_line_6 = "sein?"
 

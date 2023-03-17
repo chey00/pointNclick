@@ -65,13 +65,15 @@ class OSTD(TemplateRoom):
             self.text_line_4 = "wäre jetzt nicht schlecht..."
             self.text_line_5 = ""
             self.text_line_6 = ""
+
             self.play_sound("foundcup.mp3")
+
             self.update()
 
         if self.hitbox_schulregeln.contains(mouse_pos):
-            self.text_line_1 = ""
-            self.text_line_2 = ""
-            self.text_line_3 = "Hier stehen die Regeln unserer Schule"
+            self.text_line_1 = "Sie haben das Leitbild unserer Schule gefunden."
+            self.text_line_2 = "Der Wertschätzende Umgang an unserer Schule"
+            self.text_line_3 = "ist der Schulfamilie eine Herzensangelegenheit."
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""

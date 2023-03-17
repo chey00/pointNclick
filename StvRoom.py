@@ -25,10 +25,10 @@ class StvRoom(TemplateRoom):
 
         self.hitbox_easter_egg = QRect(800, 590, 75, 109)
 
-        self.text_line_1 = "Hallo ich bin Herr Gumbmann."
+        self.text_line_1 = "Hallo, ich bin Herr Gumbmann."
         self.text_line_2 = "Schön, dass Sie hier sind!"
         self.text_line_3 = "Hier stehe ich als "
-        self.text_line_4 = "stellvertretender Schulleiter!"
+        self.text_line_4 = "stellvertretender Schulleiter."
         self.text_line_5 = "Schauen Sie sich gerne etwas um."
         self.text_line_6 = "                           weiter"
 

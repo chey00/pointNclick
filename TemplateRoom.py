@@ -71,7 +71,6 @@ class TemplateRoom(QLabel):
         elif self.hitbox_easter_egg.contains(self.__mouse_pos):
             self.found_easter_egg.emit(self.__room_name)
 
-        print(self.__mouse_pos)
         self.update()
 
     def paintEvent(self, a0: QPaintEvent) -> None:

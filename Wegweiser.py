@@ -29,7 +29,7 @@ class Wegweiser(TemplateRoom):
         self.text_line_2 = "Ich bin die stellvertretende"
         self.text_line_3 = "Schulleiterin."
         self.text_line_4 = "In der FSWI-2 unterrichte ich"
-        self.text_line_5 = "Betriebswirtschaft."
+        self.text_line_5 = "Betriebswirtschaftliche Fächer."
         self.text_line_6 = ""
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
@@ -45,8 +45,8 @@ class Wegweiser(TemplateRoom):
         elif self.hitbox_mouth.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = "Links geht es zum Treppenhaus,"
-            self.text_line_3 = "rechts geht es zu den"
-            self.text_line_4 = "Unterrichtsräumen."
+            self.text_line_3 = "rechts geht es zu den Unterrichts-"
+            self.text_line_4 = "räumen der Fachschulen."
             self.text_line_5 = ""
             self.text_line_6 = ""
         self.update()

@@ -13,7 +13,7 @@ class BueroVogel(TemplateRoom):
 
         self.offset_balloon_x = 450
         self.offset_balloon_y = 100
-        self.offset_balloon_length = 450
+        self.offset_balloon_length = 475
         self.offset_balloon_width = 200
 
         self.set_offset_mouth(1150, 440, 70, 100)
@@ -30,12 +30,12 @@ class BueroVogel(TemplateRoom):
         self.hitbox_weiter = QRect(783, 230, 100, 25)
         self.append_hitbox(self.hitbox_weiter)
 
-        self.text_line_1 = "Hallo Ich stehe hier vor dem"
+        self.text_line_1 = "Hallo, ich stehe hier vor dem"
         self.text_line_2 = "Büro von Frau Vogel. Wenn Sie "
         self.text_line_3 = "sehen wollen wie das Programm"
         self.text_line_4 = "mit dem Bild von Frau Vogel"
         self.text_line_5 = "entsteht, können Sie im Raum"
-        self.text_line_6 = "EG-101 live zusehen.   weiter"
+        self.text_line_6 = "EG 101 gerne zusehen.  weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(BueroVogel, self).mousePressEvent(ev)
@@ -43,9 +43,9 @@ class BueroVogel(TemplateRoom):
         mouse_pos = ev.pos()
 
         if self.hitbox_gieskanne.contains(mouse_pos):
-            self.text_line_1 = "Hier ist die Gießkanne"
+            self.text_line_1 = "Das ist eine Gießkanne"
             self.text_line_2 = ""
-            self.text_line_3 = "zum Gießen der Pflanze."
+            self.text_line_3 = ""
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = "                       "
@@ -55,22 +55,22 @@ class BueroVogel(TemplateRoom):
             self.text_line_3 = "Diese Schilder sind"
             self.text_line_4 = "an jedem Raum, um "
             self.text_line_5 = "Missverständnisse zu vermeiden."
-            self.text_line_6 = "                       "
+            self.text_line_6 = ""
         elif self.hitbox_acces.contains(mouse_pos):
-            self.text_line_1 = "Hier ist der Access Point zu"
-            self.text_line_2 = "sehen. Er sorgt"
-            self.text_line_3 = "für eine stabile"
-            self.text_line_4 = "Internetverbindung und ist im"
-            self.text_line_5 = "ganzen Schulhaus zu finden."
-            self.text_line_6 = "                       "
+            self.text_line_1 = "Der Access Point ist kaum zu"
+            self.text_line_2 = "sehen. Dennoch sorgt er für"
+            self.text_line_3 = "eine stabile Internetverbindung."
+            self.text_line_4 = ""
+            self.text_line_5 = "Unsere Schule ist mit mehreren"
+            self.text_line_6 = "Glasfaserleitungen im Internet."
         elif self.hitbox_weiter.contains(mouse_pos):
             if self.__counter==0:
-                self.text_line_1 = "Frau Vogel hat die"
-                self.text_line_2 = "Seminarleitung und die"
-                self.text_line_3 = "stellvertretende"
-                self.text_line_4 = "Fachschulleitung."
+                self.text_line_1 = "Frau Vogel hat die Seminar-"
+                self.text_line_2 = "leitung Metall und ist die"
+                self.text_line_3 = "stellvertretende Schulleitung"
+                self.text_line_4 = "für unsere Fachschulen."
                 self.text_line_5 = ""
-                self.text_line_6 = "                       "
+                self.text_line_6 = ""
 
                 self.__counter=1
 
