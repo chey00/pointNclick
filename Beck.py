@@ -78,6 +78,6 @@ class Beck(TemplateRoom):
             self.text_line_6 = ""
 
             self.init_room("Beck_Nebel.png")
-            self.play_sound("fire-extinguisher.mp3")
+            self.play_sound("fire-extinguisher.mp3") #fire
 
             self.update()
