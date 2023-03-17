@@ -102,4 +102,5 @@ class EG102(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = ""
 
+            self.play_sound("der_schwamm.mp3")
             self.update()
