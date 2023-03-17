@@ -251,7 +251,7 @@ class MainWindow(QMainWindow):
 
         painter.setFont(QFont("Helvetica [Cronyx]", 12))
 
-        text = "Gegen Vorlage dieses Gutscheins erhalten Sie eine von unseren Schülern gravierte Kaffeetasse."
+        text = "Gegen Vorlage dieses Gutscheins erhalten Sie von unseren Studierenden eine gravierte Kaffeetasse."
         bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignLeft, text)
         painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
         page_rect.adjust(0, bounding_rect.height(), 0, 0)
@@ -276,7 +276,7 @@ class MainWindow(QMainWindow):
         painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
         page_rect.adjust(0, 2 * bounding_rect.height(), 0, 0)
 
-        text = "Ihre Kaffeetasse können Sie sich im Raum EG 23 abholen."
+        text = "Ihre Kaffeetasse können Sie im Raum EG 23 abholen."
         bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignLeft, text)
         painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
         page_rect.adjust(0, 2 * bounding_rect.height(), 0, 0)
