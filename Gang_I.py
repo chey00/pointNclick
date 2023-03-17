@@ -26,7 +26,7 @@ class Gang_I(TemplateRoom):
         self.text_line_5 = "kommen sie zur CNC."
         self.text_line_6 = ""
 
-        self.play_sound("DreiDDrucker_Water_sound.mp3")
+
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Gang_I, self).mousePressEvent(ev)
@@ -41,6 +41,7 @@ class Gang_I(TemplateRoom):
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""
+            self.play_sound("kicker_sound.mp3")
 
         elif self.hitbox_zumMetall.contains(mouse_pos):
             self.new_room.emit("CNC.jpg")
