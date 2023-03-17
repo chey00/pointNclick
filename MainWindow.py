@@ -1,5 +1,5 @@
 
-from PyQt6.QtCore import pyqtSlot, Qt
+from PyQt6.QtCore import pyqtSlot, Qt, QRandomGenerator
 from PyQt6.QtGui import QPainter, QColor, QFont, QPixmap, QPageSize, QPageLayout
 from PyQt6.QtPrintSupport import QPrinter, QPrintDialog
 from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
@@ -31,6 +31,9 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
 
+        self.__random_generator = QRandomGenerator()
+        self.__random_generator.securelySeeded()
+
         self.__set_rooms = set()
         self.__number_of_easter_eggs = 4
 
@@ -44,13 +47,11 @@ class MainWindow(QMainWindow):
         einstellungen = menuBar.addMenu("Einstellungen")
         self.__hitbox_action = einstellungen.addAction("Hitboxen anzeigen")
         self.__hitbox_action.setCheckable(True)
-        self.__hitbox_action.setChecked(True)
+        self.__hitbox_action.setChecked(False)
         self.setMenuBar(menuBar)
 
         self.central_widget = Eingang(parent)
         self.setup_new_room()
-
-        #self.print_voucher()
 
     def setup_new_room(self):
         self.central_widget.setHitBoxVisible(self.__hitbox_action.isChecked())
@@ -219,17 +220,19 @@ class MainWindow(QMainWindow):
 
             msgBox.exec()
 
+            self.print_voucher()
+
     def print_voucher(self):
-        #printer = QPrinter()
+        printer = QPrinter()
 
-        #printDialog = QPrintDialog(printer)
-        #printDialog.exec()
+        printDialog = QPrintDialog(printer)
+        printDialog.exec()
 
-        printer = QPrinter(QPrinter.PrinterMode.PrinterResolution)
-        printer.setOutputFileName("print.pdf")
-        printer.setPageSize(QPageSize(QPageSize.PageSizeId.A4))
-        printer.setFullPage(True)
-        printer.setPageOrientation(QPageLayout.Orientation.Portrait)
+        #printer = QPrinter(QPrinter.PrinterMode.PrinterResolution)
+        #printer.setOutputFileName("print.pdf")
+        #printer.setPageSize(QPageSize(QPageSize.PageSizeId.A4))
+        #printer.setFullPage(True)
+        #printer.setPageOrientation(QPageLayout.Orientation.Portrait)
 
         painter = QPainter()
         painter.begin(printer)
@@ -238,20 +241,48 @@ class MainWindow(QMainWindow):
         page_rect = printer.pageRect(QPrinter.Unit.DevicePixel)
 
         painter.setFont(QFont("Helvetica [Cronyx]", 36))
+
         text = "Gutschein"
         bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignHCenter, text)
         painter.drawText(bounding_rect, text)
-        offset_y = bounding_rect.height()
+        page_rect.adjust(0, bounding_rect.height(), 0, 0)
 
         painter.setFont(QFont("Helvetica [Cronyx]", 12))
-        text = "Gegen Vorlage des Gutscheins erhalten Sie im Raum UG 01 eine gravierte Kaffeetasse."
-        bounding_rect = painter.boundingRect(page_rect.adjusted(0, offset_y, 0, 0), Qt.AlignmentFlag.AlignLeft, text)
-        painter.drawText(bounding_rect.adjusted(0, offset_y, 0, 0), text)
 
-        pixmap = QPixmap("logo.png")
+        text = "Gegen Vorlage dieses Gutscheins erhalten Sie eine von unseren Schülern gravierte Kaffeetasse."
+        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignLeft, text)
+        painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
+        page_rect.adjust(0, bounding_rect.height(), 0, 0)
+
+        text = "Ihr indivdueller Gutscheincode lautet:"
+        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignLeft, text)
+        painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
+        page_rect.adjust(0, 2 * bounding_rect.height(), 0, 0)
+
+        text = str(self.__random_generator.bounded(10, 99))
+        text += "-"
+        text += str(self.__random_generator.bounded(10, 99))
+        text += "-"
+        text += str(self.__random_generator.bounded(10, 99))
+        text += "-"
+        text += str(self.__random_generator.bounded(10, 99))
+        text += "-"
+        text += str(self.__random_generator.bounded(10, 99))
+        text += "-"
+        text += str(self.__random_generator.bounded(10, 99))
+        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignHCenter, text)
+        painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
+        page_rect.adjust(0, 2 * bounding_rect.height(), 0, 0)
+
+        text = "Ihre Kaffeetasse können Sie sich im Raum EG 23 abholen."
+        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignLeft, text)
+        painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
+        page_rect.adjust(0, 2 * bounding_rect.height(), 0, 0)
+
+        pixmap = QPixmap("logo.png").scaledToWidth(150, Qt.TransformationMode.SmoothTransformation)
         point = page_rect.bottomRight().toPoint()
-        x = point.x()- pixmap.size().width()
-        y = point.y() - pixmap.size().height()
+        x = point.x() - pixmap.size().width() - 50
+        y = point.y() - pixmap.size().height() - 50
         painter.drawPixmap(x, y, pixmap)
 
         painter.end()
