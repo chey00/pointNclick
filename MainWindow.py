@@ -1,5 +1,7 @@
 
-from PyQt6.QtCore import pyqtSlot
+from PyQt6.QtCore import pyqtSlot, Qt
+from PyQt6.QtGui import QPainter, QColor, QFont, QPixmap, QPageSize, QPageLayout
+from PyQt6.QtPrintSupport import QPrinter, QPrintDialog
 from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
 
 from MyRoom import MyRoom
@@ -47,6 +49,8 @@ class MainWindow(QMainWindow):
 
         self.central_widget = Eingang(parent)
         self.setup_new_room()
+
+        #self.print_voucher()
 
     def setup_new_room(self):
         self.central_widget.setHitBoxVisible(self.__hitbox_action.isChecked())
@@ -214,3 +218,40 @@ class MainWindow(QMainWindow):
             msgBox.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Kennwort super_geheim Ihre Kaffeetasse im Raum XYZ.")
 
             msgBox.exec()
+
+    def print_voucher(self):
+        #printer = QPrinter()
+
+        #printDialog = QPrintDialog(printer)
+        #printDialog.exec()
+
+        printer = QPrinter(QPrinter.PrinterMode.PrinterResolution)
+        printer.setOutputFileName("print.pdf")
+        printer.setPageSize(QPageSize(QPageSize.PageSizeId.A4))
+        printer.setFullPage(True)
+        printer.setPageOrientation(QPageLayout.Orientation.Portrait)
+
+        painter = QPainter()
+        painter.begin(printer)
+        painter.setPen(QColor("black"))
+
+        page_rect = printer.pageRect(QPrinter.Unit.DevicePixel)
+
+        painter.setFont(QFont("Helvetica [Cronyx]", 36))
+        text = "Gutschein"
+        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignHCenter, text)
+        painter.drawText(bounding_rect, text)
+        offset_y = bounding_rect.height()
+
+        painter.setFont(QFont("Helvetica [Cronyx]", 12))
+        text = "Gegen Vorlage des Gutscheins erhalten Sie im Raum UG 01 eine gravierte Kaffeetasse."
+        bounding_rect = painter.boundingRect(page_rect.adjusted(0, offset_y, 0, 0), Qt.AlignmentFlag.AlignLeft, text)
+        painter.drawText(bounding_rect.adjusted(0, offset_y, 0, 0), text)
+
+        pixmap = QPixmap("logo.png")
+        point = page_rect.bottomRight().toPoint()
+        x = point.x()- pixmap.size().width()
+        y = point.y() - pixmap.size().height()
+        painter.drawPixmap(x, y, pixmap)
+
+        painter.end()
