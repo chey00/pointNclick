@@ -11,7 +11,7 @@ class EG102Reinhart(TemplateRoom):
 
         self.offset_balloon_x = 710
         self.offset_balloon_y = 100
-        self.offset_balloon_length = 450
+        self.offset_balloon_length = 520
         self.offset_balloon_width = 165
 
         self.set_offset_mouth(690, 330, 10, 100)
@@ -62,8 +62,9 @@ class EG102Reinhart(TemplateRoom):
                 self.__counter = 2
 
             elif self.__counter == 2:
-                self.text_line_1 = "Dort besucht man zum"
-                self.text_line_2 = "einem eine Schule oder man"
+                self.text_line_1 = "Dort kann man " \
+                                   "einen Sprachlernkurs"
+                self.text_line_2 = "erwerben oder man"
                 self.text_line_3 = "tritt ein Praktikum an."
                 self.text_line_4 = "Die dauer des Aufenhaltes"
                 self.text_line_5 = "liegt bei 2 Wochen."
