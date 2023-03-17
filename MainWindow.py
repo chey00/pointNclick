@@ -26,13 +26,13 @@ from Ganglinks import Ganglinks
 from DreiDDruck import DreiDDruck
 from EG102Reinhart import  EG102Reinhart
 from Beck import Beck
-#test
+
+
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.__random_generator = QRandomGenerator()
-        self.__random_generator.securelySeeded()
+        self.__random_generator = QRandomGenerator().securelySeeded()
 
         self.__set_rooms = set()
         self.__number_of_easter_eggs = 4
