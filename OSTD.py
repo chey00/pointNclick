@@ -65,7 +65,7 @@ class OSTD(TemplateRoom):
             self.text_line_4 = "wäre jetzt nicht schlecht..."
             self.text_line_5 = ""
             self.text_line_6 = ""
-
+            self.play_sound("foundcup.mp3")
             self.update()
 
         if self.hitbox_schulregeln.contains(mouse_pos):

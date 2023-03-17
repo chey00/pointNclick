@@ -45,6 +45,8 @@ class StvRoom(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = ""
 
+            self.play_sound("foundcup.mp3")
+
             self.update()
 
         if self.hitbox_stift.contains(mouse_pos):
