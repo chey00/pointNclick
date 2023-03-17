@@ -34,8 +34,8 @@ class BueroVogel(TemplateRoom):
         self.text_line_2 = "Büro von Frau Vogel. Wenn Sie "
         self.text_line_3 = "sehen wollen wie das Programm"
         self.text_line_4 = "mit dem Bild von Frau Vogel"
-        self.text_line_5 = "entsteht, können Sie uns live"
-        self.text_line_6 = "dabei zusehen.         weiter"
+        self.text_line_5 = "entsteht, können Sie im Raum"
+        self.text_line_6 = "EG-101 live zusehen.   weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(BueroVogel, self).mousePressEvent(ev)
@@ -43,7 +43,7 @@ class BueroVogel(TemplateRoom):
         mouse_pos = ev.pos()
 
         if self.hitbox_gieskanne.contains(mouse_pos):
-            self.text_line_1 = "Hier ist Die Gießkanne"
+            self.text_line_1 = "Hier ist die Gießkanne"
             self.text_line_2 = ""
             self.text_line_3 = "zum Gießen der Pflanze."
             self.text_line_4 = ""
@@ -51,7 +51,7 @@ class BueroVogel(TemplateRoom):
             self.text_line_6 = "                       "
         elif self.hitbox_raumzuweisung.contains(mouse_pos):
             self.text_line_1 = "Hier ist Die Raumzuweisung:"
-            self.text_line_2 = "EG - 105."
+            self.text_line_2 = "EG-105."
             self.text_line_3 = "Diese Schilder sind"
             self.text_line_4 = "an jedem Raum, um "
             self.text_line_5 = "Missverständnisse zu vermeiden."
