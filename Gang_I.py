@@ -26,6 +26,8 @@ class Gang_I(TemplateRoom):
         self.text_line_5 = "kommen sie zur CNC."
         self.text_line_6 = ""
 
+        self.play_sound("DreiDDrucker_Water_sound.mp3")
+
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Gang_I, self).mousePressEvent(ev)
 

@@ -54,7 +54,10 @@ class DreiDDruck(TemplateRoom):
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""
+
             self.init_room("DreiDDruck_Under_Water.jpg")
+            self.play_sound("DreiDDrucker_Water_sound.mp3")
+
             self.update()
 
         if self.hitbox_notaus.contains(mouse_pos):
@@ -64,5 +67,8 @@ class DreiDDruck(TemplateRoom):
             self.text_line_4 = ""
             self.text_line_5 = "Alles Dunkel D:"
             self.text_line_6 = ""
+
             self.init_room("DreiDDruck_Dark_Room.jpg")
+            self.play_sound("Lightswitch.mp3")
+
             self.update()
