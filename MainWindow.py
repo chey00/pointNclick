@@ -214,9 +214,11 @@ class MainWindow(QMainWindow):
 
             self.__status_bar.showMessage(message)
         else:
+            self.__status_bar.showMessage("Sie haben alle Kaffeetassen gefunden")
+
             msgBox = QMessageBox()
             msgBox.setText("Herzlichen Glückwunsch!")
-            msgBox.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Kennwort super_geheim Ihre Kaffeetasse im Raum XYZ.")
+            msgBox.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Ausdruck Ihre Kaffeetasse im Raum EG 23 ab.")
 
             msgBox.exec()
 
