@@ -3,26 +3,26 @@ from PyQt6.QtGui import QPainter, QColor, QFont, QPixmap
 from PyQt6.QtPrintSupport import QPrinter, QPrintDialog
 from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
 
-from Wegweiser import Wegweiser
-from Treppenhaus import Treppenhaus
+from Aula import Aula
+from Beck import Beck
+from BueroVogel import BueroVogel
+from CNC import CNC
+from DreiDDruck import DreiDDruck
+from EG101 import EG101
+from EG102 import EG102
+from Eingang import Eingang
+from Erasmus import EG102Reinhart
+from Fraesmaschine import Fraesmaschine
 from Gang_I import Gang_I
 from Gang_II import Gang_II
 from Gang_III import Gang_III
-from Gang_V import GangTech
-from Aula import Aula
-from Fraesmaschine import Fraesmaschine
-from EG102 import EG102
-from Verwaltung import Verwaltung
-from Stellvertretung import StvRoom
-from Eingang import Eingang
-from BueroVogel import BueroVogel
-from Schulleitung import OSTD
-from CNC import CNC
-from EG101 import EG101
 from Gang_IV import Ganglinks
-from DreiDDruck import DreiDDruck
-from Erasmus import EG102Reinhart
-from Beck import Beck
+from Gang_V import GangTech
+from Schulleitung import OSTD
+from Stellvertretung import StvRoom
+from Treppenhaus import Treppenhaus
+from Verwaltung import Verwaltung
+from Wegweiser import Wegweiser
 
 
 class MainWindow(QMainWindow):
@@ -45,6 +45,10 @@ class MainWindow(QMainWindow):
         self.__hitbox_action = settings.addAction("Hitboxen anzeigen")
         self.__hitbox_action.setCheckable(True)
         self.__hitbox_action.setChecked(False)
+
+        about = menu_bar.addMenu("Über")
+        about_us = about.addAction("Projekt")
+        about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
 
         self.central_widget = Eingang(parent)
@@ -274,3 +278,11 @@ class MainWindow(QMainWindow):
         painter.drawPixmap(x, y, pixmap)
 
         painter.end()
+
+    def about_us(self):
+        msg_box = QMessageBox(self)
+        msg_box.setText("Über das Programm")
+        msg_box.setInformativeText("Unser virtueller Schulhausrundgang ist im Rahmen eines Projekts der Klasse FSWI-1"
+                                   " im Schuljahr 2022/23 entstanden. Wir haben die App im Fach Programmieren erstellt"
+                                   " und nutzen Python mit Qt.")
+        msg_box.show()
