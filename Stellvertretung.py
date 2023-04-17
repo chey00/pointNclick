@@ -7,7 +7,7 @@ class StvRoom(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("StvRoom.jpg")
+        self.init_room("Stellvertretung.jpg")
 
         self.offset_balloon_x = 830
         self.offset_balloon_y = 15
@@ -45,7 +45,7 @@ class StvRoom(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = ""
 
-            self.play_sound("foundcup.mp3")
+            self.play_sound("TemplateRoom_found_cup.mp3")
 
             self.update()
 

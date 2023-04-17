@@ -7,7 +7,7 @@ class Ganglinks(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("Ganglinks.jpg")
+        self.init_room("Gang_IV.jpg")
 
         self.offset_balloon_x = int((1440 - 500) / 2)
         self.offset_balloon_y = 25

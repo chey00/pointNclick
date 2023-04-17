@@ -1,30 +1,27 @@
-
 from PyQt6.QtCore import pyqtSlot, Qt, QRandomGenerator
-from PyQt6.QtGui import QPainter, QColor, QFont, QPixmap, QPageSize, QPageLayout
+from PyQt6.QtGui import QPainter, QColor, QFont, QPixmap
 from PyQt6.QtPrintSupport import QPrinter, QPrintDialog
 from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
 
-from MyRoom import MyRoom
-from KatzenRoom import KatzenRoom
 from Wegweiser import Wegweiser
 from Treppenhaus import Treppenhaus
 from Gang_I import Gang_I
 from Gang_II import Gang_II
 from Gang_III import Gang_III
-from GangTech import GangTech
+from Gang_V import GangTech
 from Aula import Aula
 from Fraesmaschine import Fraesmaschine
 from EG102 import EG102
 from Verwaltung import Verwaltung
-from StvRoom import StvRoom
+from Stellvertretung import StvRoom
 from Eingang import Eingang
 from BueroVogel import BueroVogel
-from OSTD import OSTD
+from Schulleitung import OSTD
 from CNC import CNC
 from EG101 import EG101
-from Ganglinks import Ganglinks
+from Gang_IV import Ganglinks
 from DreiDDruck import DreiDDruck
-from EG102Reinhart import  EG102Reinhart
+from Erasmus import EG102Reinhart
 from Beck import Beck
 
 
@@ -43,12 +40,12 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Schulhausrundgang")
         self.showFullScreen()
 
-        menuBar = QMenuBar(self)
-        einstellungen = menuBar.addMenu("Einstellungen")
-        self.__hitbox_action = einstellungen.addAction("Hitboxen anzeigen")
+        menu_bar = QMenuBar(self)
+        settings = menu_bar.addMenu("Einstellungen")
+        self.__hitbox_action = settings.addAction("Hitboxen anzeigen")
         self.__hitbox_action.setCheckable(True)
         self.__hitbox_action.setChecked(False)
-        self.setMenuBar(menuBar)
+        self.setMenuBar(menu_bar)
 
         self.central_widget = Eingang(parent)
         self.setup_new_room()
@@ -66,7 +63,7 @@ class MainWindow(QMainWindow):
         if new_room == "Treppenhaus.jpg":
             self.central_widget = Treppenhaus()
             self.setup_new_room()
-        elif new_room == "GangTech.jpg":
+        elif new_room == "Gang_V.jpg":
             self.central_widget = GangTech()
             self.setup_new_room()
         elif new_room == "Gang_I.jpg":
@@ -90,7 +87,7 @@ class MainWindow(QMainWindow):
         elif new_room == "Verwaltung.jpg":
             self.central_widget = Verwaltung()
             self.setup_new_room()
-        elif new_room == "StvRoom.jpg":
+        elif new_room == "Stellvertretung.jpg":
             self.central_widget = StvRoom()
             self.setup_new_room()
         elif new_room == "Aula.jpg":
@@ -99,7 +96,7 @@ class MainWindow(QMainWindow):
         elif new_room == "BueroVogel.jpg":
             self.central_widget = BueroVogel()
             self.setup_new_room()
-        elif new_room == "OSTD1.jpg":
+        elif new_room == "Schulleitung.jpg":
             self.central_widget = OSTD()
             self.setup_new_room()
         elif new_room == "CNC.jpg":
@@ -111,7 +108,7 @@ class MainWindow(QMainWindow):
         elif new_room == "DreiDDruck_Normal.jpg":
             self.central_widget = DreiDDruck()
             self.setup_new_room()
-        elif new_room == "Ganglinks.jpg":
+        elif new_room == "Gang_IV.jpg":
             self.central_widget = Ganglinks()
             self.setup_new_room()
         elif new_room == "EG102Reinhart.jpg":
@@ -121,22 +118,15 @@ class MainWindow(QMainWindow):
             self.central_widget = Beck()
             self.setup_new_room()
 
-
     @pyqtSlot(str)
     def change_room(self, old_room):
-        if old_room == "MyRoom.jpg":
-            self.central_widget = KatzenRoom()
-            self.setup_new_room()
-        elif old_room == "KatzenRoom.jpg":
-            self.central_widget = MyRoom()
-            self.setup_new_room()
-        elif old_room == "Wegweiser.jpg":
+        if old_room == "Wegweiser.jpg":
             self.central_widget = Aula()
             self.setup_new_room()
         elif old_room == "Treppenhaus.jpg":
             self.central_widget = Wegweiser()
             self.setup_new_room()
-        elif old_room == "GangTech.jpg":
+        elif old_room == "Gang_V.jpg":
             self.central_widget = Wegweiser()
             self.setup_new_room()
         elif old_room == "Gang_I.jpg":
@@ -160,7 +150,7 @@ class MainWindow(QMainWindow):
         elif old_room == "Verwaltung.jpg":
             self.central_widget = Aula()
             self.setup_new_room()
-        elif old_room == "StvRoom.jpg":
+        elif old_room == "Stellvertretung.jpg":
             self.central_widget = Verwaltung()
             self.setup_new_room()
         elif old_room == "Aula.jpg":
@@ -169,7 +159,7 @@ class MainWindow(QMainWindow):
         elif old_room == "BueroVogel.jpg":
             self.central_widget = Gang_III()
             self.setup_new_room()
-        elif old_room == "OSTD1.jpg":
+        elif old_room == "Schulleitung.jpg":
             self.central_widget = Verwaltung()
             self.setup_new_room()
         elif old_room == "CNC.jpg":
@@ -187,19 +177,19 @@ class MainWindow(QMainWindow):
         elif old_room == "DreiDDruck_Under_Water.jpg":
             self.central_widget = Ganglinks()
             self.setup_new_room()
-        elif old_room == "Ganglinks.jpg":
+        elif old_room == "Gang_IV.jpg":
             self.central_widget = Treppenhaus()
             self.setup_new_room()
-        elif old_room == "BueroVogel2.jpg":
+        elif old_room == "BueroVogel.jpg":
             self.central_widget = Gang_III()
             self.setup_new_room()
-        elif old_room == "FrauReinhart.jpg":
+        elif old_room == "Erasmus.jpg":
             self.central_widget = EG102()
             self.setup_new_room()
         elif old_room == "Beck.png":
             self.central_widget = Gang_III()
             self.setup_new_room()
-        elif old_room == "Beck_Nebel.png":
+        elif old_room == "Beck_fog.png":
             self.central_widget = Gang_III()
             self.setup_new_room()
 
@@ -210,31 +200,27 @@ class MainWindow(QMainWindow):
         number_found_rooms = len(self.__set_rooms)
 
         if number_found_rooms < self.__number_of_easter_eggs:
-            message = "Sie haben " + str(number_found_rooms) + " von " + str(self.__number_of_easter_eggs) + " Kaffeetassen gefunden!"
+            message = "Sie haben " + str(number_found_rooms) + " von " + str(self.__number_of_easter_eggs) + \
+                      " Kaffeetassen gefunden!"
 
             self.__status_bar.showMessage(message)
         else:
             self.__status_bar.showMessage("Sie haben alle Kaffeetassen gefunden")
 
-            msgBox = QMessageBox()
-            msgBox.setText("Herzlichen Glückwunsch!")
-            msgBox.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Ausdruck Ihre Kaffeetasse im Raum EG 23 ab.")
+            msg_box = QMessageBox()
+            msg_box.setText("Herzlichen Glückwunsch!")
+            msg_box.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Ausdruck Ihre "
+                                       "Kaffeetasse im Raum EG 23 ab.")
 
-            msgBox.exec()
+            msg_box.exec()
 
             self.print_voucher()
 
     def print_voucher(self):
         printer = QPrinter()
 
-        printDialog = QPrintDialog(printer)
-        printDialog.exec()
-
-        #printer = QPrinter(QPrinter.PrinterMode.PrinterResolution)
-        #printer.setOutputFileName("print.pdf")
-        #printer.setPageSize(QPageSize(QPageSize.PageSizeId.A4))
-        #printer.setFullPage(True)
-        #printer.setPageOrientation(QPageLayout.Orientation.Portrait)
+        print_dialog = QPrintDialog(printer)
+        print_dialog.exec()
 
         painter = QPainter()
         painter.begin(printer)

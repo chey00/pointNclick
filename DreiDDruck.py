@@ -69,6 +69,6 @@ class DreiDDruck(TemplateRoom):
             self.text_line_6 = ""
 
             self.init_room("DreiDDruck_Dark_Room.jpg")
-            self.play_sound("Lightswitch.mp3")
+            self.play_sound("DreiDDruck_Lightswitch.mp3")
 
             self.update()

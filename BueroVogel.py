@@ -7,7 +7,7 @@ class BueroVogel(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("BueroVogel2.jpg")
+        self.init_room("BueroVogel.jpg")
 
         self.__counter=0
 

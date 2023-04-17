@@ -7,7 +7,7 @@ class OSTD(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("OSTD1.jpg")
+        self.init_room("Schulleitung.jpg")
 
         self.offset_balloon_x = 515
         self.offset_balloon_y = 150
@@ -66,7 +66,7 @@ class OSTD(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = ""
 
-            self.play_sound("foundcup.mp3")
+            self.play_sound("TemplateRoom_found_cup.mp3")
 
             self.update()
 

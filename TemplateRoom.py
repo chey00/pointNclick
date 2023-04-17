@@ -65,7 +65,7 @@ class TemplateRoom(QLabel):
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         self.__mouse_pos = ev.pos()
-
+        
         if self.hitbox_exit.contains(self.__mouse_pos):
             self.leave_room.emit(self.__room_name)
         elif self.hitbox_easter_egg.contains(self.__mouse_pos):

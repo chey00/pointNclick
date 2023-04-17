@@ -7,7 +7,7 @@ class EG102Reinhart(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("FrauReinhart.jpg")
+        self.init_room("Erasmus.jpg")
 
         self.offset_balloon_x = 710
         self.offset_balloon_y = 100

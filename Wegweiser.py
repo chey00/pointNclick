@@ -41,7 +41,7 @@ class Wegweiser(TemplateRoom):
         if self.hitbox_zumTreppenhaus.contains(mouse_pos):
             self.new_room.emit("Treppenhaus.jpg")
         elif self.hitbox_zumGangTech.contains(mouse_pos):
-            self.new_room.emit("GangTech.jpg")
+            self.new_room.emit("Gang_V.jpg")
         elif self.hitbox_mouth.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = "Links geht es zum Treppenhaus,"

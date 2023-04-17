@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16daf25b-8a9c-47b0-8927-891ae8b61c63" name="Changes" comment="Rechtschreibung">
+    <list default="true" id="16daf25b-8a9c-47b0-8927-891ae8b61c63" name="Changes" comment="Minor changes in texting">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Beck.py" beforeDir="false" afterPath="$PROJECT_DIR$/Beck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Beck_Nebel.png" beforeDir="false" afterPath="$PROJECT_DIR$/Beck_fog.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blaulicht - Martinshorn Sirene Polizei Feuerwehr Rettungsdienst Soundeffekt Klingelton Alarm -.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BueroVogel.py" beforeDir="false" afterPath="$PROJECT_DIR$/BueroVogel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BueroVogel2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/BueroVogel.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DreiDDruck.py" beforeDir="false" afterPath="$PROJECT_DIR$/DreiDDruck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EG102.py" beforeDir="false" afterPath="$PROJECT_DIR$/EG102.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EG102Reinhart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Erasmus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eingang.py" beforeDir="false" afterPath="$PROJECT_DIR$/Eingang.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraesmaschine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fraesmaschine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrauReinhart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Erasmus.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GangTech.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Gang_V.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GangTech.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gang_V.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gang_I.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gang_I.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ganglinks.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Gang_IV.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ganglinks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gang_IV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KatzenRoom.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KatzenRoom.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lightswitch.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/DreiDDruck_Lightswitch.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyRoom.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyRoom.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OSTD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OSTD.py" beforeDir="false" afterPath="$PROJECT_DIR$/Schulleitung.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OSTD1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Schulleitung.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StvRoom.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Stellvertretung.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StvRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stellvertretung.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemplateRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateRoom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Treppenhaus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Treppenhaus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Verwaltung.py" beforeDir="false" afterPath="$PROJECT_DIR$/Verwaltung.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wegweiser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wegweiser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/der_schwamm.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fire-extinguisher.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Beck_fire_extinguisher.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foundcup.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/TemplateRoom_found_cup.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kicker_sound.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Gang_I_Kicker.mp3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +54,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -115,7 +151,63 @@
       <option name="project" value="LOCAL" />
       <updated>1678872653465</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added feature to play sounds">
+      <created>1678975322780</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678975322780</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added feature to play sounds">
+      <created>1679052541246</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679052541246</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added feature to play sounds">
+      <created>1679052593461</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679052593461</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added print function">
+      <created>1679056319782</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679056319782</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added print function">
+      <created>1679056527966</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679056527966</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added print function">
+      <created>1679056898920</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679056898920</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Minor changes in texting">
+      <created>1679062307743</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679062307743</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Minor changes in texting">
+      <created>1679065236264</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679065236264</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +220,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Removed obsoled package" />
@@ -136,7 +229,10 @@
     <MESSAGE value="Feateure for new rooms added" />
     <MESSAGE value="Added new feature to set speech ballon" />
     <MESSAGE value="Rechtschreibung" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rechtschreibung" />
+    <MESSAGE value="Added feature to play sounds" />
+    <MESSAGE value="Added print function" />
+    <MESSAGE value="Minor changes in texting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes in texting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

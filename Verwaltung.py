@@ -77,9 +77,9 @@ class Verwaltung(TemplateRoom):
             self.__show_qr = True
 
         elif self.hitbox_zumStvRoom.contains(mouse_pos):
-            self.new_room.emit("StvRoom.jpg")
+            self.new_room.emit("Stellvertretung.jpg")
         elif self.hitbox_zumOSTD.contains(mouse_pos):
-            self.new_room.emit("OSTD1.jpg")
+            self.new_room.emit("Schulleitung.jpg")
 
         self.update()
 
