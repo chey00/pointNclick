@@ -23,6 +23,8 @@ from Stellvertretung import StvRoom
 from Treppenhaus import Treppenhaus
 from Verwaltung import Verwaltung
 from Wegweiser import Wegweiser
+from Lasergravierer import Lasergravierer
+from Zwischenraum_Treppenhaus import Zwischenraum_Treppenhaus
 
 
 class MainWindow(QMainWindow):
@@ -44,14 +46,17 @@ class MainWindow(QMainWindow):
         settings = menu_bar.addMenu("Einstellungen")
         self.__hitbox_action = settings.addAction("Hitboxen anzeigen")
         self.__hitbox_action.setCheckable(True)
-        self.__hitbox_action.setChecked(False)
+
+        self.__hitbox_action.setChecked(True)
+        #self.__hitbox_action.setChecked(False)
 
         about = menu_bar.addMenu("Über")
         about_us = about.addAction("Projekt")
         about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
 
-        self.central_widget = Eingang(parent)
+        self.central_widget = Wegweiser(parent)
+        #self.central_widget = Eingang(parent)
         self.setup_new_room()
 
     def setup_new_room(self):
@@ -121,6 +126,13 @@ class MainWindow(QMainWindow):
         elif new_room == "Beck.png":
             self.central_widget = Beck()
             self.setup_new_room()
+        elif new_room == "Zwischenraum_Treppenhaus.jpg":
+            self.central_widget = Zwischenraum_Treppenhaus()
+            self.setup_new_room()
+        elif new_room == "Lasergravierer.jpg":
+            self.central_widget = Lasergravierer()
+            self.setup_new_room()
+
 
     @pyqtSlot(str)
     def change_room(self, old_room):
@@ -128,6 +140,12 @@ class MainWindow(QMainWindow):
             self.central_widget = Aula()
             self.setup_new_room()
         elif old_room == "Treppenhaus.jpg":
+            self.central_widget = Zwischenraum_Treppenhaus()
+            self.setup_new_room()
+        elif old_room == "Lasergravierer.jpg":
+            self.central_widget = Zwischenraum_Treppenhaus()
+            self.setup_new_room()
+        elif old_room == "Zwischenraum_Treppenhaus.jpg":
             self.central_widget = Wegweiser()
             self.setup_new_room()
         elif old_room == "Gang_V.jpg":
