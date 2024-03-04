@@ -36,8 +36,7 @@ class Wegweiser(TemplateRoom):
         super(Wegweiser, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-        print(mouse_pos)
-
+ 
         if self.hitbox_zumTreppenhaus.contains(mouse_pos):
             self.new_room.emit("Zwischenraum_Treppenhaus.jpg")
         elif self.hitbox_zumGangTech.contains(mouse_pos):

@@ -32,7 +32,6 @@ class Gang_I(TemplateRoom):
         super(Gang_I, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-        print(mouse_pos)
 
         if self.hitbox_kicker.contains(mouse_pos):
             self.text_line_1 = "Hier wurde schon so mancher"

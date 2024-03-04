@@ -30,7 +30,6 @@ class GangTech(TemplateRoom):
         super(GangTech, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-        print(mouse_pos)
 
         if self.hitbox_zumGang_II.contains(mouse_pos):
             self.new_room.emit("Gang_II.jpg")

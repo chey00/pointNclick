@@ -15,8 +15,8 @@ class Ganglinks(TemplateRoom):
         self.offset_balloon_width = 150
         self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length, self.offset_balloon_y + self.offset_balloon_width, 0, 0)
 
-        self.hitbox_zum3dDrucker = QRect(310, 185, 330, 475)
-        self.append_hitbox(self.hitbox_zum3dDrucker)
+        self.hitbox_zumRaumDigitaleTransformation = QRect(310, 185, 330, 475)
+        self.append_hitbox(self.hitbox_zumRaumDigitaleTransformation)
 
         self.hitbox_zurFraesmaschine = QRect(980, 255, 200, 300)
         self.append_hitbox(self.hitbox_zurFraesmaschine)
@@ -32,10 +32,9 @@ class Ganglinks(TemplateRoom):
         super(Ganglinks, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-        print(mouse_pos)
-
-        if self.hitbox_zum3dDrucker.contains(mouse_pos):
-            self.new_room.emit("DreiDDruck_Normal.jpg")
+ 
+        if self.hitbox_zumRaumDigitaleTransformation.contains(mouse_pos):
+            self.new_room.emit("Raum_digitale_Transformation.jpg")
         elif self.hitbox_zurFraesmaschine.contains(mouse_pos):
             self.new_room.emit("Fraesmaschine.jpg")
         self.update()

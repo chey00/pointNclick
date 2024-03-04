@@ -31,7 +31,6 @@ class Zwischenraum_Treppenhaus(TemplateRoom):
         super(Zwischenraum_Treppenhaus, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-        print(mouse_pos)
 
         if self.hitbox_Treppenhaus.contains(mouse_pos):
             self.new_room.emit("Treppenhaus.jpg")

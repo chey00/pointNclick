@@ -30,7 +30,6 @@ class Aula(TemplateRoom):
         super(Aula, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-        print(mouse_pos)
 
         if self.hitbox_zurVerwaltung.contains(mouse_pos):
             self.new_room.emit("Verwaltung.jpg")

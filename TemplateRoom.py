@@ -1,6 +1,6 @@
 from PyQt6.QtCore import QPoint, QRect, pyqtSignal, pyqtSlot, QSize, Qt, QUrl
 from PyQt6.QtGui import QPixmap, QMouseEvent, QPaintEvent, QPainter, QColor, QFont, QPolygon, QPen, QBrush
-from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput, QAudioDevice
+from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtWidgets import QLabel
 
 
@@ -11,6 +11,9 @@ class TemplateRoom(QLabel):
 
     def __init__(self, parent=None):
         super().__init__(parent)
+
+        self.player = None
+        self.audioOutput = None
         self.__room_name = None
         self.__background_pixmap = None
 
@@ -30,7 +33,12 @@ class TemplateRoom(QLabel):
         self.text_line_4 = None
         self.text_line_5 = None
         self.text_line_6 = None
-
+        self.text_line_7 = None
+        self.text_line_8 = None
+        self.text_line_9 = None
+        self.text_line_10 = None
+        self.text_line_11 = None
+        self.text_line_12 = None
         self.__mouse_pos = QPoint()
 
         self.offset_balloon_length = 500
@@ -65,8 +73,6 @@ class TemplateRoom(QLabel):
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         self.__mouse_pos = ev.pos()
-
-        print(ev.pos())
         
         if self.hitbox_exit.contains(self.__mouse_pos):
             self.leave_room.emit(self.__room_name)
@@ -133,6 +139,12 @@ class TemplateRoom(QLabel):
             painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 100, self.text_line_4)
             painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 125, self.text_line_5)
             painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 150, self.text_line_6)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 175, self.text_line_7)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 200, self.text_line_8)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 225, self.text_line_9)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 250, self.text_line_10)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 275, self.text_line_11)
+            painter.drawText(self.offset_balloon_x + 10, self.offset_balloon_y + 300, self.text_line_12)
 
         if self.__show_exit_button:
             painter.drawText(self.__offset_exit + 10, self.__pos_x_exit + 25, "Zurück")
@@ -180,10 +192,17 @@ class TemplateRoom(QLabel):
         self.__show_speech_bubble = visible
 
     def play_sound(self, source_path):
-        self.player = QMediaPlayer()
-        self.audioOutput = QAudioOutput()
-        self.player.setAudioOutput(self.audioOutput)
+        if(self.player == None or self.player.duration() == self.player.position()):
+            self.player = QMediaPlayer()
+            self.audioOutput = QAudioOutput()
+            self.player.setAudioOutput(self.audioOutput)
 
-        self.player.setSource(QUrl.fromLocalFile(source_path))
-        self.audioOutput.setVolume(50)
-        self.player.play()
+            self.player.setSource(QUrl.fromLocalFile(source_path))
+            self.audioOutput.setVolume(50)
+            self.player.play()
+
+    def stop_sound(self):
+        if self.player is not None:
+            self.player.stop()
+
+
