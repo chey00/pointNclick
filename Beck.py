@@ -31,9 +31,8 @@ class Beck(TemplateRoom):
 
         self.text_line_1 = "Guten Tag,"
         self.text_line_2 = "ich bin Herr Beck der Fachschulleiter."
-        self.text_line_3 = "Hier finden Sie mein Büro. Wenn Sie mich"
-        self.text_line_4 = "suchen, finden Sie mich auch beim Metall-"
-        self.text_line_5 = "3D-Drucker."
+        self.text_line_3 = "Hier finden Sie mein Büro,"
+        self.text_line_4 = "wenn Sie mich suchen."
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Beck, self).mousePressEvent(ev)
@@ -41,10 +40,10 @@ class Beck(TemplateRoom):
         mouse_pos = ev.pos()
 
         if self.hitbox_beck.contains(mouse_pos):
-            self.text_line_1 = ""
-            self.text_line_2 = "Ich würde mich freuen, wenn Sie ab dem"
-            self.text_line_3 = "kommenden Schuljahr eine unserer Fach-"
-            self.text_line_4 = "schulen besuchen würden."
+            self.text_line_1 = "Guten Tag,"
+            self.text_line_2 = "Ich bin Herr Beck der Fachschulleiter"
+            self.text_line_3 = "Hier findest du mein Büro"
+            self.text_line_4 = "wenn du mich suchst"
             self.text_line_5 = ""
             self.text_line_6 = ""
 
@@ -72,8 +71,8 @@ class Beck(TemplateRoom):
 
         elif self.hitbox_loescher.contains(mouse_pos):
             self.text_line_1 = ""
-            self.text_line_2 = "Oh nein!!!"
-            self.text_line_3 = "Nicht den Feuerlöscher anfassen!"
+            self.text_line_2 = "Oh Nein !"
+            self.text_line_3 = "nicht auf den Feuerlöscher!"
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""
