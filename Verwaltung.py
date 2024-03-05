@@ -38,7 +38,7 @@ class Verwaltung(TemplateRoom):
         self.text_line_6 = "sein?"
 
         self.__show_qr = False
-        self.__pixmap = QPixmap("Verwaltung_QRCode.jpeg")
+        self.__pixmap = QPixmap("QR-Code.png")
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Verwaltung, self).mousePressEvent(ev)
