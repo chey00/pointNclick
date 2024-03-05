@@ -11,31 +11,31 @@ class BueroVogel(TemplateRoom):
 
         self.__counter=0
 
-        self.offset_balloon_x = 450
+        self.offset_balloon_x = 310
         self.offset_balloon_y = 100
         self.offset_balloon_length = 475
         self.offset_balloon_width = 200
 
-        self.set_offset_mouth(1150, 440, 70, 100)
+        self.set_offset_mouth(940, 390, 70, 100)
 
-        self.hitbox_gieskanne = QRect(940, 810, 100, 70)
+        self.hitbox_gieskanne = QRect(415, 745, 200, 100)
         self.append_hitbox(self.hitbox_gieskanne)
 
-        self.hitbox_raumzuweisung = QRect(970, 403, 50, 35)
+        self.hitbox_raumzuweisung = QRect(873, 340, 50, 35)
         self.append_hitbox(self.hitbox_raumzuweisung)
 
-        self.hitbox_acces = QRect(925, 130, 62, 62)
+        self.hitbox_acces = QRect(820, 67, 90, 90)
         self.append_hitbox(self.hitbox_acces)
 
-        self.hitbox_weiter = QRect(783, 230, 100, 25)
+        self.hitbox_weiter = QRect(645, 230, 100, 25)
         self.append_hitbox(self.hitbox_weiter)
 
-        self.text_line_1 = "Hallo, ich stehe hier vor dem"
-        self.text_line_2 = "Büro von Frau Vogel. Wenn Sie "
-        self.text_line_3 = "sehen wollen wie das Programm"
-        self.text_line_4 = "mit dem Bild von Frau Vogel"
-        self.text_line_5 = "entsteht, können Sie im Raum"
-        self.text_line_6 = "EG 101 gerne zusehen.  weiter"
+        self.text_line_1 = "Hallo, ich bin Frau Vogel und"
+        self.text_line_2 = "hier ist mein Büro. Ich bin"
+        self.text_line_3 = "Seminarleitung im Bereich Metall"
+        self.text_line_4 = "und die stellvertretende Schul-"
+        self.text_line_5 = "leitung für unsere Fachschulen."
+        self.text_line_6 = "                       weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(BueroVogel, self).mousePressEvent(ev)
@@ -61,14 +61,14 @@ class BueroVogel(TemplateRoom):
             self.text_line_2 = "sehen. Dennoch sorgt er für"
             self.text_line_3 = "eine stabile Internetverbindung."
             self.text_line_4 = ""
-            self.text_line_5 = "Unsere Schule ist mit mehreren"
+            self.text_line_5 = "Unsere Schule ist über mehrere"
             self.text_line_6 = "Glasfaserleitungen im Internet."
         elif self.hitbox_weiter.contains(mouse_pos):
             if self.__counter==0:
-                self.text_line_1 = "Frau Vogel hat die Seminar-"
-                self.text_line_2 = "leitung Metall und ist die"
-                self.text_line_3 = "stellvertretende Schulleitung"
-                self.text_line_4 = "für unsere Fachschulen."
+                self.text_line_1 = "Wenn Sie wissen wollen, wie"
+                self.text_line_2 = "dieses Programm enstanden ist,"
+                self.text_line_3 = "können Sie gern beim Raum"
+                self.text_line_4 = "EG 101 vorbeischauen."
                 self.text_line_5 = ""
                 self.text_line_6 = ""
 
