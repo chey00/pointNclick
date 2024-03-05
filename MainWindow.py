@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
 
-        self.central_widget = EG101(parent)
+        self.central_widget = Raum_digitale_Transformation(parent)
         #self.central_widget = Eingang(parent)
         self.setup_new_room()
 
