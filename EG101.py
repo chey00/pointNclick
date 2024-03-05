@@ -10,35 +10,35 @@ class EG101(TemplateRoom):
 
         self.init_room("EG101.jpg")
 
-        self.offset_balloon_x = 700
-        self.offset_balloon_y = 60
+        self.offset_balloon_x = 650
+        self.offset_balloon_y = 270
         self.offset_balloon_length = 570
         self.offset_balloon_width = 170
 
-        self.set_offset_mouth(770, 307, 50, 150)
+        self.set_offset_mouth(600, 530, 0, 100)
 
-        self.hitbox_forward = QRect(1156, 190, 100, 25)
+        self.hitbox_forward = QRect(1100, 402, 100, 25)
         self.append_hitbox(self.hitbox_forward)
 
         self.__counter = 0
 
-        self.hitbox_iPad = QRect(380, 570, 270, 75)
-        self.append_hitbox(self.hitbox_iPad)
+        self.hitbox_PC = QRect(480, 695, 240, 110)
+        self.append_hitbox(self.hitbox_PC)
 
-        self.hitbox_ordner = QRect(1, 670, 200, 75)
+        self.hitbox_ordner = QRect(1, 710, 207, 180)
         self.append_hitbox(self.hitbox_ordner)
 
-        self.hitbox_tafel = QRect(1282, 103, 175, 500)
+        self.hitbox_tafel = QRect(900, 470, 300, 200)
         self.append_hitbox(self.hitbox_tafel)
 
-        self.hitbox_stundenplan = QRect(445, 60, 250, 160)
+        self.hitbox_stundenplan = QRect(400, 340, 230, 125)
         self.append_hitbox(self.hitbox_stundenplan)
 
         self.text_line_1 = ""
         self.text_line_2 = "Hallo!"
-        self.text_line_3 = "Ich bin der Herr Roth."
+        self.text_line_3 = "Ich bin der Herr Gumbmann."
         self.text_line_4 = "Willkommen im Raum EG101."
-        self.text_line_5 = "Hier unterrichte ich die Klasse FSWI-2."
+        self.text_line_5 = "Hier unterrichte ich die Klasse FSWI-1."
         self.text_line_6 = "                               weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
@@ -49,21 +49,20 @@ class EG101(TemplateRoom):
         if self.hitbox_forward.contains(mouse_pos):
             if self.__counter == 0:
                 self.text_line_1 = ""
-                self.text_line_2 = "Ich unterrichte die Fächer"
-                self.text_line_3 = "Softwareentwicklungsprozesse"
-                self.text_line_4 = "und das Fach Programmieren."
+                self.text_line_2 = "Ich unterrichte das Fach"
+                self.text_line_3 = "Programmieren."
+                self.text_line_4 = ""
                 self.text_line_5 = ""
                 self.text_line_6 = ""
 
                 self.__counter = 1
 
-        if self.hitbox_iPad.contains(mouse_pos):
-            self.text_line_1 = "Das iPad, mit dem wir arbeiten."
-            self.text_line_2 = "Dieses wird den Schülern"
-            self.text_line_3 = "am Schuljahresanfang"
-            self.text_line_4 = "kostenlos zur Verfügung gestellt."
-            self.text_line_5 = "Die Wirtschaftsinformatiker bekommen"
-            self.text_line_6 = "dazu noch ein MacBook gestellt."
+        if self.hitbox_PC.contains(mouse_pos):
+            self.text_line_1 = "Die Schüler bekommen, ein iPad,"
+            self.text_line_2 = "am Schuljahresanfang kostenlos"
+            self.text_line_3 = "zur Verfügung gestellt."
+            self.text_line_4 = "Die Wirtschaftsinformatiker bekommen"
+            self.text_line_5 = "dazu noch ein MacBook gestellt."
 
         elif self.hitbox_ordner.contains(mouse_pos):
             self.text_line_1 = ""
