@@ -46,6 +46,10 @@ class TemplateRoom(QLabel):
         self.setMouseTracking(True)
         self.setCursor(Qt.CursorShape.CrossCursor)
 
+        self.player = QMediaPlayer()
+        self.audioOutput = QAudioOutput()
+        self.player.setAudioOutput(self.audioOutput)
+
     def mouseMoveEvent(self, ev: QMouseEvent) -> None:
         for hitbox in self.__hitboxes:
             if hitbox.contains(ev.pos()):
@@ -69,6 +73,9 @@ class TemplateRoom(QLabel):
         print(ev.pos())
         
         if self.hitbox_exit.contains(self.__mouse_pos):
+            if self.player.isPlaying():
+                self.player.setPosition(self.player.duration())
+
             self.leave_room.emit(self.__room_name)
         elif self.hitbox_easter_egg.contains(self.__mouse_pos):
             self.found_easter_egg.emit(self.__room_name)
@@ -180,10 +187,7 @@ class TemplateRoom(QLabel):
         self.__show_speech_bubble = visible
 
     def play_sound(self, source_path):
-        self.player = QMediaPlayer()
-        self.audioOutput = QAudioOutput()
-        self.player.setAudioOutput(self.audioOutput)
-
-        self.player.setSource(QUrl.fromLocalFile(source_path))
-        self.audioOutput.setVolume(50)
-        self.player.play()
+        if not self.player.isPlaying():
+            self.player.setSource(QUrl.fromLocalFile(source_path))
+            self.audioOutput.setVolume(50)
+            self.player.play()
