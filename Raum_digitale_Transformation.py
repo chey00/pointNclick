@@ -65,31 +65,24 @@ class Raum_digitale_Transformation(TemplateRoom):
         mouse_pos = ev.pos()
 
         if self.hitbox_mouth.contains(mouse_pos):
-            #self.stop_sound()
             self.play_sound("Raum_digitale_Transformation_Vorlese_assistent.mp3")
             self.update()
         if self.hitbox_roboter_01.contains(mouse_pos):
-            #self.stop_sound()
             self.play_sound("Raum_digitale_Transformation_works.mp3")
             self.update()
         if self.hitbox_roboter_02.contains(mouse_pos):
-            #self.stop_sound()
             self.play_sound("Raum_digitale_Transformation_works.mp3")
             self.update()
         if self.hitbox_notaus_01.contains(mouse_pos):
-            #self.stop_sound()
             self.play_sound("Raum_digitale_Transformation_power-down.mp3")
             self.update()
         if self.hitbox_notaus_02.contains(mouse_pos):
-            #self.stop_sound()
             self.play_sound("Raum_digitale_Transformation_power-down.mp3")
             self.update()
         if self.hitbox_notaus_03.contains(mouse_pos):
-            #self.stop_sound()
             self.play_sound("Raum_digitale_Transformation_power-down.mp3")
             self.update()
         if self.hitbox_notaus_04.contains(mouse_pos):
-            #self.stop_sound()
             self.play_sound("Raum_digitale_Transformation_power-down.mp3")
             self.update()
 
