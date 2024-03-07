@@ -58,33 +58,33 @@ class EG101(TemplateRoom):
                 self.__counter = 1
 
         if self.hitbox_PC.contains(mouse_pos):
-            self.text_line_1 = "Die Schüler bekommen, ein iPad,"
+            self.text_line_1 = "Die Schüler bekommen ein iPad,"
             self.text_line_2 = "am Schuljahresanfang kostenlos"
             self.text_line_3 = "zur Verfügung gestellt."
-            self.text_line_4 = "Die Wirtschaftsinformatiker bekommen"
-            self.text_line_5 = "dazu noch ein MacBook gestellt."
+            self.text_line_4 = "Die Wirtschaftsinformatiker erhalten"
+            self.text_line_5 = "dazu noch ein MacBook Air."
             self.text_line_6 = ""
 
         elif self.hitbox_ordner.contains(mouse_pos):
             self.text_line_1 = ""
-            self.text_line_2 = "Wir schreiben mindestens"
-            self.text_line_3 = "zwei Stegreifaufgaben und"
-            self.text_line_4 = "eine Schulaufgabe"
-            self.text_line_5 = "pro Halbjahr!"
+            self.text_line_2 = "Wir schreiben mindestens zwei Leistungs-"
+            self.text_line_3 = "nachweise pro Halbjahr: eine Stegreifaufgaben "
+            self.text_line_4 = "und eine Schulaufgabe."
+            self.text_line_5 = ""
             self.text_line_6 = ""
 
         elif self.hitbox_tafel.contains(mouse_pos):
             self.text_line_1 = "Im ersten Schuljahr,"
             self.text_line_2 = "haben Wirtschaftsinformatiker"
-            self.text_line_3 = "eine 37-Stunden Woche."
+            self.text_line_3 = "eine 37-Stunden-Woche."
             self.text_line_4 = "Parallel zum Bachelor, können Sie"
-            self.text_line_5 = "das Fachabitur durch eine "
+            self.text_line_5 = "das Fachabi durch eine "
             self.text_line_6 = "Ergänzungsprüfung in Englisch erwerben."
 
         elif self.hitbox_stundenplan.contains(mouse_pos):
             self.text_line_1 = "Lehrplan:"
             self.text_line_2 = "Deutsch, Englisch, Sozialkunde,"
-            self.text_line_3 = "Programmieren 1-3, Betriebswirtschaft,"
+            self.text_line_3 = "Programmieren, Betriebswirtschaft,"
             self.text_line_4 = "Datenbanken, Betriebssysteme,"
             self.text_line_5 = "Informations- & Kommunikationstechnik,"
             self.text_line_6 = "Softwareentwicklungsprozesse."

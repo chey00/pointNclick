@@ -72,7 +72,7 @@ class OSTD(TemplateRoom):
 
         if self.hitbox_schulregeln.contains(mouse_pos):
             self.text_line_1 = "Sie haben das Leitbild unserer "
-            self.text_line_2 = "Schule gefunden. Der Wertschätzende "
+            self.text_line_2 = "Schule gefunden. Der wertschätzende "
             self.text_line_3 = "Umgang an unserer Schule ist "
             self.text_line_4 = "der Schulfamilie eine "
             self.text_line_5 = "Herzensangelegenheit."

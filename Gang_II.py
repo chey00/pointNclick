@@ -40,8 +40,8 @@ class Gang_II(TemplateRoom):
             self.text_line_1 = "Du hast die Bilder von den"
             self.text_line_2 = "erfolgreichen Jahrgängen vor"
             self.text_line_3 = "uns gefunden."
-            self.text_line_4 = ""
-            self.text_line_5 = "Vielleicht hängst du auch in"
-            self.text_line_6 = "zwei Jahren hier?"
+            self.text_line_4 = "Sehen wir dein Bild in"
+            self.text_line_5 = "zwei Jahren hier?"
+            self.text_line_6 = ""
 
         self.update()

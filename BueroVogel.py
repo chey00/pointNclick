@@ -43,18 +43,18 @@ class BueroVogel(TemplateRoom):
         mouse_pos = ev.pos()
 
         if self.hitbox_gieskanne.contains(mouse_pos):
-            self.text_line_1 = "Das ist eine Gießkanne"
-            self.text_line_2 = ""
+            self.text_line_1 = "Das ist eine Gießkanne."
+            self.text_line_2 = "Damit gießen wir unsere Pflanzen."
             self.text_line_3 = ""
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = "                       "
         elif self.hitbox_raumzuweisung.contains(mouse_pos):
-            self.text_line_1 = "Hier ist Die Raumzuweisung:"
-            self.text_line_2 = "EG-105."
+            self.text_line_1 = "Hier ist die Raumzuweisung:"
+            self.text_line_2 = "EG 105."
             self.text_line_3 = "Diese Schilder sind"
             self.text_line_4 = "an jedem Raum, um "
-            self.text_line_5 = "Missverständnisse zu vermeiden."
+            self.text_line_5 = "die Orientierung zu erleichtern."
             self.text_line_6 = ""
         elif self.hitbox_acces.contains(mouse_pos):
             self.text_line_1 = "Der Access Point ist kaum zu"
@@ -62,13 +62,13 @@ class BueroVogel(TemplateRoom):
             self.text_line_3 = "eine stabile Internetverbindung."
             self.text_line_4 = "Unsere Schule ist über mehrere "
             self.text_line_5 = "Glasfaserleitungen mit dem "
-            self.text_line_6 = "Internet verbunden.    Weiter"
+            self.text_line_6 = "Internet verbunden."
 
         elif self.hitbox_weiter.contains(mouse_pos):
             if self.__counter==0:
                 self.text_line_1 = "Wenn Sie wissen wollen, wie"
-                self.text_line_2 = "dieses Programm enstanden ist,"
-                self.text_line_3 = "können Sie gern beim Raum"
+                self.text_line_2 = "dieses Programm entstanden ist,"
+                self.text_line_3 = "können Sie gerne im Raum"
                 self.text_line_4 = "EG 101 vorbeischauen."
                 self.text_line_5 = ""
                 self.text_line_6 = ""

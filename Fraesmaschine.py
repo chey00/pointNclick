@@ -27,7 +27,7 @@ class Fraesmaschine(TemplateRoom):
 
         self.__counter = 0
 
-        self.text_line_1 = "Hi ich bin der Alex und "
+        self.text_line_1 = "Hi, ich bin der Alex und "
         self.text_line_2 = "besuche die Fachschule"
         self.text_line_3 = "für Wirtschaftsinformatik."
         self.text_line_4 = ""
@@ -81,8 +81,8 @@ class Fraesmaschine(TemplateRoom):
         elif self.hitbox_easter_egg.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = ""
-            self.text_line_3 = "Glückwunsch Sie haben"
-            self.text_line_4 = "eine Tasse gefunden!!!"
+            self.text_line_3 = "Glückwunsch du hast"
+            self.text_line_4 = "eine Tasse gefunden!"
             self.text_line_5 = ""
             self.text_line_6 = ""
 

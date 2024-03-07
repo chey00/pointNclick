@@ -35,7 +35,7 @@ class Gang_I(TemplateRoom):
 
         if self.hitbox_kicker.contains(mouse_pos):
             self.text_line_1 = "Hier wurde schon so mancher"
-            self.text_line_2 = "Jubelschrei vernommen,"
+            self.text_line_2 = "Jubelschrei vernommen"
             self.text_line_3 = "und manche Träne vergossen."
             self.text_line_4 = ""
             self.text_line_5 = ""

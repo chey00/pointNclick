@@ -32,10 +32,10 @@ class Eingang(TemplateRoom):
         self.hitbox_easter_egg = QRect(740, 410, 35, 35)
 
         self.text_line_1 = ""
-        self.text_line_2 = "Hey,"
-        self.text_line_3 = "herzlich willkommen bei"
-        self.text_line_4 = "SBS Herzogenaurach!"
-        self.text_line_5 = ""
+        self.text_line_2 = "Hallo,"
+        self.text_line_3 = "herzlich willkommen zum"
+        self.text_line_4 = "Tag der offenen Tür"
+        self.text_line_5 = "der SBS Herzogenaurach."
         self.text_line_6 = "                                    weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
@@ -85,7 +85,7 @@ class Eingang(TemplateRoom):
 
             elif self.__counter == 2:
                 self.text_line_1 = ""
-                self.text_line_2 = "Die grünen Hitboxen zeigen dir an"
+                self.text_line_2 = "Die grünen Hitboxen zeigen dir an,"
                 self.text_line_3 = "worauf du klicken kannst."
                 self.text_line_4 = "Falls du Fragen hast melde "
                 self.text_line_5 = "dich gerne bei uns."
@@ -112,7 +112,7 @@ class Eingang(TemplateRoom):
                 self.text_line_6 = ""
 
             elif self.__counter == 5:
-                self.text_line_1 = "Deine erste Tasse hast du bereits gefunden."
+                self.text_line_1 = ""
                 self.text_line_2 = ""
                 self.text_line_3 = "Besuche jede Raum"
                 self.text_line_4 = "und finde die Tassen!."
@@ -125,7 +125,7 @@ class Eingang(TemplateRoom):
                 self.text_line_1 = ""
                 self.text_line_2 = ""
                 self.text_line_3 = ""
-                self.text_line_4 = "Viel Spaß bei der Suche!!"
+                self.text_line_4 = "Viel Spaß bei der Suche!"
                 self.text_line_5 = ""
                 self.text_line_6 = ""
 

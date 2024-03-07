@@ -25,11 +25,11 @@ class Gang_IV(TemplateRoom):
         self.hitbox_zumMetal3DDrucker = QRect(1025, 225, 225, 550)
         self.append_hitbox(self.hitbox_zumMetal3DDrucker)
 
-        self.text_line_1 = "Herzlich willkommen! Hier geht es"
-        self.text_line_2 = "zu den großen Maschinen!"
-        self.text_line_3 = "Rechts geht es zum 3D Drucker."
-        self.text_line_4 = "Die linke Tür bringt Sie zur"
-        self.text_line_5 = "Fräsmaschine."
+        self.text_line_1 = "Hier geht es zu den großen Maschinen!"
+        self.text_line_2 = "Rechts geht es zum Metall-3D-Drucker."
+        self.text_line_3 = "Die linke Tür bringt Sie zum"
+        self.text_line_4 = "Raum der digitalen Transformation"
+        self.text_line_5 = "Gerade aus geht es zu den Fräsmaschinen "
         self.text_line_6 = ""
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:

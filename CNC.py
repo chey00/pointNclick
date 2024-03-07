@@ -18,8 +18,8 @@ class CNC(TemplateRoom):
 
         self.text_line_1 = "Hallo, ich bin Philipp!"
         self.text_line_2 = ""
-        self.text_line_3 = "Willkommen in der Werkstatt."
-        self.text_line_4 = "Sehe dich gerne um aber vergesse"
+        self.text_line_3 = "Das ist unsere CNC-Werkstatt."
+        self.text_line_4 = "Sehe dich gerne um, aber vergesse"
         self.text_line_5 = "deine Schutzbrille nicht."
 
         self.hitbox_monitor = QRect(950, 420, 130, 100)
@@ -37,7 +37,7 @@ class CNC(TemplateRoom):
         mouse_pos = ev.pos()
 
         if self.hitbox_fraeser.contains(mouse_pos):
-            self.text_line_1 = "Achtung der Fräser ist Scharf!"
+            self.text_line_1 = "Achtung der Fräser ist scharf!"
             self.text_line_2 = ""
             self.text_line_3 = ""
             self.text_line_4 = ""

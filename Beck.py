@@ -30,7 +30,7 @@ class Beck(TemplateRoom):
         self.append_hitbox(self.hitbox_kanne)
 
         self.text_line_1 = "Guten Tag,"
-        self.text_line_2 = "ich bin Herr Beck der Fachschulleiter."
+        self.text_line_2 = "ich bin Herr Beck, der Fachschulleiter."
         self.text_line_3 = "Hier finden Sie mein Büro,"
         self.text_line_4 = "wenn Sie mich suchen."
 
@@ -51,9 +51,9 @@ class Beck(TemplateRoom):
 
         elif self.hitbox_door.contains(mouse_pos):
             self.text_line_1 = ""
-            self.text_line_2 = "Sorry das Büro"
-            self.text_line_3 = "ist Abgeschlossen"
-            self.text_line_4 = "schauen Sie doch mal wo anders nach."
+            self.text_line_2 = "Sorry, das Büro ist abgeschlossen."
+            self.text_line_3 = ""
+            self.text_line_4 = "Schauen Sie sich noch andere Räume an."
             self.text_line_5 = ""
             self.text_line_6 = ""
 
@@ -62,7 +62,7 @@ class Beck(TemplateRoom):
         elif self.hitbox_kanne.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = "Danke, aber die Blumen"
-            self.text_line_3 = "sind heute schon gegossen worden"
+            self.text_line_3 = "sind heute schon gegossen worden."
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""
@@ -71,8 +71,8 @@ class Beck(TemplateRoom):
 
         elif self.hitbox_loescher.contains(mouse_pos):
             self.text_line_1 = ""
-            self.text_line_2 = "Oh Nein !"
-            self.text_line_3 = "nicht auf den Feuerlöscher!"
+            self.text_line_2 = "Oh, nein!"
+            self.text_line_3 = "Nicht auf den Feuerlöscher!"
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""

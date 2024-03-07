@@ -25,7 +25,7 @@ class Zwischenraum_Treppenhaus(TemplateRoom):
         self.text_line_2 = ""
         self.text_line_3 = "Über das Treppenhaus gelangst du"
         self.text_line_4 = "nach unten. Gehst du nach links,"
-        self.text_line_5 = "siehst du die Tassengravur."
+        self.text_line_5 = "siehst du den Lasergravierer."
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Zwischenraum_Treppenhaus, self).mousePressEvent(ev)
