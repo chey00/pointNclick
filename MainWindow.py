@@ -15,7 +15,7 @@ from Fraesmaschine import Fraesmaschine
 from Gang_I import Gang_I
 from Gang_II import Gang_II
 from Gang_III import Gang_III
-from Gang_IV import Ganglinks
+from Gang_IV import Gang_IV
 from Gang_V import GangTech
 from Schulleitung import OSTD
 from Stellvertretung import StvRoom
@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
         self.__random_generator = QRandomGenerator().securelySeeded()
 
         self.__set_rooms = set()
-        self.__number_of_easter_eggs = 4
+        self.__number_of_easter_eggs = 6
 
         self.__status_bar = QStatusBar(parent)
         self.setStatusBar(self.__status_bar)
@@ -55,8 +55,7 @@ class MainWindow(QMainWindow):
         about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
 
-        self.central_widget = Raum_digitale_Transformation(parent)
-        #self.central_widget = Eingang(parent)
+        self.central_widget = Gang_IV(parent)
         self.setup_new_room()
 
     def setup_new_room(self):
@@ -118,7 +117,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Raum_digitale_Transformation()
             self.setup_new_room()
         elif new_room == "Gang_IV.jpg":
-            self.central_widget = Ganglinks()
+            self.central_widget = Gang_IV()
             self.setup_new_room()
         elif new_room == "EG102Reinhart.jpg":
             self.central_widget = EG102Reinhart()
@@ -167,7 +166,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Aula()
             self.setup_new_room()
         elif old_room == "Fraesmaschine.jpg":
-            self.central_widget = Ganglinks()
+            self.central_widget = Gang_IV()
             self.setup_new_room()
         elif old_room == "EG102.jpg":
             self.central_widget = Gang_II()
@@ -194,7 +193,7 @@ class MainWindow(QMainWindow):
             self.central_widget = GangTech()
             self.setup_new_room()
         elif old_room == "Raum_digitale_Transformation.jpg":
-            self.central_widget = Ganglinks()
+            self.central_widget = Gang_IV()
             self.setup_new_room()
         elif old_room == "Gang_IV.jpg":
             self.central_widget = Treppenhaus()
