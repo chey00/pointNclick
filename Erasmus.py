@@ -3,9 +3,10 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
-class EG102Reinhart(TemplateRoom):
+
+class Erasmus(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Erasmus, self).__init__(parent)
 
         self.init_room("Erasmus.jpg")
 
@@ -32,13 +33,9 @@ class EG102Reinhart(TemplateRoom):
         self.text_line_6 = "                       weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
-        super(EG102Reinhart, self).mousePressEvent(ev)
+        super(Erasmus, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-
-
-
-
 
         if self.hitbox_forward.contains(mouse_pos):
             if self.__counter == 0:
@@ -99,6 +96,5 @@ class EG102Reinhart(TemplateRoom):
                 self.text_line_4 = "Sie fragen sich was das ist?"
                 self.text_line_5 = "Ich erkläre es Ihnen."
                 self.text_line_6 = "                       weiter"
+
                 self.update()
-
-

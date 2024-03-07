@@ -35,7 +35,7 @@ class Gang_II(TemplateRoom):
         if self.hitbox_zumGang_III.contains(mouse_pos):
             self.new_room.emit("Gang_III.jpg")
         elif self.hitbox_zumEG102.contains(mouse_pos):
-            self.new_room.emit("EG102.jpg")
+            self.new_room.emit("Erasmus.jpg")
         elif self.hitbox_bilder.contains(mouse_pos):
             self.text_line_1 = "Du hast die Bilder von den"
             self.text_line_2 = "erfolgreichen Jahrgängen vor"

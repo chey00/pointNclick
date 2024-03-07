@@ -9,9 +9,8 @@ from BueroVogel import BueroVogel
 from CNC import CNC
 from DreiDDruck import DreiDDruck
 from EG101 import EG101
-from EG102 import EG102
 from Eingang import Eingang
-from Erasmus import EG102Reinhart
+from Erasmus import Erasmus
 from Fraesmaschine import Fraesmaschine
 from Gang_I import Gang_I
 from Gang_II import Gang_II
@@ -56,7 +55,7 @@ class MainWindow(QMainWindow):
         about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
 
-        self.central_widget = Eingang(parent)
+        self.central_widget = Erasmus(parent)
         self.setup_new_room()
 
     def setup_new_room(self):
@@ -90,9 +89,6 @@ class MainWindow(QMainWindow):
         elif new_room == "Fraesmaschine.jpg":
             self.central_widget = Fraesmaschine()
             self.setup_new_room()
-        elif new_room == "EG102.jpg":
-            self.central_widget = EG102()
-            self.setup_new_room()
         elif new_room == "Verwaltung.jpg":
             self.central_widget = Verwaltung()
             self.setup_new_room()
@@ -120,8 +116,8 @@ class MainWindow(QMainWindow):
         elif new_room == "Gang_IV.jpg":
             self.central_widget = Gang_IV()
             self.setup_new_room()
-        elif new_room == "EG102Reinhart.jpg":
-            self.central_widget = EG102Reinhart()
+        elif new_room == "Erasmus.jpg":
+            self.central_widget = Erasmus()
             self.setup_new_room()
         elif new_room == "Beck.png":
             self.central_widget = Beck()
@@ -172,7 +168,7 @@ class MainWindow(QMainWindow):
         elif old_room == "Fraesmaschine.jpg":
             self.central_widget = Gang_IV()
             self.setup_new_room()
-        elif old_room == "EG102.jpg":
+        elif old_room == "Erasmus.jpg":
             self.central_widget = Gang_II()
             self.setup_new_room()
         elif old_room == "Verwaltung.jpg":
@@ -209,7 +205,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Gang_III()
             self.setup_new_room()
         elif old_room == "Erasmus.jpg":
-            self.central_widget = EG102()
+            self.central_widget = Erasmus()
             self.setup_new_room()
         elif old_room == "Beck.png":
             self.central_widget = Gang_III()
