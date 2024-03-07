@@ -50,7 +50,7 @@ class DreiDDruck(TemplateRoom):
         if self.hitbox_water.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = ""
-            self.text_line_3 = "WASSER MARSCH 11!!1!!"
+            self.text_line_3 = "WASSER MARSCH !!!!!"
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""
