@@ -12,9 +12,9 @@ class Gang_IV(TemplateRoom):
 
         self.offset_balloon_x = int((1440 - 500) / 2)
         self.offset_balloon_y = 25
-        self.offset_balloon_length = 565
+        self.offset_balloon_length = 600
         self.offset_balloon_width = 150
-        self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length, self.offset_balloon_y + self.offset_balloon_width, 0, 0)
+        self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length, self.offset_balloon_y + self.offset_balloon_width, 10, 10)
 
         self.hitbox_zumRaumDigitaleTransformation = QRect(225, 225, 300, 500)
         self.append_hitbox(self.hitbox_zumRaumDigitaleTransformation)

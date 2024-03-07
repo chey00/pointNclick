@@ -65,7 +65,7 @@ class DreiDDruck(TemplateRoom):
             self.text_line_2 = "Das war der Notaus !"
             self.text_line_3 = ""
             self.text_line_4 = ""
-            self.text_line_5 = "Alles Dunkel D:"
+            self.text_line_5 = "Alles Dunkel..."
             self.text_line_6 = ""
 
             self.init_room("DreiDDruck_Dark_Room.jpg")
