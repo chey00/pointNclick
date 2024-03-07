@@ -60,6 +60,8 @@ class DreiDDruck(TemplateRoom):
 
             self.update()
 
+            print("test")
+
         if self.hitbox_notaus.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = "Das war der Notaus !"
