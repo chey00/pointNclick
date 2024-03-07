@@ -3,65 +3,63 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
+
 class Lasergravierer(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
         self.init_room("Lasergravierer.jpg")
 
-        self.offset_balloon_x = 950
+        self.offset_balloon_x = 975
         self.offset_balloon_y = 15
         self.offset_balloon_length = 450
         self.offset_balloon_width = 200
-        self.set_offset_mouth(960, 15, 0, 0)
+        self.set_offset_mouth(975, 215, 10, 10)
 
-        self.hitbox_mouth = QRect(520, 355, 75, 75)
-        self.append_hitbox(self.hitbox_mouth)
+        self.hitbox_laptop = QRect(1000, 275, 400, 200)
+        self.append_hitbox(self.hitbox_laptop)
 
-        self.hitbox_door = QRect(0, -100, 140, 1000)
-        self.append_hitbox(self.hitbox_door)
+        self.hitbox_laser = QRect(400, 150, 350, 300)
+        self.append_hitbox(self.hitbox_laser)
 
-        self.hitbox_schulregeln = QRect(161, 195, 190, 200)
-        self.append_hitbox(self.hitbox_schulregeln)
+        self.hitbox_easter_egg = QRect(825, 300, 100, 75)
 
-        self.hitbox_easter_egg = QRect(825, 300, 80, 80)
-
-        self.text_line_1 = "Herzlich Willkommen!"
-        self.text_line_2 = ""
-        self.text_line_3 = "Mein Name ist Hr. Wirsching."
-        self.text_line_4 = "Ich bin hier der Schulleiter."
-        self.text_line_5 = ""
-        self.text_line_6 = "Schön, dass Sie hier sind!"
+        self.text_line_1 = "Hallo,"
+        self.text_line_2 = "ich bin Michell. Du bist im"
+        self.text_line_3 = "Raum für den Lasergravierer."
+        self.text_line_4 = "Sicher willst du deine Tasse"
+        self.text_line_5 = "abholen. Hast du schon alle"
+        self.text_line_6 = "Easter Eggs gefunden?"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Lasergravierer, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
 
-        if self.hitbox_mouth.contains(mouse_pos):
-            self.text_line_1 = "Sollten Sie Fragen zu unserer"
-            self.text_line_2 = "Schule haben, wenden Sie sich"
-            self.text_line_3 = "gerne an mich oder an"
-            self.text_line_4 = "unsere Lehrkräfte."
-            self.text_line_5 = "Ich wünsche Ihnen einen schönen"
-            self.text_line_6 = "Aufenthalt bei uns!"
-
-            self.update()
-
-        if self.hitbox_door.contains(mouse_pos):
-            self.text_line_1 = "Das ist mein Arbeitszimmer."
-            self.text_line_2 = "Von hier aus leite ich unsere"
-            self.text_line_3 = "Schule und bearbeite alle"
-            self.text_line_4 = "wichtigen Aufgaben, damit alles"
-            self.text_line_5 = "reibungslos abläuft."
+        if self.hitbox_laptop.contains(mouse_pos):
+            self.text_line_1 = "Nicht nur die Wirtschaftsin-"
+            self.text_line_2 = "formatik nutzt bei uns Laptops."
+            self.text_line_3 = "Hier wird deine individuelle"
+            self.text_line_4 = "Tasse designt und der Laser-"
+            self.text_line_5 = "gravierer angesteuert."
             self.text_line_6 = ""
 
             self.update()
 
+        if self.hitbox_laser.contains(mouse_pos):
+            self.text_line_1 = "Genau hier wird deine Tasse"
+            self.text_line_2 = "individuell graviert!"
+            self.text_line_3 = ""
+            self.text_line_4 = "Sonst können wir damit nicht"
+            self.text_line_5 = "nur Tassen, sondern auch Ober-"
+            self.text_line_6 = "flächen bearbeiten."
+
+            self.update()
+
         if self.hitbox_easter_egg.contains(mouse_pos):
-            self.text_line_1 = ""
-            self.text_line_2 = "Genau hier wird deine Tasse"
-            self.text_line_3 = "individuell graviert!"
+            self.text_line_1 = "Die Tasse hier, hast du schon"
+            self.text_line_2 = "mal gefunden. Viel Spaß bei"
+            self.text_line_3 = "der weiteren Suche!"
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""
@@ -69,16 +67,3 @@ class Lasergravierer(TemplateRoom):
             self.play_sound("TemplateRoom_found_cup.mp3")
 
             self.update()
-
-        if self.hitbox_schulregeln.contains(mouse_pos):
-            self.text_line_1 = "Sie haben das Leitbild unserer Schule gefunden."
-            self.text_line_2 = "Der Wertschätzende Umgang an unserer Schule"
-            self.text_line_3 = "ist der Schulfamilie eine Herzensangelegenheit."
-            self.text_line_4 = ""
-            self.text_line_5 = ""
-            self.text_line_6 = ""
-
-            self.update()
-
-
-
