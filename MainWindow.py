@@ -7,6 +7,7 @@ from Aula import Aula
 from Beck import Beck
 from BueroVogel import BueroVogel
 from CNC import CNC
+from DreiDDruck import DreiDDruck
 from EG101 import EG101
 from EG102 import EG102
 from Eingang import Eingang
@@ -131,6 +132,9 @@ class MainWindow(QMainWindow):
         elif new_room == "Lasergravierer.jpg":
             self.central_widget = Lasergravierer()
             self.setup_new_room()
+        elif new_room == "DreiDDruck_Normal.jpg":
+            self.central_widget = DreiDDruck()
+            self.setup_new_room()
         else:
             print("Fehler: new_room nicht vergeben")
             
@@ -179,6 +183,9 @@ class MainWindow(QMainWindow):
             self.setup_new_room()
         elif old_room == "Aula.jpg":
             self.central_widget = Eingang()
+            self.setup_new_room()
+        elif old_room == "DreiDDruck_Normal.jpg":
+            self.central_widget = Gang_IV()
             self.setup_new_room()
         elif old_room == "BueroVogel.jpg":
             self.central_widget = Gang_III()

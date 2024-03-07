@@ -42,6 +42,6 @@ class Gang_IV(TemplateRoom):
         elif self.hitbox_zurFraesmaschine.contains(mouse_pos):
             self.new_room.emit("Fraesmaschine.jpg")
         elif self.hitbox_zumMetal3DDrucker.contains(mouse_pos):
-            self.new_room.emit("DreiDDruck.jpg")
+            self.new_room.emit("DreiDDruck_Normal.jpg")
 
         #self.update()
