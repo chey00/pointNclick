@@ -31,7 +31,7 @@ class BueroVogel(TemplateRoom):
         self.append_hitbox(self.hitbox_weiter)
 
         self.text_line_1 = "Hallo, ich bin Frau Vogel und"
-        self.text_line_2 = "hier ist mein Büro. Ich bin"
+        self.text_line_2 = "hier ist mein Büro. Ich bin die"
         self.text_line_3 = "Seminarleitung im Bereich Metall"
         self.text_line_4 = "und die stellvertretende Schul-"
         self.text_line_5 = "leitung für unsere Fachschulen."
@@ -60,9 +60,10 @@ class BueroVogel(TemplateRoom):
             self.text_line_1 = "Der Access Point ist kaum zu"
             self.text_line_2 = "sehen. Dennoch sorgt er für"
             self.text_line_3 = "eine stabile Internetverbindung."
-            self.text_line_4 = ""
-            self.text_line_5 = "Unsere Schule ist über mehrere"
-            self.text_line_6 = "Glasfaserleitungen im Internet."
+            self.text_line_4 = "Unsere Schule ist über mehrere "
+            self.text_line_5 = "Glasfaserleitungen mit dem "
+            self.text_line_6 = "Internet verbunden.    Weiter"
+
         elif self.hitbox_weiter.contains(mouse_pos):
             if self.__counter==0:
                 self.text_line_1 = "Wenn Sie wissen wollen, wie"

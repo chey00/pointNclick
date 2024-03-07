@@ -19,7 +19,7 @@ class CNC(TemplateRoom):
         self.text_line_1 = "Hallo, ich bin Philipp!"
         self.text_line_2 = ""
         self.text_line_3 = "Willkommen in der Werkstatt."
-        self.text_line_4 = "Sieh dich gerne um aber vergesse"
+        self.text_line_4 = "Sehe dich gerne um aber vergesse"
         self.text_line_5 = "deine Schutzbrille nicht."
 
         self.hitbox_monitor = QRect(950, 420, 130, 100)

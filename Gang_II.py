@@ -22,7 +22,7 @@ class Gang_II(TemplateRoom):
         self.hitbox_bilder = QRect(1150, 225, 200, 150)
         self.append_hitbox(self.hitbox_bilder)
 
-        self.text_line_1 = "Hier ist die FSWI-1 zuhause."
+        self.text_line_1 = "Hier ist die FSWI-2 zuhause."
         self.text_line_2 = ""
         self.text_line_3 = "Sprich Freund und tritt ein."
         self.text_line_4 = ""
@@ -37,11 +37,11 @@ class Gang_II(TemplateRoom):
         elif self.hitbox_zumEG102.contains(mouse_pos):
             self.new_room.emit("EG102.jpg")
         elif self.hitbox_bilder.contains(mouse_pos):
-            self.text_line_1 = "Sie haben unsere Bildervon den"
+            self.text_line_1 = "Du hast die Bilder von den"
             self.text_line_2 = "erfolgreichen Jahrgängen vor"
-            self.text_line_3 = "Ihnen gefunden."
+            self.text_line_3 = "uns gefunden."
             self.text_line_4 = ""
-            self.text_line_5 = "Vielleicht hängen Sie auch in"
+            self.text_line_5 = "Vielleicht hängst du auch in"
             self.text_line_6 = "zwei Jahren hier?"
 
         self.update()

@@ -28,7 +28,7 @@ class EG102Reinhart(TemplateRoom):
         self.text_line_2 = "Willkommen im Raum EG102."
         self.text_line_3 = "Ich heiße Frau Reinhart und"
         self.text_line_4 = "bin die Klassenleitung"
-        self.text_line_5 = "der Klasse FSWI-1."
+        self.text_line_5 = "der Klasse FSWI-2."
         self.text_line_6 = "                       weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:

@@ -33,7 +33,7 @@ class Eingang(TemplateRoom):
 
         self.text_line_1 = ""
         self.text_line_2 = "Hey,"
-        self.text_line_3 = "herzlich Willkommen am"
+        self.text_line_3 = "herzlich willkommen bei"
         self.text_line_4 = "SBS Herzogenaurach!"
         self.text_line_5 = ""
         self.text_line_6 = "                                    weiter"
@@ -47,7 +47,7 @@ class Eingang(TemplateRoom):
             self.text_line_1 = ""
             self.text_line_2 = ""
             self.text_line_3 = "GLÜCKWUNSCH!!!"
-            self.text_line_4 = "Sie haben Ihre erste Kaffeetasse gefunden."
+            self.text_line_4 = "Du hast deine erste Kaffeetasse gefunden."
             self.text_line_5 = ""
             self.text_line_6 = "                                    weiter"
 
@@ -66,7 +66,7 @@ class Eingang(TemplateRoom):
             if self.__counter == 0:
                 self.text_line_1 = ""
                 self.text_line_2 = "Ich heiße David Ojimba"
-                self.text_line_3 = "und begleite Sie heute"
+                self.text_line_3 = "und begleite dich heute"
                 self.text_line_4 = "durch unsere Schule."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
@@ -75,8 +75,8 @@ class Eingang(TemplateRoom):
 
             elif self.__counter == 1:
                 self.text_line_1 = "Hier ist unser Point & Click Adventure."
-                self.text_line_2 = "Dieses haben wir für Sie erstellt,"
-                self.text_line_3 = "um Ihnen einen Einblick in unsere"
+                self.text_line_2 = "Wir haben es für dich erstellt,"
+                self.text_line_3 = "um dir einen Einblick in unsere"
                 self.text_line_4 = "verschiedenen Fachschulen zu geben."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
@@ -85,10 +85,10 @@ class Eingang(TemplateRoom):
 
             elif self.__counter == 2:
                 self.text_line_1 = ""
-                self.text_line_2 = "Wenn Sie etwas anklicken/benutzen"
-                self.text_line_3 = "können, dann verändert sich der Cursor."
-                self.text_line_4 = "Dieser wird dann zu einem Zeigefinger."
-                self.text_line_5 = ""
+                self.text_line_2 = "Die grünen Hitboxen zeigen dir an"
+                self.text_line_3 = "worauf du klicken kannst."
+                self.text_line_4 = "Falls du Fragen hast melde "
+                self.text_line_5 = "dich gerne bei uns."
                 self.text_line_6 = "                                    weiter"
 
                 self.__counter = 3
@@ -96,8 +96,8 @@ class Eingang(TemplateRoom):
             elif self.__counter == 3:
                 self.text_line_1 = "In manchen Räumen ist eine Tasse versteckt."
                 self.text_line_2 = ""
-                self.text_line_3 = "Gehen Sie von Raum zu Raum,"
-                self.text_line_4 = "denn am Ende habt Ihr die Chance"
+                self.text_line_3 = "Gehe von Raum zu Raum,"
+                self.text_line_4 = "denn am Ende hast du die Chance"
                 self.text_line_5 = "eine Kaffeetasse zu gewinnen."
                 self.text_line_6 = "                                    weiter"
 
@@ -106,16 +106,16 @@ class Eingang(TemplateRoom):
             elif self.__counter == 4:
                 self.text_line_1 = ""
                 self.text_line_2 = ""
-                self.text_line_3 = "Naaa, haben Sie schon"
+                self.text_line_3 = "Naaa, hast du schon"
                 self.text_line_4 = "eine Tasse entdeckt?"
                 self.text_line_5 = ""
                 self.text_line_6 = ""
 
             elif self.__counter == 5:
-                self.text_line_1 = "Ihre erste Tasse haben Sie bereits gefunden."
+                self.text_line_1 = "Deine erste Tasse hast du bereits gefunden."
                 self.text_line_2 = ""
-                self.text_line_3 = "Gehen Sie von Raum zu Raum"
-                self.text_line_4 = "und sammeln Sie diese."
+                self.text_line_3 = "Besuche jede Raum"
+                self.text_line_4 = "und finde die Tassen!."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 

@@ -42,8 +42,8 @@ class Beck(TemplateRoom):
         if self.hitbox_beck.contains(mouse_pos):
             self.text_line_1 = "Guten Tag,"
             self.text_line_2 = "Ich bin Herr Beck der Fachschulleiter"
-            self.text_line_3 = "Hier findest du mein Büro"
-            self.text_line_4 = "wenn du mich suchst"
+            self.text_line_3 = "Hier finden Sie mein Büro"
+            self.text_line_4 = "wenn Sie mich suchen"
             self.text_line_5 = ""
             self.text_line_6 = ""
 
@@ -53,7 +53,7 @@ class Beck(TemplateRoom):
             self.text_line_1 = ""
             self.text_line_2 = "Sorry das Büro"
             self.text_line_3 = "ist Abgeschlossen"
-            self.text_line_4 = "schau doch mal wo anders."
+            self.text_line_4 = "schauen Sie doch mal wo anders nach."
             self.text_line_5 = ""
             self.text_line_6 = ""
 
@@ -61,8 +61,8 @@ class Beck(TemplateRoom):
 
         elif self.hitbox_kanne.contains(mouse_pos):
             self.text_line_1 = ""
-            self.text_line_2 = "Danke aber die Blumen"
-            self.text_line_3 = "sind heute schon gegossen"
+            self.text_line_2 = "Danke, aber die Blumen"
+            self.text_line_3 = "sind heute schon gegossen worden"
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""

@@ -27,8 +27,8 @@ class DreiDDruck(TemplateRoom):
 
         self.text_line_1 = "Sehr geehrte Damen und Herren,"
         self.text_line_2 = "es ist mir eine große Freude,"
-        self.text_line_3 = "Sie in unserem Bereich für 3D-Drucker an unserer Schule begrüßen zu dürfen."
-        self.text_line_4 = "Hier finden Sie nicht nur Kunststoff-3D-Drucker,"
+        self.text_line_3 = "dich in unserem Bereich für 3D-Drucker an unserer Schule begrüßen zu dürfen."
+        self.text_line_4 = "Hier findest du nicht nur Kunststoff-3D-Drucker,"
         self.text_line_5 = "sondern auch eine herausragende Besonderheit."
         self.text_line_6 = "Das Herzstück dieses Bereiches ist zweifellos unser Metall-3D-Drucker."
 

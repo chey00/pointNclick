@@ -27,8 +27,8 @@ class Gang_IV(TemplateRoom):
 
         self.text_line_1 = "Herzlich willkommen! Hier geht es"
         self.text_line_2 = "zu den großen Maschinen!"
-        self.text_line_3 = "Die linke Tür führt Sie zum 3D Drucker."
-        self.text_line_4 = "Die rechte Tür bringt Sie zur"
+        self.text_line_3 = "Rechts geht es zum 3D Drucker."
+        self.text_line_4 = "Die linke Tür bringt Sie zur"
         self.text_line_5 = "Fräsmaschine."
         self.text_line_6 = ""
 

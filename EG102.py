@@ -41,6 +41,7 @@ class EG102(TemplateRoom):
         self.text_line_2 = ""
         self.text_line_3 = "Willkommen im Raum EG102."
         self.text_line_4 = ""
+        self.text_line_5 = "                              WEITER"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(EG102, self).mousePressEvent(ev)
@@ -49,8 +50,8 @@ class EG102(TemplateRoom):
 
         if self.hitbox_freddy.contains(mouse_pos):
             self.text_line_1 = "Ich heiße Freddy und"
-            self.text_line_2 = "besuche die Klasse FSWI-1. Bei Fragen"
-            self.text_line_3 = "sprechen Sie gerne mich oder einen"
+            self.text_line_2 = "besuche die Klasse FSWI-2. Bei Fragen"
+            self.text_line_3 = "sprech gerne mich oder einen"
             self.text_line_4 = "anderen Mitschüler aus der Klasse an."
             self.text_line_5 = "                              WEITER"
             self.text_line_6 = ""
@@ -59,8 +60,8 @@ class EG102(TemplateRoom):
 
         if self.hitbox_forword.contains(mouse_pos):
             if self.__counter == 0:
-                self.text_line_1 = "Wenn Sie mit der Klassenleitung "
-                self.text_line_2 = "sprechen wollen dann klicken Sie hier."
+                self.text_line_1 = "Wenn du mit der Klassenleitung "
+                self.text_line_2 = "sprechen willst dann klicke bitte hier."
                 self.text_line_3 = ""
                 self.text_line_4 = "            WEITER"
                 self.text_line_5 = ""

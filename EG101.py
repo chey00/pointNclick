@@ -63,6 +63,7 @@ class EG101(TemplateRoom):
             self.text_line_3 = "zur Verfügung gestellt."
             self.text_line_4 = "Die Wirtschaftsinformatiker bekommen"
             self.text_line_5 = "dazu noch ein MacBook gestellt."
+            self.text_line_6 = ""
 
         elif self.hitbox_ordner.contains(mouse_pos):
             self.text_line_1 = ""
