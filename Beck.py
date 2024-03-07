@@ -17,8 +17,6 @@ class Beck(TemplateRoom):
 
         self.set_offset_mouth(240, 360, 50, 100)
 
-        self.hitbox_beck = QRect(130, 430, 150, 150)
-        self.append_hitbox(self.hitbox_beck)
 
         self.hitbox_door = QRect(500, 460, 75, 75)
         self.append_hitbox(self.hitbox_door)
@@ -39,17 +37,8 @@ class Beck(TemplateRoom):
 
         mouse_pos = ev.pos()
 
-        if self.hitbox_beck.contains(mouse_pos):
-            self.text_line_1 = "Guten Tag,"
-            self.text_line_2 = "Ich bin Herr Beck der Fachschulleiter"
-            self.text_line_3 = "Hier finden Sie mein Büro"
-            self.text_line_4 = "wenn Sie mich suchen"
-            self.text_line_5 = ""
-            self.text_line_6 = ""
 
-            self.update()
-
-        elif self.hitbox_door.contains(mouse_pos):
+        if self.hitbox_door.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = "Sorry, das Büro ist abgeschlossen."
             self.text_line_3 = ""
