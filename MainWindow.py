@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
 
-        self.central_widget = Eingang(parent)
+        self.central_widget = Erasmus(parent)
         self.setup_new_room()
 
     def setup_new_room(self):

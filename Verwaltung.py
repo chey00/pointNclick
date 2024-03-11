@@ -37,9 +37,6 @@ class Verwaltung(TemplateRoom):
         self.text_line_5 = "Wie kann ich Ihnen behilflich"
         self.text_line_6 = "sein?                         Weiter"
 
-
-
-
         self.__show_qr = False
         self.__pixmap = QPixmap("QR-Code.png")
 
