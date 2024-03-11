@@ -34,7 +34,7 @@ class MainWindow(QMainWindow):
         self.__random_generator = QRandomGenerator().securelySeeded()
 
         self.__set_rooms = set()
-        self.__number_of_easter_eggs = 6
+        self.__number_of_easter_eggs = 5
 
         self.__status_bar = QStatusBar(parent)
         self.setStatusBar(self.__status_bar)
@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
 
-        self.central_widget = Erasmus(parent)
+        self.central_widget = Eingang(parent)
         self.setup_new_room()
 
     def setup_new_room(self):
@@ -133,8 +133,6 @@ class MainWindow(QMainWindow):
             self.setup_new_room()
         else:
             print("Fehler: new_room nicht vergeben")
-            
-
 
     @pyqtSlot(str)
     def change_room(self, old_room):
@@ -213,6 +211,8 @@ class MainWindow(QMainWindow):
         elif old_room == "Beck_fog.png":
             self.central_widget = Gang_III()
             self.setup_new_room()
+        else:
+            print("Fehler: change_room nicht vergeben")
 
     @pyqtSlot(str)
     def handler_easter_egg(self, room_name):
