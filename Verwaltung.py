@@ -15,7 +15,7 @@ class Verwaltung(TemplateRoom):
         self.offset_balloon_width = 200
         self.set_offset_mouth(502, 484, 50, 150)
 
-        self.hitbox_mouth = QRect(430, 375, 120, 135)
+        self.hitbox_mouth = QRect(950, 320, 150, 50)
         self.append_hitbox(self.hitbox_mouth)
 
         self.hitbox_unterlagen = QRect(640, 680, 190, 140)
@@ -35,7 +35,10 @@ class Verwaltung(TemplateRoom):
         self.text_line_3 = ""
         self.text_line_4 = "Ich bin Frau Del Popolo."
         self.text_line_5 = "Wie kann ich Ihnen behilflich"
-        self.text_line_6 = "sein?"
+        self.text_line_6 = "sein?                         Weiter"
+
+
+
 
         self.__show_qr = False
         self.__pixmap = QPixmap("QR-Code.png")
