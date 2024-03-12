@@ -180,6 +180,12 @@ class MainWindow(QMainWindow):
         elif old_room == "DreiDDruck.jpg":
             self.central_widget = Gang_IV()
             self.setup_new_room()
+        elif old_room == "DreiDDruck_Water.jpg":
+            self.central_widget = Gang_IV()
+            self.setup_new_room()
+        elif old_room == "DreiDDruck_Dark.jpg":
+            self.central_widget = Gang_IV()
+            self.setup_new_room()
         elif old_room == "Vogel.jpg":
             self.central_widget = Gang_III()
             self.setup_new_room()

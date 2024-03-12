@@ -17,9 +17,6 @@ class EG101(TemplateRoom):
 
         self.set_offset_mouth(600, 530, 0, 100)
 
-        self.hitbox_forward = QRect(1100, 402, 100, 25)
-        self.append_hitbox(self.hitbox_forward)
-
         self.__counter = 0
 
         self.hitbox_PC = QRect(480, 695, 240, 110)
@@ -34,28 +31,17 @@ class EG101(TemplateRoom):
         self.hitbox_stundenplan = QRect(400, 340, 230, 125)
         self.append_hitbox(self.hitbox_stundenplan)
 
-        self.text_line_1 = ""
-        self.text_line_2 = "Hallo!"
-        self.text_line_3 = "Ich bin der Herr Gumbmann."
-        self.text_line_4 = "Willkommen im Raum EG101."
-        self.text_line_5 = "Hier unterrichte ich die Klasse FSWI-1."
-        self.text_line_6 = "                               weiter"
+        self.text_line_1 = "Hallo!"
+        self.text_line_2 = "Ich bin der Herr Gumbmann unterrichte"
+        self.text_line_3 = "das Fach Programmieren. Willkommen im"
+        self.text_line_4 = "Raum EG101. Hier ist die Klasse FSWI-1,"
+        self.text_line_5 = "die den Schulhausrundgang aktualisiert"
+        self.text_line_6 = "hat."
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(EG101, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-
-        if self.hitbox_forward.contains(mouse_pos):
-            if self.__counter == 0:
-                self.text_line_1 = ""
-                self.text_line_2 = "Ich unterrichte das Fach"
-                self.text_line_3 = "Programmieren."
-                self.text_line_4 = ""
-                self.text_line_5 = ""
-                self.text_line_6 = ""
-
-                self.__counter = 1
 
         if self.hitbox_PC.contains(mouse_pos):
             self.text_line_1 = "Die Schüler bekommen ein iPad,"
@@ -67,10 +53,10 @@ class EG101(TemplateRoom):
 
         elif self.hitbox_ordner.contains(mouse_pos):
             self.text_line_1 = ""
-            self.text_line_2 = "Wir schreiben mindestens zwei Leistungs-"
-            self.text_line_3 = "nachweise pro Halbjahr: eine Stegreifaufgaben "
-            self.text_line_4 = "und eine Schulaufgabe."
-            self.text_line_5 = ""
+            self.text_line_2 = "Wir schreiben mindestens zwei"
+            self.text_line_3 = "Leistungsnachweise pro Halbjahr:"
+            self.text_line_4 = "eine Stegreifaufgabenund eine"
+            self.text_line_5 = "Schulaufgabe."
             self.text_line_6 = ""
 
         elif self.hitbox_tafel.contains(mouse_pos):

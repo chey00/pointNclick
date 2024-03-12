@@ -32,10 +32,10 @@ class Eingang(TemplateRoom):
         self.hitbox_easter_egg = QRect(740, 410, 35, 35)
 
         self.text_line_1 = ""
-        self.text_line_2 = "Hallo,"
-        self.text_line_3 = "herzlich willkommen zum"
-        self.text_line_4 = "Tag der offenen Tür"
-        self.text_line_5 = "der SBS Herzogenaurach."
+        self.text_line_2 = "Hallo und herzlich willkommen,"
+        self.text_line_3 = "zum Tag der offenen Tür am 16. März 2024"
+        self.text_line_4 = "im SBS Herzogenaurach."
+        self.text_line_5 = ""
         self.text_line_6 = "                                    weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
