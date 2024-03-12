@@ -3,13 +3,13 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
+
 class Eingang(TemplateRoom):
     def __init__(self, parent=None):
-        super(Eingang, self).__init__()
+        super(Eingang, self).__init__(parent)
         self.show_exit_button(False)
 
         self.init_room("Eingang.jpg")
-
 
         self.offset_balloon_x = 750
         self.offset_balloon_y = 20
@@ -51,7 +51,7 @@ class Eingang(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = "                                    weiter"
 
-            self.play_sound("TemplateRoom_found_cup.mp3")
+            self.play_sound("TemplateRoom.mp3")
 
             self.__counter = 5
 

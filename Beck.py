@@ -6,7 +6,7 @@ from TemplateRoom import TemplateRoom
 
 class Beck(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Beck, self).__init__(parent)
 
         self.init_room("Beck.png")
 
@@ -16,7 +16,6 @@ class Beck(TemplateRoom):
         self.offset_balloon_width = 160
 
         self.set_offset_mouth(240, 360, 50, 100)
-
 
         self.hitbox_door = QRect(500, 460, 75, 75)
         self.append_hitbox(self.hitbox_door)
@@ -36,7 +35,6 @@ class Beck(TemplateRoom):
         super(Beck, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
-
 
         if self.hitbox_door.contains(mouse_pos):
             self.text_line_1 = ""
@@ -67,6 +65,6 @@ class Beck(TemplateRoom):
             self.text_line_6 = ""
 
             self.init_room("Beck_fog.png")
-            self.play_sound("Beck_fire_extinguisher.mp3") #fire
+            self.play_sound("Beck_fog.mp3")
 
             self.update()

@@ -3,9 +3,10 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
+
 class Wegweiser(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Wegweiser, self).__init__(parent)
 
         self.init_room("Wegweiser.jpg")
 
@@ -22,9 +23,6 @@ class Wegweiser(TemplateRoom):
         self.hitbox_zumGangTech = QRect(1440-251, 1, 250, 800)
         self.append_hitbox(self.hitbox_zumGangTech)
 
-        #self.hitbox_mouth = QRect(715, 340, 60, 75)
-        #self. append_hitbox(self.hitbox_mouth)
-
         self.text_line_1 = "Du hast die Wahl:"
         self.text_line_2 = ""
         self.text_line_3 = "Nach Links geht es zum Maschinenbau"
@@ -38,7 +36,7 @@ class Wegweiser(TemplateRoom):
         mouse_pos = ev.pos()
  
         if self.hitbox_zumTreppenhaus.contains(mouse_pos):
-            self.new_room.emit("Zwischenraum_Treppenhaus.jpg")
+            self.new_room.emit("ZwischenraumTreppenhaus.jpg")
         elif self.hitbox_zumGangTech.contains(mouse_pos):
             self.new_room.emit("Gang_V.jpg")
         '''elif self.hitbox_mouth.contains(mouse_pos):
@@ -49,5 +47,3 @@ class Wegweiser(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = "" '''
         self.update()
-
-

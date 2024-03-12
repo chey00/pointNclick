@@ -19,11 +19,11 @@ from TemplateRoom import TemplateRoom
     self.text_line_12 = "Systemen sammeln."
 '''
 
-class Raum_digitale_Transformation(TemplateRoom):
+class DigitaleTransformation(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("Raum_digitale_Transformation.jpg")
+        self.init_room("DigitaleTransformation.jpg")
 
         self.offset_balloon_x = 200
         self.offset_balloon_y = 150
@@ -60,30 +60,30 @@ class Raum_digitale_Transformation(TemplateRoom):
     
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
-        super(Raum_digitale_Transformation, self).mousePressEvent(ev)
+        super(DigitaleTransformation, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
 
         if self.hitbox_mouth.contains(mouse_pos):
-            self.play_sound("Raum_digitale_Transformation_Vorlese_assistent.mp3")
+            self.play_sound("DigitaleTransformation_assistent.mp3")
             self.update()
         if self.hitbox_roboter_01.contains(mouse_pos):
-            self.play_sound("Raum_digitale_Transformation_works.mp3")
+            self.play_sound("DigitaleTransformation_work.mp3")
             self.update()
         if self.hitbox_roboter_02.contains(mouse_pos):
-            self.play_sound("Raum_digitale_Transformation_works.mp3")
+            self.play_sound("DigitaleTransformation_work.mp3")
             self.update()
         if self.hitbox_notaus_01.contains(mouse_pos):
-            self.play_sound("Raum_digitale_Transformation_power-down.mp3")
+            self.play_sound("DigitaleTransformation_power.mp3")
             self.update()
         if self.hitbox_notaus_02.contains(mouse_pos):
-            self.play_sound("Raum_digitale_Transformation_power-down.mp3")
+            self.play_sound("DigitaleTransformation_power.mp3")
             self.update()
         if self.hitbox_notaus_03.contains(mouse_pos):
-            self.play_sound("Raum_digitale_Transformation_power-down.mp3")
+            self.play_sound("DigitaleTransformation_power.mp3")
             self.update()
         if self.hitbox_notaus_04.contains(mouse_pos):
-            self.play_sound("Raum_digitale_Transformation_power-down.mp3")
+            self.play_sound("DigitaleTransformation_power.mp3")
             self.update()
 
 

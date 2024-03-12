@@ -6,7 +6,7 @@ from TemplateRoom import TemplateRoom
 
 class Lasergravierer(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Lasergravierer, self).__init__(parent)
 
         self.init_room("Lasergravierer.jpg")
 
@@ -64,6 +64,6 @@ class Lasergravierer(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = ""
 
-            self.play_sound("TemplateRoom_found_cup.mp3")
+            self.play_sound("TemplateRoom.mp3")
 
             self.update()

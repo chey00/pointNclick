@@ -5,8 +5,8 @@ from PyQt6.QtWidgets import QMainWindow, QMenuBar, QStatusBar, QMessageBox
 
 from Aula import Aula
 from Beck import Beck
-from BueroVogel import BueroVogel
 from CNC import CNC
+from DigitaleTransformation import DigitaleTransformation
 from DreiDDruck import DreiDDruck
 from EG101 import EG101
 from Eingang import Eingang
@@ -16,15 +16,15 @@ from Gang_I import Gang_I
 from Gang_II import Gang_II
 from Gang_III import Gang_III
 from Gang_IV import Gang_IV
-from Gang_V import GangTech
-from Schulleitung import OSTD
+from Gang_V import Gang_V
+from Lasergravierer import Lasergravierer
+from Schulleitung import Schulleitung
 from Stellvertretung import Stellvertretung
 from Treppenhaus import Treppenhaus
 from Verwaltung import Verwaltung
+from Vogel import Vogel
 from Wegweiser import Wegweiser
-from Lasergravierer import Lasergravierer
-from Zwischenraum_Treppenhaus import Zwischenraum_Treppenhaus
-from Raum_digitale_Transformation import Raum_digitale_Transformation
+from ZwischenraumTreppenhaus import ZwischenraumTreppenhaus
 
 
 class MainWindow(QMainWindow):
@@ -48,7 +48,6 @@ class MainWindow(QMainWindow):
         self.__hitbox_action.setCheckable(True)
 
         self.__hitbox_action.setChecked(True)
-        #self.__hitbox_action.setChecked(False)
 
         about = menu_bar.addMenu("Über")
         about_us = about.addAction("Projekt")
@@ -72,7 +71,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Treppenhaus()
             self.setup_new_room()
         elif new_room == "Gang_V.jpg":
-            self.central_widget = GangTech()
+            self.central_widget = Gang_V()
             self.setup_new_room()
         elif new_room == "Gang_I.jpg":
             self.central_widget = Gang_I()
@@ -98,11 +97,11 @@ class MainWindow(QMainWindow):
         elif new_room == "Aula.jpg":
             self.central_widget = Aula()
             self.setup_new_room()
-        elif new_room == "BueroVogel.jpg":
-            self.central_widget = BueroVogel()
+        elif new_room == "Vogel.jpg":
+            self.central_widget = Vogel()
             self.setup_new_room()
         elif new_room == "Schulleitung.jpg":
-            self.central_widget = OSTD()
+            self.central_widget = Schulleitung()
             self.setup_new_room()
         elif new_room == "CNC.jpg":
             self.central_widget = CNC()
@@ -110,8 +109,8 @@ class MainWindow(QMainWindow):
         elif new_room == "EG101.jpg":
             self.central_widget = EG101()
             self.setup_new_room()
-        elif new_room == "Raum_digitale_Transformation.jpg":
-            self.central_widget = Raum_digitale_Transformation()
+        elif new_room == "DigitaleTransformation.jpg":
+            self.central_widget = DigitaleTransformation()
             self.setup_new_room()
         elif new_room == "Gang_IV.jpg":
             self.central_widget = Gang_IV()
@@ -122,13 +121,13 @@ class MainWindow(QMainWindow):
         elif new_room == "Beck.png":
             self.central_widget = Beck()
             self.setup_new_room()
-        elif new_room == "Zwischenraum_Treppenhaus.jpg":
-            self.central_widget = Zwischenraum_Treppenhaus()
+        elif new_room == "ZwischenraumTreppenhaus.jpg":
+            self.central_widget = ZwischenraumTreppenhaus()
             self.setup_new_room()
         elif new_room == "Lasergravierer.jpg":
             self.central_widget = Lasergravierer()
             self.setup_new_room()
-        elif new_room == "DreiDDruck_Normal.jpg":
+        elif new_room == "DreiDDruck.jpg":
             self.central_widget = DreiDDruck()
             self.setup_new_room()
         else:
@@ -140,12 +139,12 @@ class MainWindow(QMainWindow):
             self.central_widget = Aula()
             self.setup_new_room()
         elif old_room == "Treppenhaus.jpg":
-            self.central_widget = Zwischenraum_Treppenhaus()
+            self.central_widget = ZwischenraumTreppenhaus()
             self.setup_new_room()
         elif old_room == "Lasergravierer.jpg":
-            self.central_widget = Zwischenraum_Treppenhaus()
+            self.central_widget = ZwischenraumTreppenhaus()
             self.setup_new_room()
-        elif old_room == "Zwischenraum_Treppenhaus.jpg":
+        elif old_room == "ZwischenraumTreppenhaus.jpg":
             self.central_widget = Wegweiser()
             self.setup_new_room()
         elif old_room == "Gang_V.jpg":
@@ -155,7 +154,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Treppenhaus()
             self.setup_new_room()
         elif old_room == "Gang_II.jpg":
-            self.central_widget = GangTech()
+            self.central_widget = Gang_V()
             self.setup_new_room()
         elif old_room == "Gang_III.jpg":
             self.central_widget = Gang_II()
@@ -178,10 +177,10 @@ class MainWindow(QMainWindow):
         elif old_room == "Aula.jpg":
             self.central_widget = Eingang()
             self.setup_new_room()
-        elif old_room == "DreiDDruck_Normal.jpg":
+        elif old_room == "DreiDDruck.jpg":
             self.central_widget = Gang_IV()
             self.setup_new_room()
-        elif old_room == "BueroVogel.jpg":
+        elif old_room == "Vogel.jpg":
             self.central_widget = Gang_III()
             self.setup_new_room()
         elif old_room == "Schulleitung.jpg":
@@ -191,15 +190,15 @@ class MainWindow(QMainWindow):
             self.central_widget = Gang_I()
             self.setup_new_room()
         elif old_room == "EG101.jpg":
-            self.central_widget = GangTech()
+            self.central_widget = Gang_V()
             self.setup_new_room()
-        elif old_room == "Raum_digitale_Transformation.jpg":
+        elif old_room == "DigitaleTransformation.jpg":
             self.central_widget = Gang_IV()
             self.setup_new_room()
         elif old_room == "Gang_IV.jpg":
             self.central_widget = Treppenhaus()
             self.setup_new_room()
-        elif old_room == "BueroVogel.jpg":
+        elif old_room == "Vogel.jpg":
             self.central_widget = Gang_III()
             self.setup_new_room()
         elif old_room == "Erasmus.jpg":

@@ -3,15 +3,17 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
+
 class Gang_II(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Gang_II, self).__init__(parent)
 
         self.init_room("Gang_II.jpg")
 
         self.offset_balloon_x = int((1440 - 500) / 2)
         self.offset_balloon_y = 25
-        self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length, self.offset_balloon_y + self.offset_balloon_width, 0, 0)
+        self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length, self.offset_balloon_y +
+                              self.offset_balloon_width, 0, 0)
 
         self.hitbox_zumGang_III = QRect(1, 1, 80, 800)
         self.append_hitbox(self.hitbox_zumGang_III)

@@ -14,7 +14,8 @@ class Gang_IV(TemplateRoom):
         self.offset_balloon_y = 25
         self.offset_balloon_length = 600
         self.offset_balloon_width = 150
-        self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length, self.offset_balloon_y + self.offset_balloon_width, 10, 10)
+        self.set_offset_mouth(self.offset_balloon_x + self.offset_balloon_length, self.offset_balloon_y +
+                              self.offset_balloon_width, 10, 10)
 
         self.hitbox_zumRaumDigitaleTransformation = QRect(225, 225, 300, 500)
         self.append_hitbox(self.hitbox_zumRaumDigitaleTransformation)
@@ -38,10 +39,8 @@ class Gang_IV(TemplateRoom):
         mouse_pos = ev.pos()
  
         if self.hitbox_zumRaumDigitaleTransformation.contains(mouse_pos):
-            self.new_room.emit("Raum_digitale_Transformation.jpg")
+            self.new_room.emit("DigitaleTransformation.jpg")
         elif self.hitbox_zurFraesmaschine.contains(mouse_pos):
             self.new_room.emit("Fraesmaschine.jpg")
         elif self.hitbox_zumMetal3DDrucker.contains(mouse_pos):
-            self.new_room.emit("DreiDDruck_Normal.jpg")
-
-        #self.update()
+            self.new_room.emit("DreiDDruck.jpg")

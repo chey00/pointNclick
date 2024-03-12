@@ -6,7 +6,7 @@ from TemplateRoom import TemplateRoom
 
 class EG101(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(EG101, self).__init__(parent)
 
         self.init_room("EG101.jpg")
 

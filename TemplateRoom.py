@@ -10,7 +10,7 @@ class TemplateRoom(QLabel):
     found_easter_egg = pyqtSignal(str)
 
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(TemplateRoom, self).__init__(parent)
         self.__room_name = None
         self.__background_pixmap = None
 
@@ -39,7 +39,7 @@ class TemplateRoom(QLabel):
         self.hitbox_exit = QRect()
         self.append_hitbox(self.hitbox_exit)
 
-        self.hitbox_easter_egg = QRect(0,0,0,0)
+        self.hitbox_easter_egg = QRect(0, 0, 0, 0)
 
         self.mouth_to_speech = QPolygon()
 
@@ -106,7 +106,8 @@ class TemplateRoom(QLabel):
             painter.setPen(new_pen)
 
             painter.drawPolygon(self.mouth_to_speech)
-            painter.drawRect(self.mouth_to_speech.at(1).x() + 5, self.mouth_to_speech.at(1).y() - 5, self.mouth_to_speech.at(2).x() - self.mouth_to_speech.at(1).x() - 5, 5)
+            painter.drawRect(self.mouth_to_speech.at(1).x() + 5, self.mouth_to_speech.at(1).y() - 5,
+                             self.mouth_to_speech.at(2).x() - self.mouth_to_speech.at(1).x() - 5, 5)
 
             new_pen.setStyle(Qt.PenStyle.SolidLine)
             painter.setPen(new_pen)
@@ -176,8 +177,10 @@ class TemplateRoom(QLabel):
         self.mouth_to_speech.clear()
 
         self.mouth_to_speech.append(QPoint(x, y))
-        self.mouth_to_speech.append(QPoint(self.offset_balloon_x + self.offset_balloon_width + offset_x, self.offset_balloon_y + self.offset_balloon_width))
-        self.mouth_to_speech.append(QPoint(self.offset_balloon_x + self.offset_balloon_width + offset_x + width, self.offset_balloon_y + self.offset_balloon_width))
+        self.mouth_to_speech.append(QPoint(self.offset_balloon_x + self.offset_balloon_width + offset_x,
+                                           self.offset_balloon_y + self.offset_balloon_width))
+        self.mouth_to_speech.append(QPoint(self.offset_balloon_x + self.offset_balloon_width + offset_x + width,
+                                           self.offset_balloon_y + self.offset_balloon_width))
 
     def show_exit_button(self, visible):
         self.__show_exit_button = visible

@@ -3,9 +3,10 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
+
 class Gang_III(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Gang_III, self).__init__(parent)
 
         self.init_room("Gang_III.jpg")
 
@@ -33,6 +34,6 @@ class Gang_III(TemplateRoom):
         if self.hitbox_zuHerrnBeck.contains(mouse_pos):
             self.new_room.emit("Beck.png")
         elif self.hitbox_zuFrauVogel.contains(mouse_pos):
-            self.new_room.emit("BueroVogel.jpg")
+            self.new_room.emit("Vogel.jpg")
 
         self.update()

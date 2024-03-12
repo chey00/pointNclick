@@ -3,9 +3,10 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
+
 class Fraesmaschine(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Fraesmaschine, self).__init__(parent)
 
         self.init_room("Fraesmaschine.jpg")
 
@@ -33,7 +34,6 @@ class Fraesmaschine(TemplateRoom):
         self.text_line_4 = ""
         self.text_line_5 = "weiter"
         self.text_line_6 = ""
-
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Fraesmaschine, self).mousePressEvent(ev)
@@ -67,7 +67,7 @@ class Fraesmaschine(TemplateRoom):
                 self.text_line_5 = "für Dreh- und Fräsmaschinen."
                 self.__counter += 1
 
-            if self.__counter ==0:
+            if self.__counter == 0:
                 self.text_line_1 = ""
                 self.text_line_2 = "Willkommen in unserer"
                 self.text_line_3 = "CNC-Ausbildungswerkstatt!"
@@ -77,7 +77,6 @@ class Fraesmaschine(TemplateRoom):
                 self.__counter += 1
                 self.update()
 
-
         elif self.hitbox_easter_egg.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = ""
@@ -86,6 +85,6 @@ class Fraesmaschine(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = ""
 
-            self.play_sound("TemplateRoom_found_cup.mp3")
+            self.play_sound("TemplateRoom.mp3")
 
             self.update()

@@ -3,13 +3,14 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
-class BueroVogel(TemplateRoom):
+
+class Vogel(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Vogel, self).__init__(parent)
 
-        self.init_room("BueroVogel.jpg")
+        self.init_room("Vogel.jpg")
 
-        self.__counter=0
+        self.__counter = 0
 
         self.offset_balloon_x = 310
         self.offset_balloon_y = 100
@@ -38,7 +39,7 @@ class BueroVogel(TemplateRoom):
         self.text_line_6 = "                       weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
-        super(BueroVogel, self).mousePressEvent(ev)
+        super(Vogel, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
 
@@ -65,7 +66,7 @@ class BueroVogel(TemplateRoom):
             self.text_line_6 = "Internet verbunden."
 
         elif self.hitbox_weiter.contains(mouse_pos):
-            if self.__counter==0:
+            if self.__counter == 0:
                 self.text_line_1 = "Wenn Sie wissen wollen, wie"
                 self.text_line_2 = "dieses Programm entstanden ist,"
                 self.text_line_3 = "können Sie gerne im Raum"
@@ -73,6 +74,6 @@ class BueroVogel(TemplateRoom):
                 self.text_line_5 = ""
                 self.text_line_6 = ""
 
-                self.__counter=1
+                self.__counter = 1
 
         self.update()

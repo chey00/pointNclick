@@ -3,9 +3,10 @@ from PyQt6.QtGui import QMouseEvent, QPixmap, QPaintEvent, QPainter
 
 from TemplateRoom import TemplateRoom
 
+
 class Verwaltung(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Verwaltung, self).__init__(parent)
 
         self.init_room("Verwaltung.jpg")
 
@@ -24,7 +25,7 @@ class Verwaltung(TemplateRoom):
         self.hitbox_computer = QRect(700, 435, 110, 120)
         self.append_hitbox(self.hitbox_computer)
 
-        self.hitbox_zumStvRoom= QRect(1340, 1, 99, 800)
+        self.hitbox_zumStvRoom = QRect(1340, 1, 99, 800)
         self.append_hitbox(self.hitbox_zumStvRoom)
 
         self.hitbox_zumOSTD = QRect(1, 1, 99, 800)
@@ -48,7 +49,7 @@ class Verwaltung(TemplateRoom):
         if self.hitbox_mouth.contains(mouse_pos):
             self.text_line_1 = "Sie brauchen eine Schulbescheinigung"
             self.text_line_2 = "für Ihre Krankenkasse?"
-            self.text_line_3= ""
+            self.text_line_3 = ""
             self.text_line_4 = "Gerne, da kann ich Ihnen helfen!"
             self.text_line_5 = "Sie können diese in der nächsten"
             self.text_line_6 = "Pause abholen."

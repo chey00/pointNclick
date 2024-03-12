@@ -3,9 +3,10 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
-class OSTD(TemplateRoom):
+
+class Schulleitung(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Schulleitung, self).__init__(parent)
 
         self.init_room("Schulleitung.jpg")
 
@@ -34,7 +35,7 @@ class OSTD(TemplateRoom):
         self.text_line_6 = "                             Weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
-        super(OSTD, self).mousePressEvent(ev)
+        super(Schulleitung, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
 
@@ -66,7 +67,7 @@ class OSTD(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = ""
 
-            self.play_sound("TemplateRoom_found_cup.mp3")
+            self.play_sound("TemplateRoom.mp3")
 
             self.update()
 
@@ -79,6 +80,3 @@ class OSTD(TemplateRoom):
             self.text_line_6 = ""
 
             self.update()
-
-
-

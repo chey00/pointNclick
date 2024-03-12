@@ -3,11 +3,12 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
+
 class DreiDDruck(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(DreiDDruck, self).__init__(parent)
 
-        self.init_room("DreiDDruck_Normal.jpg")
+        self.init_room("DreiDDruck.jpg")
 
         self.offset_balloon_x = 200
         self.offset_balloon_y = 25
@@ -19,10 +20,10 @@ class DreiDDruck(TemplateRoom):
         self.hitbox_mouth = QRect(0, 160, 650, 650)
         self.append_hitbox(self.hitbox_mouth)
 
-        self.hitbox_water = QRect(990,460,90,150)
+        self.hitbox_water = QRect(990, 460, 90, 150)
         self.append_hitbox(self.hitbox_water)
 
-        self.hitbox_notaus = QRect(1402,328,30,25)
+        self.hitbox_notaus = QRect(1402, 328, 30, 25)
         self.append_hitbox(self.hitbox_notaus)
 
         self.text_line_1 = "Sehr geehrte Damen und Herren,"
@@ -44,7 +45,7 @@ class DreiDDruck(TemplateRoom):
             self.text_line_4 = "verwendet ein Metall-3D-Drucker Metallpulver als Druckmaterial."
             self.text_line_5 = "Das Verfahren, das für den 3D-Druck mit Metall verwendet wird,"
             self.text_line_6 = "heißt selektives Laserschmelzen (SLM)."
-            self.init_room("DreiDDruck_Normal.jpg")
+            self.init_room("DreiDDruck.jpg")
             self.update()
 
         if self.hitbox_water.contains(mouse_pos):
@@ -55,8 +56,8 @@ class DreiDDruck(TemplateRoom):
             self.text_line_5 = ""
             self.text_line_6 = ""
 
-            self.init_room("DreiDDruck_Under_Water.jpg")
-            self.play_sound("DreiDDrucker_Water_sound.mp3")
+            self.init_room("DreiDDruck_Water.jpg")
+            self.play_sound("DreiDDruck_Water.mp3")
 
             self.update()
 
@@ -68,7 +69,7 @@ class DreiDDruck(TemplateRoom):
             self.text_line_5 = "Alles Dunkel..."
             self.text_line_6 = ""
 
-            self.init_room("DreiDDruck_Dark_Room.jpg")
-            self.play_sound("DreiDDruck_Lightswitch.mp3")
+            self.init_room("DreiDDruck_Dark.jpg")
+            self.play_sound("DreiDDruck_Dark.mp3")
 
             self.update()
