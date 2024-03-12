@@ -6,7 +6,7 @@ from TemplateRoom import TemplateRoom
 
 class ZwischenraumTreppenhaus(TemplateRoom):
     def __init__(self, parent=None):
-        super(ZwischenraumTreppenhaus).__init__(parent)
+        super(ZwischenraumTreppenhaus, self).__init__(parent)
 
         self.init_room("ZwischenraumTreppenhaus.jpg")
 
