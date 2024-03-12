@@ -18,7 +18,7 @@ from Gang_III import Gang_III
 from Gang_IV import Gang_IV
 from Gang_V import GangTech
 from Schulleitung import OSTD
-from Stellvertretung import StvRoom
+from Stellvertretung import Stellvertretung
 from Treppenhaus import Treppenhaus
 from Verwaltung import Verwaltung
 from Wegweiser import Wegweiser
@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
 
-        self.central_widget = Erasmus(parent)
+        self.central_widget = Stellvertretung(parent)
         self.setup_new_room()
 
     def setup_new_room(self):
@@ -93,7 +93,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Verwaltung()
             self.setup_new_room()
         elif new_room == "Stellvertretung.jpg":
-            self.central_widget = StvRoom()
+            self.central_widget = Stellvertretung()
             self.setup_new_room()
         elif new_room == "Aula.jpg":
             self.central_widget = Aula()

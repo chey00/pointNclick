@@ -3,19 +3,20 @@ from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
-class StvRoom(TemplateRoom):
+
+class Stellvertretung(TemplateRoom):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Stellvertretung, self).__init__(parent)
 
         self.init_room("Stellvertretung.jpg")
 
-        self.offset_balloon_x = 500
-        self.offset_balloon_y = 273
+        self.offset_balloon_x = 600
+        self.offset_balloon_y = 25
         self.offset_balloon_width = 160
         self.offset_balloon_length = 500
-        self.set_offset_mouth(1043, 479, 50, 150)
+        self.set_offset_mouth(1000, 475, 50, 50)
 
-        self.hitbox_forward = QRect(894, 402, 100, 25)
+        self.hitbox_forward = QRect(975, 150, 125, 50)
         self.append_hitbox(self.hitbox_forward)
 
         self.__counter = 0
@@ -33,22 +34,21 @@ class StvRoom(TemplateRoom):
         self.text_line_6 = "                           weiter"
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
-        super(StvRoom, self).mousePressEvent(ev)
+        super(Stellvertretung, self).mousePressEvent(ev)
 
         mouse_pos = ev.pos()
 
         if self.hitbox_easter_egg.contains(mouse_pos):
             self.text_line_1 = ""
             self.text_line_2 = ""
-            self.text_line_3 = "Für einen guten Start in"
-            self.text_line_4 = "den Tag, ist Kaffee unerlässlich!"
+            self.text_line_3 = "Für einen guten Start in den Tag"
+            self.text_line_4 = "ist Kaffee unerlässlich!"
             self.text_line_5 = ""
             self.text_line_6 = ""
 
             self.play_sound("TemplateRoom_found_cup.mp3")
 
             self.update()
-
 
         if self.hitbox_forward.contains(mouse_pos):
             if self.__counter == 0:
