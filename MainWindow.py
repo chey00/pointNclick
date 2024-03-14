@@ -306,5 +306,6 @@ class MainWindow(QMainWindow):
         msg_box.setText("Über das Programm")
         msg_box.setInformativeText("Unser virtueller Schulhausrundgang ist im Rahmen eines Projekts der Klasse FSWI-1"
                                    " im Schuljahr 2022/23 entstanden. Wir haben die App im Fach Programmieren erstellt"
-                                   " und nutzen Python mit Qt.")
+                                   " und nutzen Python mit Qt."
+                                   "")
         msg_box.show()

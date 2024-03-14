@@ -49,20 +49,23 @@ class Eingang(TemplateRoom):
             self.text_line_3 = "GLÜCKWUNSCH!!!"
             self.text_line_4 = "Du hast deine erste Kaffeetasse gefunden."
             self.text_line_5 = ""
-            self.text_line_6 = "                                    weiter"
+            self.text_line_6 = ""
 
             self.play_sound("TemplateRoom.mp3")
 
-            self.__counter = 5
-
             self.update()
 
-        elif self.hitbox_door_1.contains(mouse_pos):
-            self.new_room.emit("Aula.jpg")
-        elif self.hitbox_door_2.contains(mouse_pos):
+        if self.hitbox_door_1.contains(mouse_pos):
+            self.stop_player()
+
             self.new_room.emit("Aula.jpg")
 
-        elif self.hitbox_forward.contains(mouse_pos):
+        if self.hitbox_door_2.contains(mouse_pos):
+            self.stop_player()
+
+            self.new_room.emit("Aula.jpg")
+
+        if self.hitbox_forward.contains(mouse_pos):
             if self.__counter == 0:
                 self.text_line_1 = ""
                 self.text_line_2 = "Ich heiße David Ojimba"
@@ -109,7 +112,9 @@ class Eingang(TemplateRoom):
                 self.text_line_3 = "Naaa, hast du schon"
                 self.text_line_4 = "eine Tasse entdeckt?"
                 self.text_line_5 = ""
-                self.text_line_6 = ""
+                self.text_line_6 = "                                    weiter"
+
+                self.__counter = 5
 
             elif self.__counter == 5:
                 self.text_line_1 = ""

@@ -44,6 +44,8 @@ class Gang_I(TemplateRoom):
             self.play_sound("Gang_I.mp3")
 
         elif self.hitbox_zumMetall.contains(mouse_pos):
+            self.stop_player()
+
             self.new_room.emit("CNC.jpg")
 
         self.update()

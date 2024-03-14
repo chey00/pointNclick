@@ -21,9 +21,6 @@ class Stellvertretung(TemplateRoom):
 
         self.__counter = 0
 
-       # self.hitbox_stift = QRect(941, 415, 75, 75)
-       # self.append_hitbox(self.hitbox_stift)
-
         self.hitbox_easter_egg = QRect(960, 696, 75, 109)
 
         self.text_line_1 = "Hallo, ich bin Frau Körber."
