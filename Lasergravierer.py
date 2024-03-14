@@ -57,9 +57,9 @@ class Lasergravierer(TemplateRoom):
             self.update()
 
         if self.hitbox_easter_egg.contains(mouse_pos):
-            self.text_line_1 = "Die Tasse hier, hast du schon"
-            self.text_line_2 = "mal gefunden. Viel Spaß bei"
-            self.text_line_3 = "der weiteren Suche!"
+            self.text_line_1 = "Super, du hast ein gutes"
+            self.text_line_2 = "Augen. Viel Spaß bei der"
+            self.text_line_3 = "weiteren Suche!"
             self.text_line_4 = ""
             self.text_line_5 = ""
             self.text_line_6 = ""
