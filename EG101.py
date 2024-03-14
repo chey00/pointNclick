@@ -32,7 +32,7 @@ class EG101(TemplateRoom):
         self.append_hitbox(self.hitbox_stundenplan)
 
         self.text_line_1 = "Hallo!"
-        self.text_line_2 = "Ich bin der Herr Gumbmann unterrichte"
+        self.text_line_2 = "Ich bin Herr Gumbmann und unterrichte"
         self.text_line_3 = "das Fach Programmieren. Willkommen im"
         self.text_line_4 = "Raum EG101. Hier ist die Klasse FSWI-1,"
         self.text_line_5 = "die den Schulhausrundgang aktualisiert"
@@ -55,7 +55,7 @@ class EG101(TemplateRoom):
             self.text_line_1 = ""
             self.text_line_2 = "Wir schreiben mindestens zwei"
             self.text_line_3 = "Leistungsnachweise pro Halbjahr:"
-            self.text_line_4 = "eine Stegreifaufgabenund eine"
+            self.text_line_4 = "eine Stegreifaufgabe und eine"
             self.text_line_5 = "Schulaufgabe."
             self.text_line_6 = ""
 
