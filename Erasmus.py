@@ -63,7 +63,7 @@ class Erasmus(TemplateRoom):
             elif self.__counter == 3:
                 self.text_line_1 = "Vor Ort gehen unsere Studenten"
                 self.text_line_2 = "in einen Sprachkurs oder machen"
-                self.text_line_3 = "ein Praktikum. Die Aufenhaltes-"
+                self.text_line_3 = "ein Praktikum. Die Aufenhalts-"
                 self.text_line_4 = "dauer beträgt zwei Wochen."
                 self.text_line_5 = ""
                 self.text_line_6 = "                       weiter"
@@ -89,7 +89,7 @@ class Erasmus(TemplateRoom):
                 self.text_line_6 = ""
 
         elif self.hitbox_erasmus.contains(mouse_pos):
-            if self.__counter == 1:
+            if self.__counter == 1 or self.__counter == 0:
                 self.text_line_1 = "Ich betreue auch unser Erasmus"
                 self.text_line_2 = "Programm. Sie fragen sich, was"
                 self.text_line_3 = "das ist? Ich erkläre es Ihnen"
