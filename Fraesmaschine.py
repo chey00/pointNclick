@@ -10,25 +10,25 @@ class Fraesmaschine(TemplateRoom):
 
         self.init_room("Fraesmaschine.jpg")
 
-        self.offset_balloon_x = 600
-        self.offset_balloon_y = 50
-        self.set_offset_mouth(1120, 370, 50, 150)
+        self.offset_balloon_x = 440
+        self.offset_balloon_y = 25
+        self.set_offset_mouth(460, 320, 50, 150)
 
-        self.hitbox_werkzeug = QRect(600, 350, 75, 75)
+        self.hitbox_werkzeug = QRect(705, 485, 75, 75)
         self.append_hitbox(self.hitbox_werkzeug)
 
-        self.hitbox_easter_egg = QRect(682, 500, 45, 45)
+        self.hitbox_easter_egg = QRect(1240, 80, 100, 70)
         self.append_hitbox(self.hitbox_easter_egg)
 
-        self.hitbox_tuer = QRect(30, 290, 500, 400)
+        self.hitbox_tuer = QRect(1210, 170, 170, 560)
         self.append_hitbox(self.hitbox_tuer)
 
-        self.hitbox_weiter = QRect(605, 155, 100, 25)
+        self.hitbox_weiter = QRect(445, 130, 100, 25)
         self.append_hitbox(self.hitbox_weiter)
 
         self.__counter = 0
 
-        self.text_line_1 = "Hi, ich bin der Alex und "
+        self.text_line_1 = "Hi, ich bin der Harun und "
         self.text_line_2 = "besuche die Fachschule"
         self.text_line_3 = "für Wirtschaftsinformatik."
         self.text_line_4 = ""

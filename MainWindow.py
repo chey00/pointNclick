@@ -36,6 +36,8 @@ class MainWindow(QMainWindow):
         self.__set_rooms = set()
         self.__number_of_easter_eggs = 5
 
+        self.__found_key = False
+
         self.__status_bar = QStatusBar(parent)
         self.setStatusBar(self.__status_bar)
 
@@ -59,10 +61,12 @@ class MainWindow(QMainWindow):
 
     def setup_new_room(self):
         self.central_widget.setHitBoxVisible(self.__hitbox_action.isChecked())
+
         self.central_widget.leave_room.connect(self.change_room)
         self.central_widget.new_room.connect(self.renew_room)
         self.central_widget.found_easter_egg.connect(self.handler_easter_egg)
         self.__hitbox_action.toggled.connect(self.central_widget.setHitBoxVisible)
+
         self.setCentralWidget(self.central_widget)
 
     @pyqtSlot(str)
@@ -113,8 +117,10 @@ class MainWindow(QMainWindow):
             self.central_widget = DigitaleTransformation()
             self.setup_new_room()
         elif new_room == "Gang_IV.jpg":
-            self.central_widget = Gang_IV()
+            self.central_widget = Gang_IV(self.__found_key)
             self.setup_new_room()
+
+            self.central_widget.found_key.connect(self.handler_found_key)
         elif new_room == "Erasmus.jpg":
             self.central_widget = Erasmus()
             self.setup_new_room()
@@ -128,7 +134,7 @@ class MainWindow(QMainWindow):
             self.central_widget = Lasergravierer()
             self.setup_new_room()
         elif new_room == "DreiDDruck.jpg":
-            self.central_widget = DreiDDruck()
+            self.central_widget = DreiDDruck(self.__found_key)
             self.setup_new_room()
         else:
             print("Fehler: new_room nicht vergeben")
@@ -163,8 +169,10 @@ class MainWindow(QMainWindow):
             self.central_widget = Aula()
             self.setup_new_room()
         elif old_room == "Fraesmaschine.jpg":
-            self.central_widget = Gang_IV()
+            self.central_widget = Gang_IV(self.__found_key)
             self.setup_new_room()
+
+            self.central_widget.found_key.connect(self.handler_found_key)
         elif old_room == "Erasmus.jpg":
             self.central_widget = Gang_II()
             self.setup_new_room()
@@ -177,15 +185,11 @@ class MainWindow(QMainWindow):
         elif old_room == "Aula.jpg":
             self.central_widget = Eingang()
             self.setup_new_room()
-        elif old_room == "DreiDDruck.jpg":
-            self.central_widget = Gang_IV()
+        elif old_room == "DreiDDruck.jpg" or old_room == "DreiDDruck_Water.jpg" or old_room == "DreiDDruck_Dark.jpg":
+            self.central_widget = Gang_IV(self.__found_key)
             self.setup_new_room()
-        elif old_room == "DreiDDruck_Water.jpg":
-            self.central_widget = Gang_IV()
-            self.setup_new_room()
-        elif old_room == "DreiDDruck_Dark.jpg":
-            self.central_widget = Gang_IV()
-            self.setup_new_room()
+
+            self.central_widget.found_key.connect(self.handler_found_key)
         elif old_room == "Vogel.jpg":
             self.central_widget = Gang_III()
             self.setup_new_room()
@@ -199,9 +203,11 @@ class MainWindow(QMainWindow):
             self.central_widget = Gang_V()
             self.setup_new_room()
         elif old_room == "DigitaleTransformation.jpg":
-            self.central_widget = Gang_IV()
+            self.central_widget = Gang_IV(self.__found_key)
             self.setup_new_room()
-        elif old_room == "Gang_IV.jpg":
+
+            self.central_widget.found_key.connect(self.handler_found_key)
+        elif old_room == "Gang_IV.jpg" or old_room == "Gang_IV_Schluessel.png":
             self.central_widget = Treppenhaus()
             self.setup_new_room()
         elif old_room == "Vogel.jpg":
@@ -235,12 +241,18 @@ class MainWindow(QMainWindow):
 
             msg_box = QMessageBox()
             msg_box.setText("Herzlichen Glückwunsch!")
-            msg_box.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Ausdruck Ihre "
-                                       "Kaffeetasse im Raum EG 23 ab.")
+            #msg_box.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Ausdruck Ihre "
+            #                           "Kaffeetasse im Raum EG 23 ab.")
+            msg_box.setInformativeText("Sie haben alle Kaffeetassen gefunden. Dieses Jahr erhalten Sie individuell " +
+                                       "gelaserte Gläser im Raum EG 23.")
 
             msg_box.exec()
 
-            self.print_voucher()
+            #self.print_voucher()
+
+    @pyqtSlot()
+    def handler_found_key(self):
+        self.__found_key = True
 
     def print_voucher(self):
         printer = QPrinter()

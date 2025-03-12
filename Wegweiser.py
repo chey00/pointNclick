@@ -10,12 +10,12 @@ class Wegweiser(TemplateRoom):
 
         self.init_room("Wegweiser.jpg")
 
-        self.offset_balloon_x = 639
+        self.offset_balloon_x = 750
         self.offset_balloon_y = 10
         self.offset_balloon_length = 520
-        self.offset_balloon_width = 200
+        self.offset_balloon_width = 175
 
-        self.set_offset_mouth(810, 360, 50, 150)
+        self.set_offset_mouth(775, 265, 50, 150)
 
         self.hitbox_zumTreppenhaus = QRect(1, 1, 250, 800)
         self.append_hitbox(self.hitbox_zumTreppenhaus)

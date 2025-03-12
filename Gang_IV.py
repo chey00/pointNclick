@@ -1,14 +1,24 @@
-from PyQt6.QtCore import QRect
+from PyQt6.QtCore import QRect, pyqtSignal
 from PyQt6.QtGui import QMouseEvent
 
 from TemplateRoom import TemplateRoom
 
 
 class Gang_IV(TemplateRoom):
-    def __init__(self, parent=None):
+    found_key = pyqtSignal()
+
+    def __init__(self, found_key, parent=None):
         super(Gang_IV, self).__init__(parent)
 
-        self.init_room("Gang_IV.jpg")
+        self.hitbox_key = QRect(0, 0, 0, 0)
+
+        if found_key:
+            self.init_room("Gang_IV.jpg")
+        else:
+            self.init_room("Gang_IV_Schluessel.png")
+
+            self.hitbox_key = QRect(1135, 800, 100, 80)
+            self.append_hitbox(self.hitbox_key)
 
         self.offset_balloon_x = int((1440 - 500) / 2)
         self.offset_balloon_y = 25
@@ -44,3 +54,14 @@ class Gang_IV(TemplateRoom):
             self.new_room.emit("Fraesmaschine.jpg")
         elif self.hitbox_zumMetal3DDrucker.contains(mouse_pos):
             self.new_room.emit("DreiDDruck.jpg")
+        elif self.hitbox_key.contains(mouse_pos):
+            self.init_room("Gang_IV.jpg")
+
+            self.text_line_1 = "Sie haben einen Schlüssel gefunden. Wo"
+            self.text_line_2 = "könnte dieser Schlüssel nur sperren?"
+            self.text_line_3 = ""
+            self.text_line_4 = ""
+            self.text_line_5 = ""
+            self.text_line_6 = ""
+
+            self.found_key.emit()

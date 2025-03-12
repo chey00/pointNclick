@@ -1,6 +1,6 @@
 from PyQt6.QtCore import QPoint, QRect, pyqtSignal, pyqtSlot, QSize, Qt, QUrl
 from PyQt6.QtGui import QPixmap, QMouseEvent, QPaintEvent, QPainter, QColor, QFont, QPolygon, QPen, QBrush
-from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput, QAudioDevice
+from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtWidgets import QLabel
 
 
@@ -11,6 +11,7 @@ class TemplateRoom(QLabel):
 
     def __init__(self, parent=None):
         super(TemplateRoom, self).__init__(parent)
+
         self.__room_name = None
         self.__background_pixmap = None
 

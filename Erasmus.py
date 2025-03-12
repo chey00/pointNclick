@@ -72,9 +72,9 @@ class Erasmus(TemplateRoom):
 
             elif self.__counter == 4:
                 self.text_line_1 = "Bisher haben unsere Studenten"
-                self.text_line_2 = "die Länder Malta, Irland"
-                self.text_line_3 = "und Schweden besucht. Dieses"
-                self.text_line_4 = "Jahr geht es nach Helsinki."
+                self.text_line_2 = "die Länder Malta, Irland und"
+                self.text_line_3 = "Finnland besucht. Dieses Jahr"
+                self.text_line_4 = "geht es nach Stockholm."
                 self.text_line_5 = ""
                 self.text_line_6 = "                       weiter"
 

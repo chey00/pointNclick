@@ -16,7 +16,7 @@ class Eingang(TemplateRoom):
         self.offset_balloon_width = 180
         self.offset_balloon_length = 650
 
-        self.set_offset_mouth(787, 271, 50, 150)
+        self.set_offset_mouth(700, 350, 50, 150)
 
         self.hitbox_door_1 = QRect(5, 215, 350, 600)
         self.append_hitbox(self.hitbox_door_1)
@@ -29,11 +29,11 @@ class Eingang(TemplateRoom):
 
         self.__counter = 0
 
-        self.hitbox_easter_egg = QRect(740, 410, 35, 35)
+        self.hitbox_easter_egg = QRect(600, 555, 60, 70)
 
-        self.text_line_1 = ""
-        self.text_line_2 = "Hallo und herzlich willkommen,"
-        self.text_line_3 = "zum Tag der offenen Tür am 16. März 2024"
+        self.text_line_1 = "Hallo und herzlich willkommen,"
+        self.text_line_2 = ""
+        self.text_line_3 = "zum Tag der offenen Tür am 22. Februar 2025"
         self.text_line_4 = "im SBS Herzogenaurach."
         self.text_line_5 = ""
         self.text_line_6 = "                                    weiter"
@@ -68,7 +68,7 @@ class Eingang(TemplateRoom):
         if self.hitbox_forward.contains(mouse_pos):
             if self.__counter == 0:
                 self.text_line_1 = ""
-                self.text_line_2 = "Ich heiße David Ojimba"
+                self.text_line_2 = "Ich heiße Batuhan Aktürk"
                 self.text_line_3 = "und begleite dich heute"
                 self.text_line_4 = "durch unsere Schule."
                 self.text_line_5 = ""
@@ -97,11 +97,11 @@ class Eingang(TemplateRoom):
                 self.__counter = 3
 
             elif self.__counter == 3:
-                self.text_line_1 = "In manchen Räumen ist eine Tasse versteckt."
-                self.text_line_2 = ""
-                self.text_line_3 = "Gehe von Raum zu Raum,"
-                self.text_line_4 = "denn am Ende hast du die Chance"
-                self.text_line_5 = "eine Kaffeetasse zu gewinnen."
+                self.text_line_1 = "In manchen Räumen ist eine Kaffeetasse"
+                self.text_line_2 = "versteckt. Gehe von Raum zu Raum, denn"
+                self.text_line_3 = "am Ende hast du die Chance ein individuell"
+                self.text_line_4 = "graviertes Glas als Erinnerung mitzunehmen."
+                self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 
                 self.__counter = 4
@@ -119,8 +119,8 @@ class Eingang(TemplateRoom):
             elif self.__counter == 5:
                 self.text_line_1 = ""
                 self.text_line_2 = ""
-                self.text_line_3 = "Besuche jede Raum"
-                self.text_line_4 = "und finde die Tassen!."
+                self.text_line_3 = "Besuche jeden Raum"
+                self.text_line_4 = "und finden Sie alle fünf Tassen."
                 self.text_line_5 = ""
                 self.text_line_6 = "                                    weiter"
 
