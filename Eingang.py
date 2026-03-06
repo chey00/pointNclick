@@ -33,8 +33,8 @@ class Eingang(TemplateRoom):
 
         self.text_line_1 = "Hallo und herzlich willkommen,"
         self.text_line_2 = ""
-        self.text_line_3 = "zum Tag der offenen Tür am 22. Februar 2025"
-        self.text_line_4 = "im SBS Herzogenaurach."
+        self.text_line_3 = "zum Tag der offenen Tür am 7. März 2026"
+        self.text_line_4 = "am SBS Herzogenaurach."
         self.text_line_5 = ""
         self.text_line_6 = "                                    weiter"
 
