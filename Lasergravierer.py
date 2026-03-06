@@ -10,22 +10,22 @@ class Lasergravierer(TemplateRoom):
 
         self.init_room("Lasergravierer.jpg")
 
-        self.offset_balloon_x = 975
-        self.offset_balloon_y = 15
+        self.offset_balloon_x = 500
+        self.offset_balloon_y = 89
         self.offset_balloon_length = 450
         self.offset_balloon_width = 200
-        self.set_offset_mouth(975, 215, 10, 10)
+        self.set_offset_mouth(500, 290, 10, 10)
 
-        self.hitbox_laptop = QRect(1000, 275, 400, 200)
+        self.hitbox_laptop = QRect(246, 388, 250, 150)
         self.append_hitbox(self.hitbox_laptop)
 
-        self.hitbox_laser = QRect(400, 150, 350, 300)
+        self.hitbox_laser = QRect(540, 458, 900, 410)
         self.append_hitbox(self.hitbox_laser)
 
-        self.hitbox_easter_egg = QRect(825, 300, 100, 75)
+        self.hitbox_easter_egg = QRect(171, 464, 70, 75)
 
         self.text_line_1 = "Hallo,"
-        self.text_line_2 = "ich bin Michell. Du bist im"
+        self.text_line_2 = "ich bin Danilo. Du bist im"
         self.text_line_3 = "Raum für den Lasergravierer."
         self.text_line_4 = "Sicher willst du deine Tasse"
         self.text_line_5 = "abholen. Hast du schon alle"

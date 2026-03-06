@@ -37,6 +37,7 @@ class MainWindow(QMainWindow):
         self.__number_of_easter_eggs = 5
 
         self.__found_key = False
+        self.__machine_key_taken = False # NEU: Speichert, ob der Schlüssel aus der Box genommen wurde
 
         self.__status_bar = QStatusBar(parent)
         self.setStatusBar(self.__status_bar)
@@ -55,8 +56,7 @@ class MainWindow(QMainWindow):
         about_us = about.addAction("Projekt")
         about_us.triggered.connect(self.about_us)
         self.setMenuBar(menu_bar)
-
-        self.central_widget = Eingang(parent)
+        self.central_widget = Eingang(self)
         self.setup_new_room()
 
     def setup_new_room(self):
@@ -66,6 +66,10 @@ class MainWindow(QMainWindow):
         self.central_widget.new_room.connect(self.renew_room)
         self.central_widget.found_easter_egg.connect(self.handler_easter_egg)
         self.__hitbox_action.toggled.connect(self.central_widget.setHitBoxVisible)
+
+        # NEU: Signal-Anschluss für den Maschinenschlüssel, falls der aktuelle Raum DreiDDruck ist
+        if isinstance(self.central_widget, DreiDDruck):
+            self.central_widget.found_machine_key.connect(self.handler_found_machine_key)
 
         self.setCentralWidget(self.central_widget)
 
@@ -133,8 +137,9 @@ class MainWindow(QMainWindow):
         elif new_room == "Lasergravierer.jpg":
             self.central_widget = Lasergravierer()
             self.setup_new_room()
-        elif new_room == "DreiDDruck.jpg":
-            self.central_widget = DreiDDruck(self.__found_key)
+        elif new_room == "DreiDDruck.jpg" or new_room == "DreiDDruck_An.jpg" or new_room == "DreiDDruck_Schluessel.jpg":
+            # ANPASSUNG: Übergabe beider Schlüssel-Zustände
+            self.central_widget = DreiDDruck(self.__found_key, self.__machine_key_taken)
             self.setup_new_room()
         else:
             print("Fehler: new_room nicht vergeben")
@@ -185,7 +190,7 @@ class MainWindow(QMainWindow):
         elif old_room == "Aula.jpg":
             self.central_widget = Eingang()
             self.setup_new_room()
-        elif old_room == "DreiDDruck.jpg" or old_room == "DreiDDruck_Water.jpg" or old_room == "DreiDDruck_Dark.jpg":
+        elif "DreiDDruck" in old_room: # Vereinfachte Abfrage für alle DreiDDruck Bilder
             self.central_widget = Gang_IV(self.__found_key)
             self.setup_new_room()
 
@@ -241,83 +246,24 @@ class MainWindow(QMainWindow):
 
             msg_box = QMessageBox()
             msg_box.setText("Herzlichen Glückwunsch!")
-            #msg_box.setInformativeText("Sie haben alle Kaffeetassen gefunden. Holen Sie sich mit dem Ausdruck Ihre "
-            #                           "Kaffeetasse im Raum EG 23 ab.")
             msg_box.setInformativeText("Sie haben alle Kaffeetassen gefunden. Dieses Jahr erhalten Sie individuell " +
                                        "gelaserte Gläser im Raum EG 23.")
 
             msg_box.exec()
 
-            #self.print_voucher()
-
     @pyqtSlot()
     def handler_found_key(self):
         self.__found_key = True
 
-    def print_voucher(self):
-        printer = QPrinter()
 
-        print_dialog = QPrintDialog(printer)
-        print_dialog.exec()
-
-        painter = QPainter()
-        painter.begin(printer)
-        painter.setPen(QColor("black"))
-
-        page_rect = printer.pageRect(QPrinter.Unit.DevicePixel)
-
-        painter.setFont(QFont("Helvetica [Cronyx]", 36))
-
-        text = "Gutschein"
-        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignHCenter, text)
-        painter.drawText(bounding_rect, text)
-        page_rect.adjust(0, bounding_rect.height(), 0, 0)
-
-        painter.setFont(QFont("Helvetica [Cronyx]", 12))
-
-        text = "Gegen Vorlage dieses Gutscheins erhalten Sie von unseren Studierenden eine gravierte Kaffeetasse."
-        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignLeft, text)
-        painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
-        page_rect.adjust(0, bounding_rect.height(), 0, 0)
-
-        text = "Ihr indivdueller Gutscheincode lautet:"
-        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignLeft, text)
-        painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
-        page_rect.adjust(0, 2 * bounding_rect.height(), 0, 0)
-
-        text = str(self.__random_generator.bounded(10, 99))
-        text += "-"
-        text += str(self.__random_generator.bounded(10, 99))
-        text += "-"
-        text += str(self.__random_generator.bounded(10, 99))
-        text += "-"
-        text += str(self.__random_generator.bounded(10, 99))
-        text += "-"
-        text += str(self.__random_generator.bounded(10, 99))
-        text += "-"
-        text += str(self.__random_generator.bounded(10, 99))
-        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignHCenter, text)
-        painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
-        page_rect.adjust(0, 2 * bounding_rect.height(), 0, 0)
-
-        text = "Ihre Kaffeetasse können Sie im Raum EG 23 abholen."
-        bounding_rect = painter.boundingRect(page_rect, Qt.AlignmentFlag.AlignLeft, text)
-        painter.drawText(bounding_rect.adjusted(0, bounding_rect.height(), 0, bounding_rect.height()), text)
-        page_rect.adjust(0, 2 * bounding_rect.height(), 0, 0)
-
-        pixmap = QPixmap("logo.png").scaledToWidth(150, Qt.TransformationMode.SmoothTransformation)
-        point = page_rect.bottomRight().toPoint()
-        x = point.x() - pixmap.size().width() - 50
-        y = point.y() - pixmap.size().height() - 50
-        painter.drawPixmap(x, y, pixmap)
-
-        painter.end()
+    @pyqtSlot()
+    def handler_found_machine_key(self):
+        self.__machine_key_taken = True
 
     def about_us(self):
         msg_box = QMessageBox(self)
         msg_box.setText("Über das Programm")
         msg_box.setInformativeText("Unser virtueller Schulhausrundgang ist im Rahmen eines Projekts der Klasse FSWI-1"
                                    " im Schuljahr 2022/23 entstanden. Wir haben die App im Fach Programmieren erstellt"
-                                   " und nutzen Python mit Qt."
-                                   "")
+                                   " und nutzen Python mit Qt.")
         msg_box.show()
