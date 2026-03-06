@@ -28,7 +28,7 @@ class Wegweiser(TemplateRoom):
         self.text_line_3 = "Nach Links geht es zum Maschinenbau"
         self.text_line_4 = "und der Mechatroniktechnik."
         self.text_line_5 = "Rechts geht es weiter zur"
-        self.text_line_6 = "Wirtschaftsinformatik."
+        self.text_line_6 = "Wirtschaftsinformatik und KI."
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(Wegweiser, self).mousePressEvent(ev)

@@ -4,20 +4,21 @@ from TemplateRoom import TemplateRoom
 
 # Gesprochener Text Hitbox_Kopf
 '''
-    self.text_line_1 = "Hallo, mein Name ist Lisa Krickhahn und "
-    self.text_line_2 = "ich habe im zweiten Jahr meines Mechatronik-"
-    self.text_line_3 = "Technikers mit meinen Mitschülern der Klasse FSMT-2 "
-    self.text_line_4 = "im Rahmen des Faches Robotertechnik die Möglichkeit "
-    self.text_line_5 = "gehabt, einen Einblick in die Welt der 6-Achs-Roboter, "
-    self.text_line_6 = "mithilfe unserer neuen kollaborativen Roboter zu "
-    self.text_line_7 = "erhalten. In diesem Fach lernen wir als angehende "
+        self.text_line_1 = "Willkommen! Ich betreue hier an der SBS-Herzogenaurach"
+        self.text_line_2 = "den Fachbereich für Digitale Transformation."
+        self.text_line_3 = "Gemeinsam mit unseren angehenden Technikern und"
+        self.text_line_4 = "Auszubildenden erarbeiten wir hier die Grundlagen der"
+        self.text_line_5 = "modernen Industrierobotik. In meinem Unterricht führen wir"
+        self.text_line_6 = "Sie theoretisch und praktisch in die Welt der"
+        self.text_line_7 = "6-Achs-Roboter und Cobots ein."
 
-    self.text_line_8 = "Techniker die Steuerung, Wegmesssysteme, "
-    self.text_line_9 = "Kinematik, Antriebe und Sensorik kennen. So können  "
-    self.text_line_10 = "wir bereits erste eigene Programme entwickeln und "
-    self.text_line_11 = "praktische Erfahrungen im Umgang mit Robotik  "
-    self.text_line_12 = "Systemen sammeln."
+        self.text_line_8 = "Wir analysieren Steuerungen, Wegmesssysteme,"
+        self.text_line_9 = "Kinematik, Antriebe sowie modernste Sensorik."
+        self.text_line_10 = "Mein Ziel ist es, dass jeder Schüler eigene"
+        self.text_line_11 = "Programme entwickelt und wertvolle praktische"
+        self.text_line_12 = "Erfahrung im Umgang mit Robotik-Systemen sammelt."
 '''
+
 
 class DigitaleTransformation(TemplateRoom):
     def __init__(self, parent=None):
@@ -25,67 +26,51 @@ class DigitaleTransformation(TemplateRoom):
 
         self.init_room("DigitaleTransformation.jpg")
 
-        self.offset_balloon_x = 200
-        self.offset_balloon_y = 150
+        self.offset_balloon_x = 250
+        self.offset_balloon_y = 50
         self.offset_balloon_length = 1050
         self.offset_balloon_width = 150
-        self.set_offset_mouth(705,482,450,80)
+        self.set_offset_mouth(815, 327, 450, 80)
 
-        self.hitbox_mouth = QRect(616, 448, 75, 75)
+        # Hitboxes
+        self.hitbox_mouth = QRect(734, 275, 81, 97)
+        self.hitbox_roboter_01 = QRect(290, 250, 135, 265)
+        self.hitbox_roboter_02 = QRect(935, 270, 160, 260)
+        self.hitbox_notaus_01 = QRect(367, 671, 27, 25)
+        self.hitbox_notaus_02 = QRect(1091, 652, 22, 20)
+        self.hitbox_notaus_03 = QRect(704, 464, 17, 14)
+        # self.hitbox_notaus_04 = QRect(933, 751, 20, 20)
+
         self.append_hitbox(self.hitbox_mouth)
-
-        self.hitbox_roboter_01 = QRect(203, 397, 190, 200)
         self.append_hitbox(self.hitbox_roboter_01)
-
-        self.hitbox_roboter_02 = QRect(800, 397, 100, 200)
         self.append_hitbox(self.hitbox_roboter_02)
-
-        self.hitbox_notaus_01 = QRect(279, 795, 20, 20)
         self.append_hitbox(self.hitbox_notaus_01)
-
-        self.hitbox_notaus_02 = QRect(465, 523, 20, 20)
         self.append_hitbox(self.hitbox_notaus_02)
-
-        self.hitbox_notaus_03 = QRect(983, 508, 20, 20)
         self.append_hitbox(self.hitbox_notaus_03)
+        # self.append_hitbox(self.hitbox_notaus_04)
 
-        self.hitbox_notaus_04 = QRect(933, 751, 20, 20)
-        self.append_hitbox(self.hitbox_notaus_04)
-        
-        self.text_line_1 = "Im Rahmen des Faches Robotertechnik erhalten Schüler "
-        self.text_line_2 = "in diesem Raum die Möglichkeit, mit den neuen " 
-        self.text_line_3 = "kollaborativen Robotern, die Themengebiete: Steuerung, " 
-        self.text_line_4 = "Wegmesssysteme, Kinematik, Antriebe und "
-        self.text_line_5 = "Sensorik kennenzulernen."
-    
+        # New Text for SBS-Herzogenaurach
+        self.text_line_1 = "Willkommen im Fachbereich Robotertechnik der SBS-Herzogenaurach!"
+        self.text_line_2 = "Hier im Raum Digitale Transformation bereiten wir angehende Techniker"
+        self.text_line_3 = "und Auszubildende auf die Industrie 4.0 vor. An unseren modernen "
+        self.text_line_4 = "kollaborativen Robotern lernen Sie alles über Steuerung,"
+        self.text_line_5 = "Kinematik und Sensorik für Ihre berufliche Zukunft."
 
     def mousePressEvent(self, ev: QMouseEvent) -> None:
         super(DigitaleTransformation, self).mousePressEvent(ev)
-
         mouse_pos = ev.pos()
 
+        # Logic remains the same
         if self.hitbox_mouth.contains(mouse_pos):
             self.play_sound("DigitaleTransformation_assistent.mp3")
-            self.update()
-        if self.hitbox_roboter_01.contains(mouse_pos):
+        elif self.hitbox_roboter_01.contains(mouse_pos) or self.hitbox_roboter_02.contains(mouse_pos):
             self.play_sound("DigitaleTransformation_work.mp3")
-            self.update()
-        if self.hitbox_roboter_02.contains(mouse_pos):
-            self.play_sound("DigitaleTransformation_work.mp3")
-            self.update()
-        if self.hitbox_notaus_01.contains(mouse_pos):
+        elif any(hb.contains(mouse_pos) for hb in
+                 # [self.hitbox_notaus_01, self.hitbox_notaus_02, self.hitbox_notaus_03, self.hitbox_notaus_04]):
+                 [self.hitbox_notaus_01, self.hitbox_notaus_02, self.hitbox_notaus_03]):
             self.play_sound("DigitaleTransformation_power.mp3")
-            self.update()
-        if self.hitbox_notaus_02.contains(mouse_pos):
-            self.play_sound("DigitaleTransformation_power.mp3")
-            self.update()
-        if self.hitbox_notaus_03.contains(mouse_pos):
-            self.play_sound("DigitaleTransformation_power.mp3")
-            self.update()
-        if self.hitbox_notaus_04.contains(mouse_pos):
-            self.play_sound("DigitaleTransformation_power.mp3")
-            self.update()
 
+        self.update()
 
 
 
