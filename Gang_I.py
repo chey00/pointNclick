@@ -46,6 +46,6 @@ class Gang_I(TemplateRoom):
         elif self.hitbox_zumMetall.contains(mouse_pos):
             self.stop_player()
 
-            self.new_room.emit("CNC.jpeg")
+            self.new_room.emit("CNC.jpg")
 
         self.update()

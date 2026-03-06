@@ -7,7 +7,7 @@ class CNC(TemplateRoom):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.init_room("CNC.jpeg")
+        self.init_room("CNC.jpg")
 
         self.offset_balloon_x = 920
         self.offset_balloon_y = 40
